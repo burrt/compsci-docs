@@ -1,0 +1,53 @@
+# For technical reasons, this file is *NOT* reloaded automatically when you use
+# 'bundle exec jekyll serve'. If you change this file, please restart the server process.
+
+# Site settings
+# These are used to personalize your new site. If you look in the HTML files,
+# you will see them accessed via {{ site.title }}, {{ site.email }}, and so on.
+# You can create any custom variable you would like, and they will be accessible
+# in the templates via {{ site.myvariable }}.
+
+title: Computer Science Notes
+email: geoffchoy@outlook.com
+description: >-
+  Computer Science notes that have been around for a while.
+
+baseurl: "/docs"
+url: ""
+
+github_username:  jekyll
+
+# Build settings
+markdown: kramdown
+theme: minima
+plugins:
+  - jekyll-feed
+
+collections:
+  v1:
+    name: "v1 Docs"
+    site_section: true
+    output: true
+    permalink: /v1/:path/
+    prefix: "/v1"
+    selectorName: "v1"
+
+defaults:
+  -
+    scope:
+      path: ""
+      type: "v1"
+    values:
+      lang: "en"
+
+# Exclude from processing.
+# The following items will not be processed, by default. Create a custom list
+# to override the default setting.
+# exclude:
+#   - Gemfile
+#   - Gemfile.lock
+#   - node_modules
+#   - vendor/bundle/
+#   - vendor/cache/
+#   - vendor/gems/
+#   - vendor/ruby/
