@@ -2,7 +2,7 @@
 layout: default
 title: Compiler Notes
 categories: [compilers]
-description: Some notes on compiling stuff
+description: Some notes on compiling stuff - misleading title
 order: 20
 sitemap: false
 ---
