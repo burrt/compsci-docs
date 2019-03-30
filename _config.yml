@@ -12,8 +12,8 @@ email: geoffchoy@outlook.com
 description: >
   Computer Science notes that have been around for a while.
 
-url: "http://localhost:4000/compsci-docs"
-baseurl: "/compsci-docs"
+url: "http://localhost:4000"
+baseurl: "/docs"
 gh_url: "https://burrt.github.io/compsci-docs/"
 
 github_username: burrt
