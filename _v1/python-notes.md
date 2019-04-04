@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: compsci-note
 title: Python Notes
 categories: [language]
 description: Some notes on Python

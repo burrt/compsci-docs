@@ -1,7 +1,7 @@
 ---
-layout: default
+layout: compsci-note
 title: CMD Notes
-categories: [cmd, windows]
+categories: [windows]
 description: Some notes on cmd commands and batch
 order: 20
 sitemap: false

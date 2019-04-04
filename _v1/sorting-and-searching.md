@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: compsci-note
 title: Sorting and Searching Algorithm Notes
 categories: [fundamentals]
 description: Some notes on sort and search algorithms, and time complexity

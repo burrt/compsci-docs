@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: compsci-note
 title: Web Development Notes
 categories: [web-dev]
 description: Some basic notes on HTML/CSS

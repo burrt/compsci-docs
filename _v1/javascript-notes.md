@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: compsci-note
 title: Javascript Notes
 categories: [web-dev, language]
 description: Some notes on Javascript

@@ -20,7 +20,7 @@ github_username: burrt
 
 # Build settings
 markdown: kramdown
-theme: minima
+theme: jekyll-theme-midnight
 plugins:
   - jekyll-feed
 
@@ -32,10 +32,11 @@ collections:
     permalink: /v1/:path/
     prefix: "/v1"
     selectorName: "v1"
+  category:
+    output: true
 
 defaults:
-  -
-    scope:
+  - scope:
       path: ""
       type: "v1"
     values:

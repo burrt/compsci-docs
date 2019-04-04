@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: compsci-note
 title: Docker Notes
 categories: [docker]
 description: Some notes on Docker

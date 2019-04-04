@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: compsci-note
 title: Emacs Notes
 categories: [ide]
 description: Some hotkeys of Emacs I always forget
