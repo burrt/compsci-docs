@@ -1,6 +1,6 @@
 ---
 layout: compsci-note
-title: Visual Stuiod 2017 Notes
+title: Visual Studio Notes
 categories: [ide]
 description: Some hotkeys and stuff for Visual Studio
 order: 20

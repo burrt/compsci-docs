@@ -1,0 +1,14 @@
+<ul id="nav-custom">
+    <li><a href="{{ site.baseurl }}/">Home</a></li>
+
+    {% assign categories = site.data.categories %}
+    {% for category in categories %}
+        {% if category.topnav == true %}
+          <li><a href="{{ site.baseurl }}/v1/{{ category.slug }}">{{ category.name}}</a></li>
+        {% endif %}
+        {% assign class = nil %}
+        {% if page.url contains link.url %}
+            {% assign class = 'active' %}
+        {% endif %}
+    {% endfor %}
+  </ul>

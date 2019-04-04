@@ -1,18 +1,9 @@
 ---
 layout: compsci-note
-title: Categories
-description: List of doumentation categories
-permalink: /tools/
+title: Tools
+slug: tools
+description: List of docs under the tools category
+permalink: v1/tools/
 ---
 
-<ul>
-    {% assign categories = site.categories %}
-    {% for category in categories %}
-    {% capture category_name %}{{ category | first }}{% endcapture %}
-    <li><a href="{{ site.baseurl }}/">{{ category_name}}</a></li>
-    <li><a href="{{ site.baseurl }}/">{{ category.name}}</a></li>
-        {% if true == true %}
-            <li><a href="{{ site.baseurl }}/">{{ category.name}}</a></li>
-        {% endif %}}
-    {% endfor %}
-</ul>
+{% include category.html %}

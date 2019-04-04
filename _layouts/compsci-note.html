@@ -15,27 +15,11 @@
       <link rel="stylesheet" href="{{ '/assets/css/ie.css' | relative_url }}">
     <![endif]-->
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
-
   </head>
   <body>
-      <div id="header">
-
-              <ul id="nav-custom">
-                  <li><a href="{{ site.baseurl }}/">Home</a></li>
-
-                  {% assign categories = site.data.categories %}
-                  {% for category in categories %}
-                      {% if category.topnav == true %}
-                        <li><a href="{{ site.baseurl }}/v1/{{ category.slug }}">{{ category.name}}</a></li>
-                      {% endif %}
-                      {% assign class = nil %}
-                      {% if page.url contains link.url %}
-                          {% assign class = 'active' %}
-                      {% endif %}
-                  {% endfor %}
-                </ul>
-          
-      </div><!-- end header -->
+    <div id="header">
+      {% include topnav.html %}
+    </div>
 
     <div class="wrapper">
 

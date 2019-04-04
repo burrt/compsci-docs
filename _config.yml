@@ -32,8 +32,6 @@ collections:
     permalink: /v1/:path/
     prefix: "/v1"
     selectorName: "v1"
-  category:
-    output: true
 
 defaults:
   - scope:
