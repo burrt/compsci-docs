@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: compsci-note
 title: Bash Notes
 categories: [bash]
 description: Some basic stuff on Bash

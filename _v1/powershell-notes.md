@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: compsci-note
 title: Powershell Notes
 categories: [scripting]
 description: Some notes on Powershell which I never use

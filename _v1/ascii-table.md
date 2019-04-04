@@ -1,6 +1,7 @@
 ---
-layout: default
+layout: compsci-note
 title: ASCII Table
+categories: [other]
 description: An ASCII Table
 order: 20
 sitemap: false

@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: compsci-note
 title: Compiler Notes
 categories: [compilers]
 description: Some notes on compiling stuff - misleading title

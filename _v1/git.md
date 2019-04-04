@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: compsci-note
 title: Git Notes
 categories: [tools]
 description: Some notes on git

@@ -1,13 +1,16 @@
 ---
-layout: default
+layout: compsci-note
 title: Random Useful Notes
-categories: [misc]
+categories: [other]
 description: Some notes I find pretty handy
 order: 20
 sitemap: false
+sidebar:
+  title: Docs
+  nav: sidebar-test
 ---
 
-# Home
+# Overview
 
 A bunch of random stuff that's handy every now and then.
 

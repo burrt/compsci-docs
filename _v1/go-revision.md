@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: compsci-note
 title: Go Notes
 categories: [language]
 description: Some notes on Go lang

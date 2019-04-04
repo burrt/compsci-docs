@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: compsci-note
 title: SQL Notes
 categories: [database]
 description: Some notes on SQL queries

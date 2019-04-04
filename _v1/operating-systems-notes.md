@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: compsci-note
 title: Operating System Notes
 categories: [linux]
 description: Some notes on Operating Systems

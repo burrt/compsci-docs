@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: compsci-note
 title: Angular Notes
 categories: [web-dev]
 description: Some basic notes on Angular

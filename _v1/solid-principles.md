@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: compsci-note
 title: SOLID Principles Notes
 categories: [solid]
 description: Some notes on SOLID Principles in Software Engineering

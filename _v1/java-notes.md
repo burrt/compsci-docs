@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: compsci-note
 title: Java Notes
 categories: [language]
 description: Some notes on Java

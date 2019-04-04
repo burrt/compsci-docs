@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: compsci-note
 title: Python Tools Notes
 categories: [tools]
 description: Some notes on useful tools for Python

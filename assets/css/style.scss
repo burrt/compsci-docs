@@ -1,0 +1,39 @@
+---
+---
+
+@import "{{ site.theme }}";
+
+#nav-custom {
+  max-width: 650px;
+  margin: 0 auto;
+  padding: 0 10px;
+  margin: 6px auto;
+
+  li {
+    font-family: 'OpenSansLight', "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-weight: bold;
+    list-style: none;
+    display: inline;
+    color: white;
+    line-height: 50px;
+    font-size: 14px;
+
+    a {
+      color: white;
+      background: url(../images/nav-bg.gif) #353535;
+      font-weight: bold;
+
+      padding: 10px 12px;
+      margin-top: 6px;
+      line-height:14px;
+      font-size:14px;
+      display:inline-block;
+      text-align:center;
+
+      &:hover {
+        font-weight: bold;
+        color: green;
+      }
+    }
+  }
+}

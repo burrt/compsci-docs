@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: compsci-note
 title: VHDL Tips
 categories: [tips, language]
 description: Some tips and tricks with VHDL
