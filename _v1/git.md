@@ -7,7 +7,7 @@ order: 20
 sitemap: false
 ---
 
-# Contents
+## Contents
 
 * [Line endings](#annoying-line-ending-differences)
 * [Grep](#grep)
