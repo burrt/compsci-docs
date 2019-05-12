@@ -1,9 +1,7 @@
 ---
-layout: compsci-note
+layout: compsci-category
 title: Tools
 slug: tools
 description: List of docs under the tools category
-permalink: v1/tools/
+topnav: true
 ---
-
-{% include category.html %}

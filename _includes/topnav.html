@@ -1,14 +1,59 @@
-<ul id="nav-custom">
-    <li><a href="{{ site.baseurl }}/">Home</a></li>
+<div class="container">
+  <nav class="navbar nav-down navbar-default navbar-fixed-top">
+    <div class="container">
 
-    {% assign categories = site.data.categories %}
-    {% for category in categories %}
-        {% if category.topnav == true %}
-          <li><a href="{{ site.baseurl }}/v1/{{ category.slug }}">{{ category.name}}</a></li>
-        {% endif %}
-        {% assign class = nil %}
-        {% if page.url contains link.url %}
-            {% assign class = 'active' %}
-        {% endif %}
-    {% endfor %}
-  </ul>
+      <!--if you want, also is possible change to fluid container-->
+      <!--<div class="container-fluid">-->
+
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar"
+          aria-expanded="false" aria-controls="navbar">
+          <span class="sr-only"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="{{ site.baseurl }}/">Home</a>
+      </div>
+      <div id="navbar" class="navbar-collapse collapse">
+        <ul class="nav navbar-nav">
+          {% assign categories = site.data.categories %}
+          {% for category in categories %}
+            {% if category.topnav == true %}
+              <li class="nav-item">
+                <a class="nav-link" href="{{ site.baseurl }}/v1/{{ category.slug }}">{{ category.name}}</a>
+              </li>
+            {% endif %}
+          {% endfor %}
+          <!-- <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+              aria-expanded="false">Dropdown <span class="caret"></span></a>
+            <ul class="dropdown-menu">
+              <li><a href="#">Action</a></li>
+              <li><a href="#">Another action</a></li>
+              <li><a href="#">Something else here</a></li>
+              <li role="separator" class="divider"></li>
+              <li class="dropdown-header">Nav header</li>
+              <li><a href="#">Separated link</a></li>
+              <li><a href="#">One more separated link</a></li>
+            </ul>
+          </li> -->
+
+        </ul>
+      </div>
+    </div>
+  </nav>
+</div>
+
+{%- comment -%} {% assign categories = site.data.categories %}
+{% for category in categories %}
+  {% if category.topnav == true %}
+    <li class="nav-item">
+      <a class="nav-link" href="{{ site.baseurl }}/v1/{{ category.slug }}">{{ category.name}}</a>
+    </li>
+  {% endif %}
+  {% assign class = nil %}
+  {% if page.url contains link.url %}
+    {% assign class = 'active' %}
+  {% endif %}
+{% endfor %} {%- endcomment -%}

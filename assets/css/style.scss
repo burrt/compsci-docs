@@ -1,65 +1,39 @@
 ---
 ---
 
+@import "navbar.css";
 @import "{{ site.theme }}";
 
-#nav-custom {
-  max-width: 650px;
-  margin: 0 auto;
-  padding: 0 10px;
-  margin: 6px auto;
+.project-name {
+  margin-top: 3rem;
+  margin-bottom: 1rem;
 
-  li {
-    font-family: 'OpenSansLight', "Helvetica Neue", Helvetica, Arial, sans-serif;
-    font-weight: bold;
-    list-style: none;
-    display: inline;
-    color: white;
-    line-height: 50px;
-    font-size: 14px;
+  @include large {
+    font-size: 3.25rem;
+  }
 
-    a {
-      color: white;
-      background: url(../images/nav-bg.gif) #353535;
-      font-weight: bold;
+  @include medium {
+    font-size: 2.25rem;
+  }
 
-      padding: 10px 12px;
-      margin-top: 6px;
-      line-height:14px;
-      font-size:14px;
-      display:inline-block;
-      text-align:center;
-
-      &:hover {
-        font-weight: bold;
-        color: green;
-      }
-    }
+  @include small {
+    font-size: 1.75rem;
   }
 }
 
-code {
-  font-family: Monaco, Bitstream Vera Sans Mono, Lucida Console, Terminal, monospace;
-  color:#efefef;
-  font-size:13px;
-  margin: 0 1px;
-  padding: 0px 0px;
-  border-radius: 2px;
+nav {
+  background: #f5b335;
+  height: 60x;
+  position: fixed;
+  top: 0;
+  transition: top 0.2s ease-in-out;
+  width: 100%;
 }
 
-pre {
-  padding:8px 15px;
-  background: #191919;
-  border-radius: 2px;
-  border:1px solid #121212;
-  box-shadow: inset 0 1px 3px rgba(0,0,0,.3);
-  overflow: auto;
-  overflow-y: hidden;
+.nav-up {
+  top: -60px;
+}
 
-  code {
-    color: #efefef;
-    text-shadow: 0px 1px 0px #000;
-    margin: 0;
-    padding: 0;
-  }
+body {
+  font-size: 16px;
 }

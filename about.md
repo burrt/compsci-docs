@@ -1,8 +1,12 @@
 ---
-layout: page
+layout: compsci-default
 title: About
 permalink: /about/
 ---
+
+Hi, this page is pretty redundant but I'll leave it here since Jekyll is so awesome; so check out how to generate your own website!
+
+## Using Jekyll
 
 This is the base Jekyll theme. You can find out more info about customizing your Jekyll theme, as well as basic Jekyll usage documentation at [jekyllrb.com](https://jekyllrb.com/)
 
