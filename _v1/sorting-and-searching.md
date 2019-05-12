@@ -2,7 +2,7 @@
 layout: compsci-note
 title: Sorting and Searching Algorithm Notes
 categories: [fundamentals]
-description: Some notes on sort and search algorithms, and time complexity
+description: Some notes on sorting and searching algorithms, and time complexity
 order: 20
 sitemap: false
 ---
@@ -86,16 +86,16 @@ Example of why time complexity matters:
 
 Amortized analysis from [Wikipedia](https://en.wikipedia.org/wiki/Amortized_analysis)
 > Amortized analysis considers both the costly and less costly operations together over the whole series of operations of the algorithm. This may include accounting for different types of input, length of the input, and other factors that affect its performance.
-
+>
 > The basic idea is that a **worst case** operation can alter the state in such a way that the worst case *cannot occur again for a long time*, thus "amortizing" its cost.
-
+>
 > There are generally three methods for performing amortized analysis: the **aggregate method**, the **accounting method**, and the **potential method**. All of these give correct answers; the choice of which to use depends on which is *most convenient* for a particular situation.
-
+>
 > **Aggregate** analysis determines the upper bound `T(n)` on the total cost of a sequence of n operations, then calculates the amortized cost to be `T(n) / n.`
-
+>
 > The **accounting** method is a form of aggregate analysis which *assigns* to each operation an amortized cost which may differ from its actual cost. Early operations have an amortized cost higher than their actual cost, which accumulates a saved "credit" that pays for later operations having an amortized cost lower than their actual cost.
 > Because the credit begins at zero, the *actual cost of a sequence of operations equals the amortized cost minus the accumulated credit*. Because the credit is required to be *non-negative*, the amortized cost is an **upper bound on the actual cost**. Usually, many short-running operations accumulate such a credit in small increments, while rare long-running operations decrease it drastically.[4]
-
+>
 >The **potential** method is a form of the accounting method where the saved credit is computed as a function (the "potential") of the state of the data structure. The amortized cost is the immediate cost plus the change in potential.
 
 ## Sorts
@@ -288,7 +288,7 @@ Some of them include:
 * Euclidean
 * Breaking ties
 
-I think [this website](http://theory.stanford.edu/~amitp/GameProgramming/Heuristics.html) will summarise heuristics far better than I can.
+I think the [Standford website](http://theory.stanford.edu/~amitp/GameProgramming/Heuristics.html) summarises heuristics far better than I can.
 
 ### Straight line distance
 
@@ -298,10 +298,9 @@ D = sqrt((x1 - x2)**2 + (y1 - y2)**2)
 
 ### Manhattan
 
-For your typical 4 move heuristic (N, S, E, W).
+For your typical 4 move heuristic (N, S, E, W). Check out this excellent [Standford website]( http://theory.stanford.edu/~amitp/GameProgramming/Heuristics.html).
 
 ```python
-# http://theory.stanford.edu/~amitp/GameProgramming/Heuristics.html
 function heuristic(node) =
     dx = abs(node.x - goal.x)
     dy = abs(node.y - goal.y)

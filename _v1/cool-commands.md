@@ -1,8 +1,8 @@
 ---
 layout: compsci-note
-title: Angular Notes
-categories: [web-dev]
-description: Some basic notes on Angular
+title: Cool Commands
+categories: [random]
+description: Some cool commands on Linux
 order: 20
 sitemap: false
 ---

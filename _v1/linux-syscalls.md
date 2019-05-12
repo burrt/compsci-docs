@@ -69,7 +69,7 @@ size_t malloc_usable_size (void *ptr);
 
 ## Difference between fork() and exec()
 
-* quick explaination:
+* quick explanation:
   * `fork()` creates new child process. If **ret = 0**, in child process else in **parent** process.
     * common to call `exec()` in child process to run a new program
   * `exec()` overwrites the current process with the new program ie. address space etc.
