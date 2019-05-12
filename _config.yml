@@ -3,9 +3,8 @@ email: geoffchoy@outlook.com
 description: >
   Computer Science notes that I've had for a while.
 
-url: "http://localhost:4000"
-baseurl: ""
-gh_url: "https://burrt.github.io/compsci-docs/"
+url: "https://burrt.github.io/compsci-docs/"
+baseurl: "/compsci-docs"
 
 github_username: burrt
 
