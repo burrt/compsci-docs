@@ -1,0 +1,39 @@
+---
+---
+
+@import "navbar.css";
+@import "{{ site.theme }}";
+
+.project-name {
+  margin-top: 3rem;
+  margin-bottom: 1rem;
+
+  @include large {
+    font-size: 3.25rem;
+  }
+
+  @include medium {
+    font-size: 2.25rem;
+  }
+
+  @include small {
+    font-size: 1.75rem;
+  }
+}
+
+nav {
+  background: #f5b335;
+  height: 60x;
+  position: fixed;
+  top: 0;
+  transition: top 0.2s ease-in-out;
+  width: 100%;
+}
+
+.nav-up {
+  top: -60px;
+}
+
+body {
+  font-size: 16px;
+}

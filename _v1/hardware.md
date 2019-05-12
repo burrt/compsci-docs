@@ -1,9 +1,7 @@
 ---
-layout: compsci-note
+layout: compsci-category
 title: Hardware
 slug: hardware
 description: List of docs under the hardware category
-permalink: v1/hardware/
+topnav: true
 ---
-
-{% include category.html %}
