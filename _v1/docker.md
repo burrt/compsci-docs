@@ -22,7 +22,7 @@ docker inspect -f "{{ .NetworkSettings.IPAddress }}" <containerNameOrId>
 docker exec -it <mycontainer> bash
 ```
 
-## Postgres
+## Postgres container
 
 Refer to [the docs](#https://docs.docker.com/samples/library/postgres/#start-a-postgres-instance) for the complete details. [Here is also another link that might be useful](#https://medium.com/@lvthillo/connect-from-local-machine-to-postgresql-docker-container-f785f00461a7).
 

@@ -7,7 +7,7 @@ order: 20
 sitemap: false
 ---
 
-# Bash Notes
+## Bash
 
 ## Portability
 

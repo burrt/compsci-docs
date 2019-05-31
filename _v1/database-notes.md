@@ -7,7 +7,7 @@ order: 20
 sitemap: false
 ---
 
-# Links
+## Links
 
 * [Indexes - clustered and unclustered](https://technet.microsoft.com/en-us/library/jj835095(v=sql.110).aspx)
 
@@ -22,7 +22,7 @@ sitemap: false
 * **Relation** or Relation state `r` or `r(R)` of the relation schema `R(A1, A2, Ai...)` is a set of tuples:
   * `r = {t1, t2, t3..}`, a set of **n-tuples**.
   * Each n-tuple `t` is an **ordered list** of **n** values `t = <v1, v2, ..., vn>`, where each value v<sub>i</sub>, 1 ≤ i ≤ n, is an element of `dom(Ai)` or is a special `NULL` value.
-  * The **i<sup>th<sup>** value in tuple `t`, which corresponds to the attribute `Ai` , is referred to as `t[Ai]`.
+  * The **i<sup>th</sup>** value in tuple `t`, which corresponds to the attribute `Ai`, is referred to as `t[Ai]`.
 
 Example:
 
@@ -66,4 +66,3 @@ Hence, a key satisfies **two** properties:
 ### Candidate key
 
 * A relation can have more than one key, these are called candidate keys e.g. If a relation contains 2 unique serials.
-

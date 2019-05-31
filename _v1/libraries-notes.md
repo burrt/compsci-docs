@@ -7,7 +7,7 @@ order: 20
 sitemap: false
 ---
 
-# Contents
+## Contents
 
 * [Static libraries](#static)
   * [Example](#example-of-compiling-a-static-library)
@@ -29,7 +29,7 @@ A **special** `.la` file are static libraries used by the GNU "libtools" package
 
 ### Dynamic
 
-[See an exmple of creating a shared library](https://www.cprogramming.com/tutorial/shared-libraries-linux-gcc.html)
+[See an example of creating a shared library](https://www.cprogramming.com/tutorial/shared-libraries-linux-gcc.html)
 
 A **shared library**`.so` is a library that is **linked but not embedded** in the final executable, so will be loaded when the executable is launched and **need** to be present in the system where the executable is deployed.
 
@@ -45,7 +45,6 @@ A **dynamic link library** on Windows `.dll` is like a **shared** library`(.so)`
 * Your process's memory footprint is smaller, because the memory used for the library is amortized among all the processes using the library.
 * Libraries can be loaded on demand at run time; this is good for plugins, so you don't have to choose the plugins to be used when compiling and installing the software. New plugins can be added on the fly.
 * Dynamic libraries are especially useful for system libraries, like `libc`. These libraries often need to include code that's dependent on the specific OS and version, because kernel interfaces have changed. If you link a program with a static system library, it will only run on the version of the OS that this library version was written for. But if you use a dynamic library, it will automatically pick up the library that's installed on the system you run on.
-
 
 ## Examples
 

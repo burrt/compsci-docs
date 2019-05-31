@@ -7,7 +7,7 @@ order: 20
 sitemap: false
 ---
 
-# Basic hotkeys
+## Basic hotkeys
 
 ```text
 Ctrl + Shift + A          # Search for commands/hotkeys

@@ -7,7 +7,7 @@ order: 20
 sitemap: false
 ---
 
-# Contents
+## Contents
 
 * [Malloc](#malloc)
 * [Calloc](#calloc)
@@ -17,17 +17,17 @@ sitemap: false
 
 ## Malloc
 
-* Alloc memory to heap (grows towards high addresses). If the heap is not big enough, `malloc` will internally call `set_brk()` syscall to alloc more.
+* Alloc memory to heap (grows towards high addresses). If the heap is not big enough, `malloc` will internally call `set_brk()` syscall to allocate more.
 * Since the stack is limited and the variable needs to survive after invocation.
 * Also for obfuscation eg. a function implements the allocation of a ptr that isn't exposed to the caller.
 * Internally it might call:
-  * `sbrk()` for glibc - this usually does it in the following sequence
-  ```c
+    * `sbrk()` for glibc - this usually does it in the following sequence
+    ```c
             heap_ptr = sbrk(0)
             heap_ptr = sbrk(100)
-  ```
-  * `sbrk()` is used for incrementing the heap ptr
-  * Both `sbrk()` and `brk()` call `_syscall_brk()` which should return a valid address in the heap
+    ```
+    * `sbrk()` is used for incrementing the heap ptr
+    * Both `sbrk()` and `brk()` call `_syscall_brk()` which should return a valid address in the heap
 
 ```c
 // brk.c
@@ -56,7 +56,7 @@ libc_hidden_def(brk)
 
 ## Calloc
 
-* It initialises the buffer/memory. Now if you **zero** intialise, this large chunk of data won't necessarily be mapped to physical memory but rather only **1** block will be mapped.
+* It initializes the buffer/memory. Now if you **zero** initialize, this large chunk of data won't necessarily be mapped to physical memory but rather only **1** block will be mapped.
 * The PT will allocate the pages required but mark it as **READ-ONLY** so it will essentially map to physical memory when required (on-demand).
 * And therefore this prevents large blocks of data being mapped to physical memory at one time.
 
@@ -83,27 +83,27 @@ size_t malloc_usable_size (void *ptr);
 
 `fork()` creates a new process by duplicating the calling process. The new process, referred to as the child, is an exact duplicate of the calling process, referred to as the parent, except for the following points:
 
-* The child has its own unique process ID, and this PID does not match the ID of any existing process group (setpgid(2)).
+* The child has its own unique process ID, and this PID does not match the ID of any existing process group (`setpgid(2)`).
 * The child's parent process ID is the same as the parent's process ID.
 * The child does not inherit its parent's memory locks (`mlock(2)`, `mlockall(2)`).
-* Process resource utilizations (getrusage(2)) and CPU time counters (times(2)) are reset to zero in the child.
-* The child's set of pending signals is initially empty (sigpending(2)).
-* The child does not inherit **semaphore** adjustments from its parent (semop(2)).
-* The child does not inherit **record locks** from its parent (fcntl(2)).
-* The child does not inherit **timers** from its parent (setitimer(2), alarm(2), timer_create(2)).
-* The child does not inherit outstanding asynchronous I/O operations from its parent (aio_read(3), aio_write(3)), nor does it inherit any asynchronous I/O contexts from its parent (see io_setup(2)).
+* Process resource utilizations (`getrusage(2)`) and CPU time counters (times(2)) are reset to zero in the child.
+* The child's set of pending signals is initially empty (`sigpending(2)`).
+* The child does not inherit **semaphore** adjustments from its parent (`semop(2)`).
+* The child does not inherit **record locks** from its parent (`fcntl(2)`).
+* The child does not inherit **timers** from its parent (`setitimer(2)`, `alarm(2)`, `timer_create(2)`).
+* The child does not inherit outstanding asynchronous I/O operations from its parent (`aio_read(3)`, `aio_write(3)`), nor does it inherit any asynchronous I/O contexts from its parent (see `io_setup(2)`).
 
 The parent and child also differ with respect to the following Linux-specific process attributes:
 
-* The prctl(2) PR_SET_PDEATHSIG setting is reset so that the child does **not** receive a signal when its parent terminates.
+* The `prctl(2) PR_SET_PDEATHSIG` setting is reset so that the child does **not** receive a signal when its parent terminates.
 * The **termination** signal of the child is always `SIGCHLD` (see clone(2)).
 
 Note the following further points:
 
 * The child process is created with a single thread--the one that called fork(). The entire virtual address space of the parent is **replicated** in the child, including the states of **mutexes**, **condition variables**, and other **pthreads objects**; the use of `pthread_atfork` may be helpful for dealing with problems that this can cause.
-* The child inherits copies of the parent's set of **open file descriptors**. Each file descriptor in the child refers to the same open file description as the corresponding file descriptor in the parent. This means that the two descriptors **share** open file **status flags**, current **file offset**, and signal-driven I/O attributes (see the description of `F_SETOWN` and `F_SETSIG` in `fcntl`(2)).
-* The child inherits copies of the parent's set of open message queue descriptors (see mq_overview(7)). Each descriptor in the child refers to the same open message queue description as the corresponding descriptor in the parent. This means that the two descriptors share the same flags (mq_flags).
-* The child inherits copies of the parent's set of open directory streams (see opendir(3)). POSIX.1-2001 says that the corresponding directory streams in the parent and child may share the directory stream positioning; on Linux/glibc they do not.
+* The child inherits copies of the parent's set of **open file descriptors**. Each file descriptor in the child refers to the same open file description as the corresponding file descriptor in the parent. This means that the two descriptors **share** open file **status flags**, current **file offset**, and signal-driven I/O attributes (see the description of `F_SETOWN` and `F_SETSIG` in `fcntl(2)`).
+* The child inherits copies of the parent's set of open message queue descriptors (see `mq_overview(7)`). Each descriptor in the child refers to the same open message queue description as the corresponding descriptor in the parent. This means that the two descriptors share the same flags (`mq_flags`).
+* The child inherits copies of the parent's set of open directory streams (see `opendir(3)`). POSIX.1-2001 says that the corresponding directory streams in the parent and child may share the directory stream positioning; on Linux/glibc they do not.
 
 ### Execve
 
@@ -111,11 +111,11 @@ Note the following further points:
 
 * `#! interpreter [optional-arg]`
 * `argv` is an array of argument strings passed to the new program. By convention, the first of these strings should contain the filename associated with the file being executed.
-* `envp` is an array of strings, conventionally of the form key=value, which are passed as environment to the new program. Both `argv` and `envp` **must** be terminated by a NULL pointer.
+* `envp` is an array of strings, conventionally of the form `key=value`, which are passed as environment to the new program. Both `argv` and `envp` **must** be terminated by a NULL pointer.
 * The argument vector and environment can be accessed by the called program's main function, when it is defined as:
   * `int main(int argc, char *argv[], char *envp[])`
 * `execve()` does **not** return on success, and the text, data, bss, and stack of the calling process are **overwritten** by that of the program loaded.
-* If the current program is being ptraced, a SIGTRAP is sent to it after a successful execve().
+* If the current program is being ptraced, a `SIGTRAP` is sent to it after a successful `execve()`.
 
 All process attributes are preserved during an execve(), except the following:
 

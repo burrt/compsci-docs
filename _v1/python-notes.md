@@ -434,7 +434,7 @@ File open modes
 
 ## Time complexity
 
-Some of the optimised data structures Python for better performance summarised from the [Python wiki](https://wiki.python.org/moin/TimeComplexity).
+Some of the optimized data structures Python for better performance summarized from the [Python wiki](https://wiki.python.org/moin/TimeComplexity).
 
 For additional information for time complexity, see my [other page](https://github.com/burrt/debian/wiki/Sorting-&-searching#big-o)
 

@@ -357,10 +357,12 @@ Test a = new Test() { Num = 1, Str = "Hi" };
 Test b = new Test() { Num = 1, Str = "Hi" };
 
 // False
-System.Console.WriteLine("ReferenceEquals(a, b) = {0}", System.Object.ReferenceEquals(a, b));
+Console.WriteLine("ReferenceEquals(a, b) = {0}",
+    System.Object.ReferenceEquals(a, b));
 b = a;
 // True
-System.Console.WriteLine("ReferenceEquals(a, b) = {0}", System.Object.ReferenceEquals(a, b));
+Console.WriteLine("ReferenceEquals(a, b) = {0}",
+    System.Object.ReferenceEquals(a, b));
 ```
 
 ### Value types equality
@@ -449,7 +451,8 @@ public class bar
         FunctionPtr = new DelegateName(foo);
         // alternatively you can do this?
         // FunctionPtr = foo;
-        // we can call/(de)attach multiple delegates - can no longer reset FunctionPtr
+        // we can call/(de)attach multiple delegates 
+        //   - can no longer reset FunctionPtr
         // FunctionPtr += foo2
         // FunctionPtr -= foo2
     }
@@ -593,7 +596,8 @@ try
 {
     int x = 10 / 0;
 }
-catch (Exception ex) when (ex is InvalidOperation || ex is NullPointerException)
+catch (Exception ex)
+    when (ex is InvalidOperation || ex is NullPointerException)
 {
     Console.WriteLine($"Hit exception {nameof(ex)}");
 }
@@ -622,7 +626,9 @@ public class ToolNotSupportedException : Exception
     {
     }
 
-    protected ToolNotSupportedException(SerializationInfo info, StreamingContext context)
+    protected ToolNotSupportedException(
+        SerializationInfo info,
+        StreamingContext context)
         : base(info, context)
     {
     }
@@ -911,11 +917,17 @@ Console.WriteLine(s, args);
 // but positional arguments must be first
 PrintOrderDetails(orderNum: 31, productName: "Red Mug", sellerName: "Gift Shop");
 
-static void PrintOrderDetails(string sellerName, int orderNum, string productName)
+static void PrintOrderDetails(
+    string sellerName,
+    int orderNum,
+    string productName)
 
 // Optional arguments
-public void ExampleMethod(int required, string optionalstr = "default string",
-    int optionalint = 10, int optionintagaon = default(int))
+public void ExampleMethod(
+    int required,
+    string optionalstr = "default string",
+    int optionalint = 10,
+    int optionintagaon = default(int))
 ```
 
 ### Methods

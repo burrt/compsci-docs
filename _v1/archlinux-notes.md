@@ -7,9 +7,10 @@ order: 20
 sitemap: false
 ---
 
-# Contents
+## Contents
 
 * [Fonts](#fonts)
+* [Installing on a VM](#installing-on-a-vm)
 * [Installation tips](#installation-tips)
 * [Basics](#basics)
 
@@ -161,14 +162,6 @@ startx /usr/bin/i3
 cp /etc/X11/xinit/xinitrc ~/.xinitrc
 ```
 
-### Hotkey issues for laptops
-
-* Install `acpilight` from AUR
-* Not all the steps, it you're using `i3` as a WM, use its `bindsym` features to adjust `sys/proc`
-  * Using `i3`, you can use their `bindsym`
-* ~~Actually the latest updates seems to have fixed the brightness keys!!~~
-* `xbacklight` can be used to adjust them manually
-
 ### Autologin
 
 * Create a new service file similar to `getty@.service` by copying it to `/etc/systemd/system/`
@@ -193,6 +186,13 @@ if [[ -z $DISPLAY ]] && [[ $(tty) = /dev/tty1 ]]; then
 fi
 ```
 
+## Hotkey issues for laptops
+
+* Install `acpilight` from AUR
+* Not all the steps, it you're using `i3` as a WM, use its `bindsym` features to adjust `sys/proc`
+  * Using `i3`, you can use their `bindsym`
+* ~~Actually the latest updates seems to have fixed the brightness keys!!~~
+* `xbacklight` can be used to adjust them manually
 
 ## Basics
 

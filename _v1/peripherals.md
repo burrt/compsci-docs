@@ -7,7 +7,7 @@ order: 20
 sitemap: false
 ---
 
-# UART - Universal Asynchronous Receiver/Transmitter
+## UART - Universal Asynchronous Receiver/Transmitter
 
 * Translates between parallel and serial forms (eg. serial port, store in shift register)
 * So data from a serial port can be stored in a buffer (before OS interrupts and attempts to read/flush this buffer)
@@ -18,7 +18,7 @@ sitemap: false
 * Data is basically buffered up and triggers interrupts to the OS and the OS determines whether to handle this data.
 * This means that there may be data loss if the buffer overflows.
 
-# Timers
+## Timers
 
 * Is used to calibrate an OS's perception of time.
 * Loops per jiffies

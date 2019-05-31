@@ -67,9 +67,11 @@ int (*functionFactory(int n))(int, int)
 }
 
 // But it's much nicer to use a typedef function pointer
-typedef int (*myFuncDef)(int, int);  // myFuncDef is the name to replace
+// myFuncDef is the name to replace
+typedef int (*myFuncDef)(int, int);  
 
-myFuncDef functionFactory(int n) // only the parameter and func name is retained
+// only the parameter and func name is retained
+myFuncDef functionFactory(int n)
 {
     printf("Got parameter %d", n);
     myFuncDef functionPtr = &addInt; // Alternate is func_ptr = addInt;

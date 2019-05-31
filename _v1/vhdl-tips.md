@@ -30,7 +30,7 @@ sitemap: false
 
 ```vhdl
 -- Combination Logic rule:
--- Must have a sensitivity list containing all the signals which it reads (inputs)
+-- Must have a sensitivity list containing all the input signals which it reads
 -- Must always update the signals which it assigns (outputs):
 -- Only for simulation to work correctly
 

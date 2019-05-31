@@ -10,10 +10,6 @@ sidebar:
   nav: sidebar-test
 ---
 
-# Overview
-
-A bunch of random stuff that's handy every now and then.
-
 ## Exiting VIM
 
 `:wq` or `:x`
@@ -51,7 +47,7 @@ time a.out
 * Atomic
   * "All or nothing" - no partial failure and state unchanged if fails
 * Consistency
-  * Changes to one valid state to another - must satisfy any defined consistency fules
+  * Changes to one valid state to another - must satisfy any defined consistency rules
 * Isolation
   * Concurrent execution of transactions are isolated
 * Durability
@@ -59,7 +55,7 @@ time a.out
 
 ### CAP
 
-CAP theorem that states it is impossible for distributed data store to simultaneously rpovide **more than two** out of the thee guarantees:
+CAP theorem that states it is impossible for distributed data store to simultaneously provide **more than two** out of the thee guarantees:
 
 * Consistency
 * Availability
@@ -104,19 +100,19 @@ To break it up:
 
 | Integer value | Name            | `<unistd.h>` symbolic constant | `<stdio.h>` file stream |
 |---------------|-----------------|--------------------------------|-------------------------|
-| 0             | Standard input  | STDIN_FILENO                   | stdin                   |
-| 1             | Standard output | STDOUT_FILENO                  | stdout                  |
-| 2             | Standard error  | STDERR_FILENO                  | stderr                  |
+| 0             | Standard input  | `STDIN_FILENO`                 | stdin                   |
+| 1             | Standard output | `STDOUT_FILENO`                | stdout                  |
+| 2             | Standard error  | `STDERR_FILENO`                | stderr                  |
 
 ### Fixing WSL terminal colours
 
 If you're using a dark colour scheme on the WSL terminal - you might get some horrible looking colours when you do `ls` for example. Quick fix is to do:
 
 ```bash
-cd ~/.git
+cd ~/src
 git clone https://github.com/seebi/dircolors-solarized.git
-eval `dircolors ~/git/dircolors-solarized/dircolors.256dark`
+eval `dircolors dircolors-solarized/dircolors.256dark`
 
 # add to your .bashrc if you want to
-echo "eval `dircolors ~/git/dircolors-solarized/dircolors.256dark`" >> ~/.bashrc
+echo "eval `dircolors dircolors-solarized/dircolors.256dark`" >> ~/.bashrc
 ```

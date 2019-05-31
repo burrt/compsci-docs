@@ -103,10 +103,17 @@ Git will **not** perform any conversions when checking out or committing text fi
 To create a user `.gitignore` and **not** global, do:
 
 ```bash
-cd <your-repo>/.git                                # go to your repo .git folder
-nano .user_gitignore                               # populate with your files/folders
-git config core.excludesfile .git/.user_gitignore  # add it to your config
-git config -l                                      # you can see it is added
+# go to your repo .git folder
+cd <your-repo>/.git
+
+# populate with your files/folders
+nano .user_gitignore
+
+# add it to your config
+git config core.excludesfile .git/.user_gitignore
+
+# you can see it is added
+git config -l
 ```
 
 To create a **global** `.gitignore`, do:
@@ -119,7 +126,7 @@ git config --global core.excludesfile ~/.global_gitignore   # or where desired
 
 Basically `HEAD^` is doing a BFS traversal while `HEAD~` only recognises the first parent but can select the leaves using the caret e.g. `H = A^^^2 = A~2^2`
 
-```
+```text
 G   H   I   J
  \ /     \ /
   D   E   F
@@ -150,27 +157,33 @@ Useful if you have bitbucket, github etc. and want to use different ssh keys ins
 
 1. Generate a ssh key and add it to your account e.g. bitbucket_rsa
 2. Edit your `~/.ssh/config`:
-```
-# Github
-Host github-foobar
-        HostName github.com
-        User git
-        IdentityFile ~/.ssh/id_rsa
 
-# Bitbucket
-Host bitbucket-deadbeef
-        HostName bitbucket.com
-        User git
-        IdentityFile ~/.ssh/bitbucket_rsa
+    ```conf
+    # ~/.ssh/config
 
-```
+    # Github
+    Host github-foobar
+            HostName github.com
+            User git
+            IdentityFile ~/.ssh/id_rsa
+
+    # Bitbucket
+    Host bitbucket-deadbeef
+            HostName bitbucket.com
+            User git
+            IdentityFile ~/.ssh/bitbucket_rsa
+    ```
+
 3. Now you can add a new `remote` that uses your new ssh key
-```
-# git remote add <remote_name> git@<new_host>:<username>/<repo>.git
-git remote add bitbucket git@bitbucket-deadbeef:deadbeef/some-repo.git
-```
+
+    ```bash
+    # git remote add <remote_name> git@<new_host>:<username>/<repo>.git
+    git remote add bitbucket git@bitbucket-deadbeef:deadbeef/some-repo.git
+    ```
+
 4. Now we can push to our new remote with our new ssh key!
-```
-git fetch bitbucket master
-git push bitbucket master
-```
+
+    ```bash
+    git fetch bitbucket master
+    git push bitbucket master
+    ```

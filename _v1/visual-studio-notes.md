@@ -52,11 +52,20 @@ Shift + F9  # opens QuickWatch
 Abbreviations can be completed by typing then pressing Tab.
 
 ```text
-cw     # generate Console.WriteLine, remove first paren for other method overloads
-ctor   # generate a default constructor
-testm  # generate a default test method
-prop   # generate properties
-for    # for loop with int i intializer etc.
+# generate Console.WriteLine, remove first paren for other method overloads
+cw
+
+# generate a default constructor
+ctor
+
+# generate a default test method
+testm
+
+# generate properties
+prop
+
+# for loop with int i intializer etc.
+for
 ```
 
 ## Misc

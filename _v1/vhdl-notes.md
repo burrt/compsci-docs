@@ -178,7 +178,8 @@ Below is the timing differences:
 
 ```vhdl
 -- Example of implied memory, latch
--- equal is assigned at based on speed of gates + wires, so oscillatory behaviour may have 'glitches'
+-- equal is assigned at based on speed of gates + wires
+-- so oscillatory behaviour may have 'glitches'
 process (A,B)
 begin
     if A = B then
@@ -340,7 +341,8 @@ end generate tristate;
 
  // just do a partial sum
 
- p0[7:0] = a[0] × b[7:0] = {8{a[0]}} & b[7:0]   // if a[0] = 0; 00000000 & b[7:0] = same as muliplying by 0
+ // if a[0] = 0; 00000000 & b[7:0] = same as multiplying by 0
+ p0[7:0] = a[0] × b[7:0] = {8{a[0]}} & b[7:0]
  p1[7:0] = a[1] × b[7:0] = {8{a[1]}} & b[7:0]
  p2[7:0] = a[2] × b[7:0] = {8{a[2]}} & b[7:0]
  p3[7:0] = a[3] × b[7:0] = {8{a[3]}} & b[7:0]

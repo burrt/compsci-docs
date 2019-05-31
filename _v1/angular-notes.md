@@ -7,7 +7,7 @@ order: 20
 sitemap: false
 ---
 
-# Angular
+## Angular
 
 ## Features
 
@@ -40,14 +40,14 @@ sitemap: false
 
 ```ts
 export class SomeComponent{
-    getStartTimeStyleForngClass()
+    getStartTimeStyleForNgClass()
     {
         const isEarlyStart = this.event?.time === '8:00 am' && this.event?.time === '10:00 am');
         return {green: isEarlyStart, bold: isEarlyStart}
         }
     }
 
-    getStartTimeStyleForngStyle() : any
+    getStartTimeStyleForNgStyle() : any
     {
         if (isEarlyStart = this.event?.time === '8:00 am' && this.event?.time === '10:00 am') {
             return {color: green, 'font-weight': 'bold'}
