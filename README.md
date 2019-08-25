@@ -9,7 +9,11 @@ These docs are hosted on [Github Pages](https://burrt.github.io/compsci-docs/).
 
 ### Building
 
-Clone
+Cloning:
+
+```sh
+git clone https://github.com/burrt/compsci-docs.git
+```
 
 ### Linux
 
@@ -22,7 +26,7 @@ bundle exec jekyll serve --config _config.yml,_config_development.yml
 
 ### Windows
 
-If you don't have VMware Workstation or VirtualBox or prefer the use of Docker/Hyper-V:
+#### Docker
 
 ```powershell
 # Powershell
