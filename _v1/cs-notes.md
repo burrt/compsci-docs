@@ -7,7 +7,7 @@ order: 20
 sitemap: false
 ---
 
-# C# Revision
+## C# Revision
 
 ## Links
 
@@ -451,7 +451,7 @@ public class bar
         FunctionPtr = new DelegateName(foo);
         // alternatively you can do this?
         // FunctionPtr = foo;
-        // we can call/(de)attach multiple delegates 
+        // we can call/(de)attach multiple delegates
         //   - can no longer reset FunctionPtr
         // FunctionPtr += foo2
         // FunctionPtr -= foo2
@@ -882,7 +882,7 @@ using System;
         public static void OutUsage()
         {
             Divide(10, 3, out int res, out int rem);
-            Console.WriteLine("{0} {1}", res, rem);	// Outputs "3 1"
+            Console.WriteLine("{0} {1}", res, rem); // Outputs "3 1"
         }
     }
 }
@@ -1463,7 +1463,7 @@ The `List<int> numbers` now has the `Where` method due to method extensions from
 * They organize large code projects.
 * They are delimited by using the `.` operator.
 * The `using directive` obviates the requirement to specify the name of the namespace for every class.
-* The `global` namespace is the "root" namespace: `global::System` will always refer to the .NET Framework namespace `
+* The `global` namespace is the "root" namespace: `global::System` will always refer to the .NET Framework namespace
 `System`.
 * If there is any ambiguity if you import two namespaces with name collisions, you will get a compile error.
 
@@ -1516,11 +1516,11 @@ Person p = null;
 int nonNullableInt = (p != null) ? 0
                                  : -1;
 
-// Null conditional operator which only evalutes further if
+// Null conditional operator which only evaluates further if
 // the right hand side is not null else returns null
 int? nullableInt = p?.Age;
 
-// Null coalescing operator which evalutes to the left hand
+// Null coalescing operator which evaluates to the left hand
 // expression if not null else right hand expression
 p = new Person();
 int? nullableInt = p.Age ?? -1;
@@ -1530,7 +1530,7 @@ int? nullableInt = p.Age ?? -1;
 p = null;
 int? nullableInt = p.?Age ?? -1;
 
-// Arrays with null con ditional
+// Arrays with null conditional
 Person[] people = new Person[3]
 {
     new Person(1), // Age = 1

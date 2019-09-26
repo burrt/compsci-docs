@@ -23,6 +23,10 @@ sitemap: false
 * [Service scope](#service-scope)
 * [Miscellaneous Encyclopedia](#miscellaneous-encyclopedia)
 
+## Overview
+
+The SOLID principles are a set of software design principles that were first introduced
+
 ## Single Responsibility Principle
 
 > Every software should have **only** one reason to change.
