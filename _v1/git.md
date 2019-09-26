@@ -14,6 +14,7 @@ sitemap: false
 * [Your own gitignore](#your-own-gitignore)
 * [Using Head^ and HEAD~](#using-head-and-head)
 * [Using multiple SSH keys](#using-multiple-ssh-keys)
+* [Submodules](#submodules)
 
 ## Generating SSH keys (copy paste from Github)
 
@@ -122,7 +123,7 @@ To create a **global** `.gitignore`, do:
 git config --global core.excludesfile ~/.global_gitignore   # or where desired
 ```
 
-### Using HEAD^ and HEAD~
+## Using HEAD^ and HEAD~
 
 Basically `HEAD^` is doing a BFS traversal while `HEAD~` only recognises the first parent but can select the leaves using the caret e.g. `H = A^^^2 = A~2^2`
 
@@ -150,7 +151,7 @@ I = F^   = B^3^    = A^^3^
 J = F^2  = B^3^2   = A^^3^2
 ```
 
-### Using multiple SSH keys
+## Using multiple SSH keys
 
 Useful if you have bitbucket, github etc. and want to use different ssh keys instead of sharing them - for ~~security~~
  inconvenience reasons
@@ -187,3 +188,37 @@ Useful if you have bitbucket, github etc. and want to use different ssh keys ins
     git fetch bitbucket master
     git push bitbucket master
     ```
+
+## Submodules
+
+### Adding changes in the submodule
+
+From [StackOverflow](https://stackoverflow.com/questions/5542910/how-do-i-commit-changes-in-a-git-submodule):
+
+A submodule is its own repo/work-area, with its own `.git` directory. When cloning, use the `--recurse-submodules`.
+
+So, first commit/push your submodule's changes:
+
+```bash
+$ cd path/to/submodule
+$ git add <stuff>
+$ git commit -m "submodule changes"
+$ git push
+```
+
+Then, update your main project to track the updated version of the submodule:
+
+```bash
+$ cd /main/project
+$ git add path/to/submodule
+$ git commit -m "updated my submodule"
+$ git push
+```
+
+### Updating all submodules
+
+If you want to update all your submodules to the latest commit available from their remotes:
+
+```bash
+git submodule foreach git pull origin master
+```
