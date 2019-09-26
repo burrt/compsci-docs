@@ -7,7 +7,7 @@ url: "https://burrt.github.io/compsci-docs/"
 baseurl: "/compsci-docs"
 
 github_username: burrt
-repository: burrt/burrt.github.io
+repository: "burrt/compsci-docs"
 
 markdown: kramdown
 theme: jekyll-theme-cayman
