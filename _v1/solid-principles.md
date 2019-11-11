@@ -1,7 +1,7 @@
 ---
 layout: compsci-note
 title: SOLID Principles Notes
-categories: [solid]
+categories: [solid, fundamentals]
 description: Some notes on SOLID Principles in Software Engineering
 order: 20
 sitemap: false
