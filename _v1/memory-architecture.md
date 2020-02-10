@@ -7,7 +7,7 @@ order: 20
 sitemap: false
 ---
 
-# Contents
+## Contents
 
 * [Architectures](#architectures)
   * [Harvard](#harvard)

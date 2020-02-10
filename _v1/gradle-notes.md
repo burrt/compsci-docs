@@ -43,7 +43,7 @@ Tasks can depend on each other and there are a few ways of achieving this:
 1. `dependsOn` - will be run after task T, doesn't handle circular dependencies
 2. `mustRunAfter` - will detect and fail on circular dependencies
 3. `shouldRunAfter` - doesn't handle circular dependencies
-4. `finalizedBy` - invered dependency
+4. `finalizedBy` - inverted dependency
 
 Order of concurrent task execution is random.
 
@@ -57,4 +57,3 @@ task copyStuff (type: Copy) {
     into 'dst'
 }
 ```
-

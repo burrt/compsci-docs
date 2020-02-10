@@ -7,7 +7,7 @@ order: 20
 sitemap: false
 ---
 
-# Contents
+## Contents
 
 * [FPGA](#fpga)
 * [LUTs](#luts)
@@ -63,7 +63,7 @@ once it reaches the local logic.
 
 ### Asynchronous
 
-* Due to varying network skews this can lead to different FFs coming out of reset on different clock cycles giving an indeterminate behaviour.
+* Due to varying network skews this can lead to different FFs coming out of reset on different clock cycles giving an indeterminate behavior.
   * For a large reset network with a huge fan-out we can assume the network skew to be considerable - which further worsens the situation and increases the likelihood of problems.
 * -They are asynchronous, both at the assertion and at the de-assertion of the reset. The assertion is a non issue, the **de-assertion** is the issue. If the asynchronous reset is released at or near the active clock edge of a flip-flop, the
 output of the flip-flop could go **metastable** and thus the reset state of the ASIC could be lost.
@@ -72,7 +72,7 @@ output of the flip-flop could go **metastable** and thus the reset state of the 
 #### Reset times
 
 * **Recovery time**: minimum time that an asynchronous control input pin must be stable **before** the next active clock edge transition. Like `T(su)`
-* **Removal time**: minimum time that an asynchronous control input pin must be stable **before** being deasserted and after the prvious active clock transition. Like `T(h)`
+* **Removal time**: minimum time that an asynchronous control input pin must be stable **before** being deasserted and after the previous active clock transition. Like `T(h)`
 
 ```text
 reset ________________
@@ -162,7 +162,7 @@ Okay, there are 2 huge differences here:
 ### Normal latches
 
 * These are fucked, you **don't** want to ever write these!
-* It holds a bit value **BUT** its final state of the output depends on **oscillatory behaviour** that depends on the speed of the gates and wires!
+* It holds a bit value **BUT** its final state of the output depends on **oscillatory behavior** that depends on the speed of the gates and wires!
 
 ### Gated latches
 
@@ -179,7 +179,7 @@ Below is the timing differences:
 ```vhdl
 -- Example of implied memory, latch
 -- equal is assigned at based on speed of gates + wires
--- so oscillatory behaviour may have 'glitches'
+-- so oscillatory behavior may have 'glitches'
 process (A,B)
 begin
     if A = B then

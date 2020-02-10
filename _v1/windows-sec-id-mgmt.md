@@ -19,17 +19,17 @@ The main source of information can be found at the [Microsoft Documentation: Ide
 
 ## Terms
 
-|Simple objects|Explanation|
-|---|---|
-|Security Principle|Users or groups and are represented as a Security Identifier (SID)|
-|Resource|Has an owner - default will be the user who created it|
-|Rights|Assigned to *user* accounts and authorizes users to perform specific actions e.g. interactive sign-on, file backup|
-|Permissions|Are associated with objects|
-|Objects|Are files/folders/printers/registry keys, AD DS Objects etc.|
-|Container|Can contain other objects and can also inherit permissions|
-|Expressions|Enhancements to access controls; they can allow/deny access to resources only when certain conditions are met e.g. device type or location|
-|Security Principal|Can be an entity e.g. user account, computer, thread/process that runs in the security context of a user/computer account|
-|Security Context| A process/group/user running in the security context of the account and has a unique SID issued by an authority e.g. DC|
+| Simple objects     | Explanation                                                                                                                                |
+|--------------------|--------------------------------------------------------------------------------------------------------------------------------------------|
+| Security Principle | Users or groups and are represented as a Security Identifier (SID)                                                                         |
+| Resource           | Has an owner - default will be the user who created it                                                                                     |
+| Rights             | Assigned to *user* accounts and authorizes users to perform specific actions e.g. interactive sign-on, file backup                         |
+| Permissions        | Are associated with objects                                                                                                                |
+| Objects            | Are files/folders/printers/registry keys, AD DS Objects etc.                                                                               |
+| Container          | Can contain other objects and can also inherit permissions                                                                                 |
+| Expressions        | Enhancements to access controls; they can allow/deny access to resources only when certain conditions are met e.g. device type or location |
+| Security Principal | Can be an entity e.g. user account, computer, thread/process that runs in the security context of a user/computer account                  |
+| Security Context   | A process/group/user running in the security context of the account and has a unique SID issued by an authority e.g. DC                    |
 
 ### Claim
 

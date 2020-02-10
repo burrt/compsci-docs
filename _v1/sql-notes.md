@@ -7,9 +7,9 @@ order: 20
 sitemap: false
 ---
 
-# Basics
+## Basics
 
-## Case statements
+### Case statements
 
 ```sql
 SELECT
@@ -20,7 +20,7 @@ FROM
   <table>
 ```
 
-## Alter tables
+### Alter tables
 
 ```sql
 -- Creating foreign keys

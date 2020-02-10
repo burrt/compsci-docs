@@ -7,7 +7,7 @@ order: 20
 sitemap: false
 ---
 
-# Contents
+## Contents
 
 ## Basics
 
@@ -40,26 +40,26 @@ get-service | select-object -property @{N='MyNewStatus';E={$_.Status}}, @{N='MyN
 
 ## Special characters
 
-|Special character |Meaning|
-|------------------|-------|
-|`"`     | The beginning (or end) of quoted text|
-|`#`     | The beginning of a comment|
-|`$`     | The beginning of a variable|
-|`&`     | Reserved for future use|
-|`( )`   | Parentheses used for subexpressions|
-|`;`     | Statement separator|
-|`{ }`   | Script block|
-|`|`     | Pipeline separator|
-|`` ` `` | Escape character|
+| Special character | Meaning                               |
+|-------------------|---------------------------------------|
+| `"`               | The beginning (or end) of quoted text |
+| `#`               | The beginning of a comment            |
+| `$`               | The beginning of a variable           |
+| `&`               | Reserved for future use               |
+| `( )`             | Parentheses used for sub-expressions  |
+| `;`               | Statement separator                   |
+| `{ }`             | Script block                          |
+| `|`               | Pipeline separator                    |
+|`` ` ``            | Escape character                      |
 
 ## Comparisons
 
-|Comparator | Explaination|
-|-----------|-------------|
-|`-eq`, `-ne`, `-ceq`, `-cne`| Equality case insensitive and sensitive|
-|`-lt`, `-gt`| Less, greater than|
-|`-le`, `-ge`| Less than or equal to, greater than or equal to|
-|`-and`, `-or`| Basic AND/OR|
-|`-not`, `!`| NOT|
-|`-like`, `-notlike`, `-clike`, `-cnotlike`| Wildcard case (in)sensitive equality|
-|`-match`, `-cmatch`| Regex string matching with case sensitivity - returns as a boolean|
+| Comparator                                 | Explanation                                                        |
+|--------------------------------------------|--------------------------------------------------------------------|
+| `-eq`, `-ne`, `-ceq`, `-cne`               | Equality case insensitive and sensitive                            |
+| `-lt`, `-gt`                               | Less, greater than                                                 |
+| `-le`, `-ge`                               | Less than or equal to, greater than or equal to                    |
+| `-and`, `-or`                              | Basic AND/OR                                                       |
+| `-not`, `!`                                | NOT                                                                |
+| `-like`, `-notlike`, `-clike`, `-cnotlike` | Wildcard case (in)sensitive equality                               |
+| `-match`, `-cmatch`                        | Regex string matching with case sensitivity - returns as a boolean |

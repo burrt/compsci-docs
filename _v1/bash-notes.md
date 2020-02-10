@@ -81,35 +81,34 @@ then
 else
     for i in "$@"
     do
-	case $i in
-	    -a=*|--aw=*)
-		AWURL="${i#*=}"
-		;;
-	    -a*|--aw*)
-		AWURL="$2"
-		shift
-		shift
-		;;
-	    -k=*|--key=*)
-		APIKEY="${i#*=}"
-		;;
-	    -k*|--key*)
-		APIKEY="$2"
-		shift
-		shift
-		;;
-	    -h*|--help*)
-		printf "${HELP}"
-		exit 0
-		;;
-	    --default)
-		DEFAULT=YES
-		;;
-	    *)
-		# unknown option
-		;;
-	esac
+    case $i in
+        -a=*|--aw=*)
+        AWURL="${i#*=}"
+        ;;
+        -a*|--aw*)
+        AWURL="$2"
+        shift
+        shift
+        ;;
+        -k=*|--key=*)
+        APIKEY="${i#*=}"
+        ;;
+        -k*|--key*)
+        APIKEY="$2"
+        shift
+        shift
+        ;;
+        -h*|--help*)
+        printf "${HELP}"
+        exit 0
+        ;;
+        --default)
+        DEFAULT=YES
+        ;;
+        *)
+        # unknown option
+        ;;
+    esac
     done
 fi
-
 ```

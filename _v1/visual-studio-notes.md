@@ -7,9 +7,9 @@ order: 20
 sitemap: false
 ---
 
-# Visual Studio
+## Visual Studio
 
-## Hotkeys
+### Hotkeys
 
 ```text
 F5                  # start debugging, Shift + F5 to stop
@@ -47,7 +47,7 @@ Ctrl + R, Ctrl + W  # show spaces
 Shift + F9  # opens QuickWatch
 ```
 
-## Auto-complete
+### Auto-complete
 
 Abbreviations can be completed by typing then pressing Tab.
 
@@ -68,7 +68,7 @@ prop
 for
 ```
 
-## Misc
+### Misc
 
 * Holding down `Alt` and dragging the cursor will allow box select
   * The cursor will also be spawned at the start of the cursor as well

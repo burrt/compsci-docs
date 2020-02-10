@@ -7,16 +7,16 @@ order: 20
 sitemap: false
 ---
 
-# Contents
+## Contents
 
 * [Basics](#basics)
   * [Processors vs threads](#processors-vs-threads)
-  * [Concurrency and synchronisation](#concurrency-and-synchronisation)
+  * [Concurrency and synchronization](#concurrency-and-synchronization)
     * [Semaphores](#semaphores)
     * [Producer and consumer problem](#producer-consumer-problem)
 * [File Systems](#file-systems)
 * [Terms](#terms)
-* [Routines](#initialisation-routines)
+* [Routines](#initialization-routines)
 * [Position Independent Code](#pic-position-independent-code)
 * [Global Offset Table](#got-global-offset-table)
 * [Static and shared libraries](#static-shared-dynamic-libraries)
@@ -42,9 +42,9 @@ sitemap: false
 |Signals & signal handlers||
 |Accounting information||
 
-## Concurrency and synchronisation
+## Concurrency and synchronization
 
-Remember, the scheduler's job is to switch between processors/threads - this is usually done with timer interrupts, hence why synchronisation often turns interrupts on/off.
+Remember, the scheduler's job is to switch between processors/threads - this is usually done with timer interrupts, hence why synchronization often turns interrupts on/off.
 
 ### Test-and-Set
 
@@ -82,7 +82,7 @@ leave_region:
 * Dijkstra 1965 legend
 * `P()`: wait/acquire
 * `V()`: signal/release
-* primitives are atmoic
+* primitives are atomic
 * simple and awesome but if you program them incorrectly (e.g. without matching `wait()`, `signal()`), good luck debugging
 
 ```c
@@ -140,7 +140,7 @@ consumer() {
 **Issues:**
 
 * `count` has race conditions
-* item buffer isn't synchronised at all
+* item buffer isn't synchronized at all
 * dead locks
 
 ```c
@@ -166,8 +166,8 @@ sleep();  // consumer
 
 #### Solution
 
-* we use a semaphore to control the sleep/wake behaviour for the *size of the item buffer*
-* we use a mutex semaphore (basically a lock) for synchronisation of the item buffer
+* we use a semaphore to control the sleep/wake behavior for the *size of the item buffer*
+* we use a mutex semaphore (basically a lock) for synchronization of the item buffer
 
 ```c
 empty = N;  // number of empty slots
@@ -295,8 +295,8 @@ A file system must do the following:
 * only keep table for open files in memory
 * fast random access
 * i-nodes are stored usually at the start of the disk
-    * fixed size
-    * last i-node entry points to an extension i-node
+  * fixed size
+  * last i-node entry points to an extension i-node
 * e.g. ext2, ext3
 
 ## Terms
@@ -315,13 +315,13 @@ A file system must do the following:
 * Other memory bus alternatives are on-chip mesh networks - this has significant complexities of communication as well.
 * Shared memory access is serialised, you have cache coherency challenges as well.
 
-## Initialisation routines
+## Initialization routines
 
-* Constructors - initialisation routines - functions to initialise data in the program when the program is started ie. before main()
+* Constructors - initialization routines - functions to initialize data in the program when the program is started ie. before main()
   * called in reverse order
 * Destructors - termination routines - that are called when the program terminates
   * called in forward order
-* The linker must generate a list of these constructors/descructors `__CTOR_LIST__` and the exec file format traverses these lists at startup/exit.
+* The linker must generate a list of these constructors/destructors `__CTOR_LIST__` and the exec file format traverses these lists at startup/exit.
 * Sections `.ctors` and `.dtors` and usually set aside for these lists
 * On systems that support .init, parts of crtstuff.c are compiled into that section. The program is linked by the gcc driver by:
    `ld -o output_file crti.o crtegin.o ... -lgcc crtend.o crtn.o`
@@ -330,16 +330,16 @@ A file system must do the following:
 * The objects `crtbegin.o` and `crtend.o` are (for most targets) compiled from `crtstuff.c.`
   They contain, among other things, code fragments within the `.init` and `.fini` sections that branch to routines in the `.text` section.
   The linker will pull all parts of a section together, which results in a complete `__init` function that invokes the routines we need at startup.
-* If **no** `.init` section is available, gcc compiles any function called main, it inserts a procedure call to __main as the first executable code after the function prologue. The __main function is designed in libhcc2.c and runs the global constructors.
+* If **no** `.init` section is available, gcc compiles any function called main, it inserts a procedure call to __main as the first executable code after the function prologue. The `__main` function is designed in `libhcc2.c` and runs the global constructors.
 * The last method *doesn't* use arbitrary sections nor the GNU linker. This is useful for dynamic linking and when using file formats the linker doesn't support eg. ECOFF.
-  * The initialisation and termination functions are recognised by their names.
-  * An extra program called `collect2` which pretends to be the linker (as the GNU linked is not called) ie. it does the same as the original linker but also arranges to include the vectors of initialisation and terminations functions.
+  * The initialization and termination functions are recognized by their names.
+  * An extra program called `collect2` which pretends to be the linker (as the GNU linked is not called) ie. it does the same as the original linker but also arranges to include the vectors of initialization and terminations functions.
   * These functions are called via `__main`.
   * `use_collect2` needs to be defined in the target in `config.gcc`
 
 ### ctors dtors
 
-   Both `crt0/crt1` do the same thing, basically do what is needed before calling main() (like initialising stack, setting IRQs, etc.). You should link with one or the other but not both. They are not really libraries but really inline assembly code.
+   Both `crt0/crt1` do the same thing, basically do what is needed before calling main() (like initializing stack, setting IRQs, etc.). You should link with one or the other but not both. They are not really libraries but really inline assembly code.
 
 * `crt1.o` is used on system that support constructors and destructors (functions called before and after main and exit). In this case main is treated like a normal function call.
 * `crt0.o` is used on systems that does not support constructors/destructors.
@@ -350,7 +350,7 @@ A file system must do the following:
 
     We added `.init_array/.fini_array` in order to blend the SVR4 version of .init, which contained actual code, with the HP-UX version, which contained function pointers and used a `DT_INIT_SZ` entry in the dynamic array rather than prologue and epilogue pieces contributed from `crt*.o` files. The HP-UX version was seen as an improvement, but it wasn't compatible, so we renamed the sections and the dynamic table entries so that the two versions could live side-by-side and implementations could transition slowly from one to the other.
 
-    On HP-UX, we used `.init/.init_array` for static constructors, and they registered the corresponding static destructors on a special atexit list, rather than adding destructors to `.fini_array`, so that we could handle destructors on dlclose() events properly (subject to your interpretation of "properly" in that context)
+    On HP-UX, we used `.init/.init_array` for static constructors, and they registered the corresponding static destructors on a special atexit list, rather than adding destructors to `.fini_array`, so that we could handle destructors on `dlclose()` events properly (subject to your interpretation of "properly" in that context)
 The order of execution differs between `.ctors` and `.init_array`
 
 * Backwarding order of `.ctors` section
@@ -436,12 +436,12 @@ Position independent functions accessing global data start by determining the **
     * Specifies where the SHT, PHT are located
 2. Program Header Table
     * The program header table tells the system how to create a process image.
-    * It is found at file offset *e_phoff*, and consists of *e_phnum* entries, each with size *e_phentsize*
+    * It is found at file offset *`e_phoff`*, and consists of *`e_phnum`* entries, each with size *`e_phentsize`*
 3. All the sections - `.text`, `.data`, `.bss`, `.ctors` etc.
     * The ELF binary contains all the necessary data to execute
     * Libraries can be compiled within the ELF with the `-static` flag
     * `.bss` is not actually included in the ELF
-        * It only specifies the size and assumes the space at the address is initialised to zero
+        * It only specifies the size and assumes the space at the address is initialized to zero
         * If you check the flags, there is no `ALLOC`
 4. Section Header Table
     * This lists all the different sections and where they are found

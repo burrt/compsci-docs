@@ -7,8 +7,6 @@ order: 20
 sitemap: false
 ---
 
-# Contents
-
 ## Basics
 
 ```javascript
@@ -33,6 +31,4 @@ let welcome = (age < 18) ?
   function() { alert("Hello!"); } :
   function() { alert("Greetings!"); };
 welcome();
-
-
 ```

@@ -7,7 +7,7 @@ order: 20
 sitemap: false
 ---
 
-# Contents
+## Contents
 
 * [Mallocing by reference](#mallocing-by-reference)
 * [Function pointers](#function-pointers)

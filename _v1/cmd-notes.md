@@ -7,7 +7,7 @@ order: 20
 sitemap: false
 ---
 
-# Basics
+## Basics
 
 ```cmd
 cls  # clear screen

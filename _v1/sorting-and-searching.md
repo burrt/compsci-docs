@@ -7,7 +7,7 @@ order: 20
 sitemap: false
 ---
 
-# Contents
+## Contents
 
 * [Time complexity](#time-complexity)
 * [Sorts](#sorts)
@@ -42,13 +42,13 @@ Useful links:
 * [Different complexities from Hackerrank](https://www.hackerearth.com/practice/basic-programming/complexity-analysis/time-and-space-complexity/tutorial/)
 * [Graphs visualized](http://bigocheatsheet.com/) - this actually shows what **tight bound** means graphically!
 
-We basically only care about O(n) since it is more practical and easier to calculate compared to Θ(n). Remember we only care about asymptotic behaviour hence the removal of constants and only caring about the most dominant n.
+We basically only care about O(n) since it is more practical and easier to calculate compared to Θ(n). Remember we only care about asymptotic behavior hence the removal of constants and only caring about the most dominant n.
 
 |Asymptotic comparison operator| Explanation|
 |------------------------------|--------------------------------------------------------------|
 |`o(n)` - Small-O of n     | Asymptotic 'loose' upper bound - if we know a `O(n)` is **not** a tight bound, we can denote a `o(n)`|
 |`O(n)` - Big-O of n       | Asymptotic upper bound - can't be worse than this but can be *better*|
-|`Θ(n)` - Theta n          | Asymptotic tight bound - exactly the behaviour (graph is between constants - see Hackerrank link)|
+|`Θ(n)` - Theta n          | Asymptotic tight bound - exactly the behavior (graph is between constants - see Hackerrank link)|
 |`Ω(n)` - Big-Omega of n   | Asymptotic lower bound|
 |`ω(n)` - Small-Omega of n | Asymptotic 'loose' lower bound - similar to small-o of n|
 

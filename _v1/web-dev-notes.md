@@ -7,7 +7,7 @@ order: 20
 sitemap: false
 ---
 
-# Contents
+## Contents
 
 * [HTTP Codes](#http-codes)
 * [HTML Basics](#html)
@@ -158,7 +158,7 @@ these purposes since they're contextual.
 You can also hyperlink images or anything else.
 The title attribute for hover over.
 The target attribute can also be used for opening
-in new tab/window behaviour.
+in new tab/window behavior.
 The download attribute to supply a default file name on save.
 The mailto: attribute uses the default email application
 to mail to the specified email address.

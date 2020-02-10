@@ -7,7 +7,7 @@ order: 20
 sitemap: false
 ---
 
-# Methods of caching in hardware
+## Methods of caching in hardware
 
 1. [Direct Mapped](#direct-mapped)
 2. [Fully Associative](#fully-associative)

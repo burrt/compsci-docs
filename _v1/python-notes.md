@@ -7,7 +7,7 @@ order: 20
 sitemap: false
 ---
 
-# Contents
+## Contents
 
 * [Basics](#basics)
   * [Copy](#copy)
@@ -28,9 +28,9 @@ sitemap: false
 
 ## Links
 
-* https://developers.google.com/edu/python/
-* https://docs.python.org/3.6/
-* https://stackoverflow.com/questions/231767/what-does-the-yield-keyword-do
+* [Google Dev Python](https://developers.google.com/edu/python/)
+* [Python 3.6 Docs](https://docs.python.org/3.6/)
+* [StackOverflow - Python yield](https://stackoverflow.com/questions/231767/what-does-the-yield-keyword-do)
 
 ## Quick style guide
 

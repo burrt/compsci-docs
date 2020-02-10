@@ -7,13 +7,13 @@ order: 20
 sitemap: false
 ---
 
-# Contents
+## Contents
 
 * [Rules](#rules)
 * [Logging](#logging)
 * [Asserts](#asserts)
-* [Initialising 1D array](#initialising-1d-array)
-* [Initialising 2D array](#initialising-2d-array)
+* [Initializing 1D array](#initializing-1d-array)
+* [Initializing 2D array](#initializing-2d-array)
 * [Conversions](#conversions)
 * [Component declarations](#component-declarations)
 * [Incrementing a counter](#incrementing-a-counter)
@@ -22,7 +22,7 @@ sitemap: false
 
 * DO NOT write to same signal in 2 different processes!
 * DO NOT have a 'reset' signal in combinational logic!
-* DO NOT write to **registers** in combinational processes! Creates latches and are **unsynthesisable**!
+* DO NOT write to **registers** in combinational processes! Creates latches and are **not synthesisable**!
 * **Variables** update immediately
 * **Signals** update on its **last** assignment
 * Sequential logic **only** needs `(clk, reset)`
@@ -63,14 +63,14 @@ assert (x_sig = y_sig) report "x_sig != y_sig" severity failure;
 * Can have other levels of severity
 * If **FALSE**, break and print report - failure causes a STOP (or break in Modelsim?)
 
-## Initialising 1D array
+## Initializing 1D array
 
 ```vhdl
 type bram is array (0 to 1023) of std_logic_vector(31 downto 0);
 signal fifo : bram := (others => (others => '0'));
 ```
 
-## Initialising 2D array
+## Initializing 2D array
 
 ```vhdl
 type ram is array (63 downto 0) of std_logic_vector (63 downto 0);

@@ -547,7 +547,7 @@ Action<string, string> concat = (s1, s2) => Console.WriteLine(${s1}{s2});
 
 A closure is basically a block of code (lambda/anonymous function) that can be executed at a later time but maintains the environment which it was first created. This allows it to continue reference and hold state of those variables in the containing method.
 
-Basically the C# compiler will recognize the closure being created and will promote the local variables into a compiler generated class which the delegate can be invoked and maintain and use the local variables. This means if you were to create a closure on a **disposable** or **mutatable** object, you can easily hit non-deterministic behaviour with `NullReferenceException`.
+Basically the C# compiler will recognize the closure being created and will promote the local variables into a compiler generated class which the delegate can be invoked and maintain and use the local variables. This means if you were to create a closure on a **disposable** or **mutatable** object, you can easily hit non-deterministic behavior with `NullReferenceException`.
 
 ```cs
 static void Main(string[] args)
@@ -1196,7 +1196,7 @@ Reasoning:
 * There are two ways to avoid this.
   * First, avoid declaring new methods with the same name as virtual methods.
   * Second, you can instruct the C# compiler to call the virtual method by making it search the base class method list by casting the instance of `Derived` to `Base`. Because the method is virtual, the implementation of `DoWork(int)` on `Derived` will be called.
-* This behaviour for the `new` modifier is applicable to properties as well
+* This behavior for the `new` modifier is applicable to properties as well
 
 ### Constructors
 

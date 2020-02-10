@@ -7,7 +7,7 @@ order: 20
 sitemap: false
 ---
 
-# Contents
+## Contents
 
 * [Basics](#basics)
 * [Streams](#streams)
@@ -37,7 +37,7 @@ sitemap: false
 
 Definitions:
 
-* Object: is a software bundle of related state and behaviour.
+* Object: is a software bundle of related state and behavior.
 * Class: is a blueprint or prototype from which objects are created.
 * Interface: is a contract between a class and the outside world.
 * Package: is a namespace for organizing classes and interfaces in a logical manner.

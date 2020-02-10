@@ -14,10 +14,18 @@ sitemap: false
 ## Basics
 
 ```bash
-docker ps  # show running
+# show running containers
+docker ps
+
+# clean up container
+docker rm
+
+# list images
+docker images
 
 # get IP address of container
 docker inspect -f "{{ .NetworkSettings.IPAddress }}" <containerNameOrId>
+
 # run commands
 docker exec -it <mycontainer> bash
 ```

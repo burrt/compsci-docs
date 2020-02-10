@@ -7,7 +7,7 @@ order: 20
 sitemap: false
 ---
 
-# Contents
+## Contents
 
 * [TOTP](#totp)
 * [HTOP](#htop)
@@ -19,7 +19,7 @@ sitemap: false
 
 Also see [RFC 6238](https://tools.ietf.org/html/rfc6238)
 
-### Definition
+### TOTP Definition
 
 TOTP is based on HOTP with a timestamp replacing the incrementing counter.
 
@@ -66,7 +66,7 @@ Now:
 
 HOTP is an HMAC-based one-time password (OTP) algorithm. See [Wikipedia](https://en.wikipedia.org/wiki/HMAC-based_One-time_Password_Algorithm#Definition).
 
-### Definition
+### HTOP Definition
 
 * `K` be a secret key
 * `C` be a counter

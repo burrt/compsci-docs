@@ -15,6 +15,10 @@ sitemap: false
 * [Execve](#execve)
 * [System](#system)
 
+## Purpose
+
+A small list of Linux syscalls that are common and interesting to read about.
+
 ## Malloc
 
 * Alloc memory to heap (grows towards high addresses). If the heap is not big enough, `malloc` will internally call `set_brk()` syscall to allocate more.
@@ -51,6 +55,7 @@ int brk(void *addr)
     }
     return 0;
 }
+
 libc_hidden_def(brk)
 ```
 
