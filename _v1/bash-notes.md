@@ -1,7 +1,7 @@
 ---
 layout: compsci-note
 title: Bash Notes
-categories: [bash]
+categories: [bash, scripting]
 description: Some basic stuff on Bash
 order: 20
 sitemap: false
