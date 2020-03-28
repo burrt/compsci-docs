@@ -24,18 +24,18 @@ w32tm  # setting time sync/zone/server
 
 ## File
 
-```cmd
-attrib  # file attributes
-comp  # compare file contents
+```bat
+attrib      # file attributes
+comp        # compare file contents
 copy/xcopy  # copy files
-del  #
+del
 rmdir /q /s # remove dir recursively and silent
-tree # show directories graphically
+tree        # show directories graphically
 ```
 
 ## Network
 
-```cmd
+```bat
 ipconfig  # /all, /release /renew
 nslookup  # query DNS
 telnet

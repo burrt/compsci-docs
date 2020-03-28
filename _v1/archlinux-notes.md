@@ -167,7 +167,7 @@ cp /etc/X11/xinit/xinitrc ~/.xinitrc
 * Create a new service file similar to `getty@.service` by copying it to `/etc/systemd/system/`
   * `cp /usr/lib/systemd/system/getty@.service /etc/systemd/system/autologin@.service`
 * You will then have to symlink that `autologin@.service` to the getty service for the tty on which
-  you want to autologin, for examply for tty1:
+  you want to autologin, for example for tty1:
   * `ln -s /etc/systemd/system/autologin@.service /etc/systemd/system/getty.target.wants/getty@tty1.service`
 * Modify `autologin@.service` and reload daemon files, start service
 
@@ -239,12 +239,12 @@ Security=wpa-configsection
 ESSID=uniwide
 IP=dhcp
 WPAConfigSection=(
-	'ssid="uniwide"'
-	'key_mgmt=WPA-EAP'
-	'eap=PEAP'
-	'pairwise=TKIP CCMP'
-	'phase2="auth=MSCHAPV2"'
-	'identity="z1234567"'
-	'password="pass"'
-	)
+  'ssid="uniwide"'
+  'key_mgmt=WPA-EAP'
+  'eap=PEAP'
+  'pairwise=TKIP CCMP'
+  'phase2="auth=MSCHAPV2"'
+  'identity="z1234567"'
+  'password="pass"'
+  )
 ```

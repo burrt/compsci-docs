@@ -18,6 +18,6 @@ To connect to a computer running TCP/IP via its NetBIOS name, it needs to be res
 
 ### Other
 
-* Link-Local Multicast Name Resolution (LLMNR)
+* Link-Local Multi-cast Name Resolution (LLMNR)
 * Peer Name Resolution
 * Server Network Information Discovery

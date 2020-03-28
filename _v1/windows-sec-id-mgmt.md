@@ -92,7 +92,7 @@ A SID is used to uniquely identify a security principle or group. There are two 
 |SubAuthority[0]                    | Domain Identifier
 |SubAuthority[1]                    |
 |...                                |
-|SubAuthority[n]                    |Relative Identifier
+|SubAuthority[n]                    | Relative Identifier
 +-----------------------------------+
 ```
 

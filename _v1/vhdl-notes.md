@@ -37,7 +37,7 @@ sitemap: false
 
 ## LUTs
 
-[Explanation of LUTs](http://electronics.stackexchange.com/questions/169532/what-is-an-lut-in-fpga)
+[Explanation of LUTs](https://electronics.stackexchange.com/questions/169532/what-is-an-lut-in-fpga)
 
 Basically though, just a truth table (X inputs, X outputs) that can generate a function you want - think Karnaugh maps, binary rules etc.
 
@@ -105,7 +105,7 @@ effect
 
 As usual, a diagram does wonders:
 
-![](http://i.imgur.com/CGbLahG.jpg?1)
+![Setup-hold-time](https://i.imgur.com/CGbLahG.jpg?1)
 
 ### Metastability
 
@@ -146,7 +146,7 @@ No violation!
 
 ## Clock skew
 
-![Clock Skew](http://i.imgur.com/V7apDH9.png)
+![Clock Skew](https://i.imgur.com/V7apDH9.png)
 
 * **Positive clock skew** means that the clock arriving a little slower in a counter-flip flop for example. This allows 'extra' time when calculating the critical path for a certain flip-flop.
 * A **negative clock skew**, i.e. clock arriving earlier at `Q3` than at `Q0` – `Q2` would have the opposite effect of lengthening the clock period & *reducing* clock frequency
@@ -174,7 +174,7 @@ Okay, there are 2 huge differences here:
 
 Below is the timing differences:
 
-![D latch and D flip flop](http://i.imgur.com/DusJCJe.png?1)
+![D latch and D flip flop](https://i.imgur.com/DusJCJe.png?1)
 
 ```vhdl
 -- Example of implied memory, latch
@@ -305,7 +305,7 @@ if rising_edge(clk) then
 
 ## Tri State Buffers
 
-![alt text](https://www.cs.umd.edu/class/sum2003/cmsc311/Notes/CompOrg/Figs/tristate.png "Active high")
+![Active high](https://www.researchgate.net/profile/Kiran_Kumar207/publication/318295016/figure/fig4/AS:513915571195911@1499538428940/Tri-state-buffers-with-active-high-and-low-controls.png)
 
 ```vhdl
 Y <= A when (EN = '0') else 'Z';
@@ -367,10 +367,10 @@ end generate tristate;
 
 ### Division
 
-[A good example](http://academic.evergreen.edu/projects/biophysics/technotes/misc/bin_math.htm)
+[A good example](https://academic.evergreen.edu/projects/biophysics/technotes/misc/bin_math.htm)
 
 ## Examples
 
 ### 4 bit counter
 
-![4 bit counter](http://i.imgur.com/MUPyyWc.png?1)
+![4 bit counter](https://i.imgur.com/MUPyyWc.png?1)

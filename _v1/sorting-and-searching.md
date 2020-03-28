@@ -40,7 +40,7 @@ Useful links:
 
 * [Easy mode intro](https://discrete.gr/complexity/)
 * [Different complexities from Hackerrank](https://www.hackerearth.com/practice/basic-programming/complexity-analysis/time-and-space-complexity/tutorial/)
-* [Graphs visualized](http://bigocheatsheet.com/) - this actually shows what **tight bound** means graphically!
+* [Graphs visualized](https://bigocheatsheet.com/) - this actually shows what **tight bound** means graphically!
 
 We basically only care about O(n) since it is more practical and easier to calculate compared to Θ(n). Remember we only care about asymptotic behavior hence the removal of constants and only caring about the most dominant n.
 

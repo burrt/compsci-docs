@@ -206,16 +206,16 @@ I'm going to over-simplify this because there's just too much to write about.
 
 The OS manages from FD table - device driver on a typical storage stack.
 
-|Stack          |Description        |Hides                                |Exposes|
-|---------------|-------------------|-------------------------------------|-------|
-|Application    |Syscall interface: create, open, read, write etc.        |||
-|FD table<br>OF table|File (open) descriptor table - keeps track of files opened by user-level processes. Implements semantics of FS syscalls.|||
-|VFS            |Virtual FS - unified interface to *multiple* file systems.|||
-|FS             ||Physical location of data on the disk|Directory heirarchy, symbolic file names, random-access files, protection.|
-|Buffer cache<br>Disk scheduler|Keeps recently access disk blocks in memory. Schedule disk accesses from multiple processes for performance and fairness. This all occurs in memory.|
-|Device driver  ||Hides device specific protocol e.g. USB3|Exposes block-device interface (linear sequence of blocks)|
-|Disk controller||Hides disk geometry, bad sectors|Exposes linear sequence of blocks|
-|Physical disk  |Hard disk platters: tracks, sectors|||
+| Stack                          | Description                                                                                                                                          | Hides                                    | Exposes                                                                    |
+|--------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------|------------------------------------------|----------------------------------------------------------------------------|
+| Application                    | Syscall interface: create, open, read, write etc.                                                                                                    |                                          |                                                                            |
+| FD table<br>OF table           | File (open) descriptor table - keeps track of files opened by user-level processes. Implements semantics of FS syscalls.                             |                                          |                                                                            |
+| VFS                            | Virtual FS - unified interface to *multiple* file systems.                                                                                           |                                          |                                                                            |
+| FS                             |                                                                                                                                                      | Physical location of data on the disk    | Directory hierarchy, symbolic file names, random-access files, protection. |
+| Buffer cache<br>Disk scheduler | Keeps recently access disk blocks in memory. Schedule disk accesses from multiple processes for performance and fairness. This all occurs in memory. |                                          |                                                                            |
+| Device driver                  |                                                                                                                                                      | Hides device specific protocol e.g. USB3 | Exposes block-device interface (linear sequence of blocks)                 |
+| Disk controller                |                                                                                                                                                      | Hides disk geometry, bad sectors         | Exposes linear sequence of blocks                                          |
+| Physical disk                  | Hard disk platters: tracks, sectors                                                                                                                  |                                          |                                                                            |
 
 ### File structure
 

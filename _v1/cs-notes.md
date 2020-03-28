@@ -110,14 +110,14 @@ A generic interface that has covariant or contravariant generic type parameters 
 * They are **value** types - pass by value to methods hence field changes don't persist
 * Can implement interfaces, can be used as a nullable type and assigned `null`
 * Does not support `protected` since it cannot inherit classes etc.
-* Fields can't be initialised on declaration unless `static` or `const`
+* Fields can't be initialized on declaration unless `static` or `const`
 * Generally less expensive than classes and used for small objects/entities
 
 ```cs
 public struct CoOrds
 {
     public int x, y;
-    // You can't have an empty constructor, all fields must be initialised
+    // You can't have an empty constructor, all fields must be initialized
     public CoOrds(int p1, int p2)
     {
         x = p1;
@@ -127,7 +127,7 @@ public struct CoOrds
 
 CoOrds point = new CoOrds();
 // You can omit the new keyword since structs are value types
-// All fields must be initialised before using
+// All fields must be initialized before using
 CoOrds point = new CoOrds(1, 1);
 CoOrds point;
 point.x = 1;
@@ -153,7 +153,7 @@ You can do more interesting things to print the string value and combinations of
 ### Implicit types
 
 * Make the compiler infer the type from the RHS expression using `var`
-* Can only be used when a local variable is declared and initialised in the same statement; the variable cannot be initialised to null, or to a method group or an anonymous function
+* Can only be used when a local variable is declared and initialized in the same statement; the variable cannot be initialized to null, or to a method group or an anonymous function
 * Cannot be used on fields at class scope
 
 ```cs
@@ -227,7 +227,7 @@ public class Container
 {
     public class Nested
     {
-        private Container parent;  // needs to be initialised
+        private Container parent;  // needs to be initialized
 
         // default constructor
         public Nested()
@@ -414,12 +414,12 @@ public bool Equals(TwoDPoint p)
 
 You have to care about inheritance when dealing with reference types i.e. in your **base** class, you perform the standard checks, and then in your **derived** class, you call the base class check and then call any additional checks as necessary.
 
-Remember that the static `object.Equals(object lhs, object rhs)` method for reference types will call any overriden virtual method of `object.Equals(object obj)`.
+Remember that the static `object.Equals(object lhs, object rhs)` method for reference types will call any overridden virtual method of `object.Equals(object obj)`.
 
 #### NOTE
 
 ```cs
-// The == operator will never call your overriden virtual method
+// The == operator will never call your overridden virtual method
 // of object.Equal() so it will always do a reference check
 public CheckIfEqual(object o1, object o2)
 {
@@ -481,7 +481,7 @@ public class bar
 
 ### Func
 
-Another form is the `Func<T, TResult> Delegate`, you can have up to 16 input types e.g. `Func<T1,T2,T3,T4,T5,T6,T7,T8,T9,T10,T11,T12,T13,T14,T15,T16,TResult>` and an example usuage of this with lambda expression:
+Another form is the `Func<T, TResult> Delegate`, you can have up to 16 input types e.g. `Func<T1,T2,T3,T4,T5,T6,T7,T8,T9,T10,T11,T12,T13,T14,T15,T16,TResult>` and an example usage of this with lambda expression:
 
 ```cs
 // Declare a Func variable and assign a lambda expression to the variable.
@@ -845,7 +845,7 @@ Point b = new Point3D(10, 20, 30);
 
 ### Parameters
 
-Like D, it supports both **value and reference parameters**. Value parameters means that the arguments are initialised as local variables, reference parameters `ref` are not!
+Like D, it supports both **value and reference parameters**. Value parameters means that the arguments are initialized as local variables, reference parameters `ref` are not!
 
 #### Reference parameter
 
@@ -1311,7 +1311,7 @@ bar.save()  // "FooInterface save()"
 
 ## Static
 
-We can use `static` constructors to initialise static objects e.g. `readonly` members at compile time and is only run at most once. They also run before any instance constructors and the user cannot access it directly nor control when they are run.
+We can use `static` constructors to initialize static objects e.g. `readonly` members at compile time and is only run at most once. They also run before any instance constructors and the user cannot access it directly nor control when they are run.
 
 ```cs
 public class Adult : Person
@@ -1394,8 +1394,7 @@ They are a way of support subscribers and publishers model.
 
 Too much to cover about generics, [see the MS docs for information](https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/generics/)
 
-
-Generics at run time are actually optimised so there is instance reuse for reference classes (references have the same value - pointers). This is slightly less optimised for value types as a specialised version of the class is initialised per value type and then reused.
+Generics at run time are actually optimized so there is instance reuse for reference classes (references have the same value - pointers). This is slightly less optimized for value types as a specialised version of the class is initialized per value type and then reused.
 
 ## LINQ
 
@@ -1578,7 +1577,7 @@ Make sure to yield control back to the main thread!
 
 ### IO Bound
 
-You **don't** want a new thread or queue an IO bound task to the Threadpool because  a **new thread** dedicated to just wait for return request is costly when the thread could be doing more meaningful work!
+You **don't** want a new thread or queue an IO bound task to the `Threadpool` because  a **new thread** dedicated to just wait for return request is costly when the thread could be doing more meaningful work!
 
 What you want is to **delegate** the work to the OS which in turn delegates the work asynchronously - this is important so that when your HTTP request finally responds - it is bubbled back to the caller via interrupts and in a non-blocking fashion.
 

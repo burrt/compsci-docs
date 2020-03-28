@@ -25,13 +25,15 @@ A small list of Linux syscalls that are common and interesting to read about.
 * Since the stack is limited and the variable needs to survive after invocation.
 * Also for obfuscation eg. a function implements the allocation of a ptr that isn't exposed to the caller.
 * Internally it might call:
-    * `sbrk()` for glibc - this usually does it in the following sequence
-    ```c
-            heap_ptr = sbrk(0)
-            heap_ptr = sbrk(100)
-    ```
-    * `sbrk()` is used for incrementing the heap ptr
-    * Both `sbrk()` and `brk()` call `_syscall_brk()` which should return a valid address in the heap
+  * `sbrk()` for glibc - this usually does it in the following sequence
+
+  ```c
+          heap_ptr = sbrk(0)
+          heap_ptr = sbrk(100)
+  ```
+
+  * `sbrk()` is used for incrementing the heap ptr
+  * Both `sbrk()` and `brk()` call `_syscall_brk()` which should return a valid address in the heap
 
 ```c
 // brk.c
@@ -82,8 +84,8 @@ size_t malloc_usable_size (void *ptr);
 ### Fork
 
 ```c
-  #include <unistd.h>
-  pid_t fork(void);
+#include <unistd.h>
+pid_t fork(void);
 ```
 
 `fork()` creates a new process by duplicating the calling process. The new process, referred to as the child, is an exact duplicate of the calling process, referred to as the parent, except for the following points:

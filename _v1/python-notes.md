@@ -44,7 +44,7 @@ sitemap: false
 
 ### Doc string
 
-[Google example](http://sphinxcontrib-napoleon.readthedocs.io/en/latest/example_google.html)
+[Google example](https://sphinxcontrib-napoleon.readthedocs.io/en/latest/example_google.html)
 
 ## Basics
 
@@ -608,13 +608,13 @@ Remember that decorators return the wrapped function i.e. a modified version of 
   * you must be aware that the `help()` may **not** work correctly
   * the workaround for decorators as wrappers is `functools.update_wrapper()`. This sets the attribute on the **instance** but `help()` looks at the class as it is always called as `help(instance)`. See more [here on stackoverflow](https://stackoverflow.com/questions/6394511/python-functools-wraps-equivalent-for-classes).
 * as nested functions
-* with/without arguements
+* with/without arguments
 
 Each method has a slightly different syntax that you should be aware of.
 Useful links:
 
-* [Python 3 decorators - better example](http://python-3-patterns-idioms-test.readthedocs.io/en/latest/PythonDecorators.html)
-* [Python 3 decorators - quick examples](http://book.pythontips.com/en/latest/decorators.html)
+* [Python 3 decorators - better example](https://python-3-patterns-idioms-test.readthedocs.io/en/latest/PythonDecorators.html)
+* [Python 3 decorators - quick examples](https://book.pythontips.com/en/latest/decorators.html)
 
 #### Decorators with classes
 

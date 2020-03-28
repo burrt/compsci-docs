@@ -32,8 +32,7 @@ REFERENCES dbo.primary_table (primary_col)
 ALTER TABLE client_devices
 ALTER COLUMN apMacAddr VARCHAR(255) NULL
 
--- Creating unclustered Index
+-- Creating non-clustered Index
 CREATE INDEX UC_col_index ON dbo.table_name (col4 ASC)
 INCLUDE (col1, col2, col3)
-
 ```

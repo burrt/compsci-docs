@@ -14,7 +14,7 @@ sitemap: false
 ```text
 F5                  # start debugging, Shift + F5 to stop
 F10                 # step over line, skip over function calls
-F11                 # step into functions, initialisations as well
+F11                 # step into functions, initializations as well
 F12                 # go to definition, Shift + F12 will display results
 
 Ctrl +/-            # navigate backwards (previous position)
@@ -52,7 +52,7 @@ Shift + F9  # opens QuickWatch
 Abbreviations can be completed by typing then pressing Tab.
 
 ```text
-# generate Console.WriteLine, remove first paren for other method overloads
+# generate Console.WriteLine, remove first parenthesis for other method overloads
 cw
 
 # generate a default constructor
@@ -64,7 +64,7 @@ testm
 # generate properties
 prop
 
-# for loop with int i intializer etc.
+# for loop with int i initializer etc.
 for
 ```
 

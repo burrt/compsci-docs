@@ -165,13 +165,13 @@ ListIterator.add(E element) // O(n)
 // {foo, bar}
 // for [foo, bar] use  StringJoiner("], [", "[", "]")
 StringJoiner str = new StringJoiner(", ", "{", "}");
-str.setEmptyValue("deadbeef"); // delimters and start/end make a difference
+str.setEmptyValue("deadbeef"); // delimiters and start/end make a difference
 str.add("foo");
 str.add("bar");
 String joinedStr = str.toString();
 
 // Formatting strings
-// % [arguement index][flags][width][precision] conversion
+// % [argument index][flags][width][precision] conversion
 String formattedStr = String.format("Hi, I'm %s and I'm %d years old",
                                    "Geoff", 23);
 formattedStr = String.format("Pi = %.2f", Math.PI);
@@ -181,7 +181,6 @@ formattedStr = String.format("%$1d, %$2f, %$1d", 1, 2.0); // "Hex: 0x10
 ```
 
 ## Collections
-
 
 ## Annotations
 
@@ -311,7 +310,7 @@ public synchronized foo() {
 An example of this is if, in a non-synchronized method you call 2 synchronized methods, if the thread is yielded on another thread in between the invocations - you now have a race condition!
 
 ```java
-// Method level sychronization
+// Method level synchronization
 public void run() {
     int b = getBalance();
 
@@ -320,7 +319,7 @@ public void run() {
     setBalance(++b);
 }
 
-// Manual sychronization
+// Manual synchronization
 public void run() {
 
     // Synchronize the object reference and now getBalance and SetBalance
@@ -336,7 +335,7 @@ public void run() {
 
 ## Logging
 
-It's important to understand how you can take advantage of the hierachial logging you can configure in Java i.e. you can have a parent logging configuration and have the childs inherit this.
+It's important to understand how you can take advantage of the hierarchial logging you can configure in Java i.e. you can have a parent logging configuration and have the children inherit this.
 
 ```java
 // com.parent.package
@@ -365,7 +364,7 @@ Also known as access control modifiers.
 * `public`: the class/variable/method is accessible and available to all the other objects in the system.
 * `private`: the class/variable/method is accessible and available within **this class only**.
 * `static`: they belong to the **class** instead of a specific instance. All instances will shared this field.
-* `final`: can only be initialised to **once** - compiler will check this.
+* `final`: can only be initialized to **once** - compiler will check this.
   * `final static`: useful for making a static constant for all classes.
   * compiler doesn't care about the value, only the reference - see [More confusing stuff](#more-confusing-stuff)
 
@@ -384,7 +383,7 @@ Also known as access control modifiers.
 
 ### More on final
 
-* If you have initialised a `final` variable, then you cannot change it to refer to a different object.
+* If you have initialized a `final` variable, then you cannot change it to refer to a different object.
 * `final` classes cannot be sub-classed
 * `final` methods cannot be overridden.
 * `final` methods can override.
@@ -427,15 +426,13 @@ class Hello {
         li.add(1000);
     }
 }
-
 ```
 
 Explanation:
 
 * *Scenario 1*: this is fine since the compiler knows that constructors are called only **once** for instances and since `List li` is an instance variable - this is safe.
-* *Scenario 2*: now `List li` is a class variable that is initialised once at the top. We can mutate the list and will be seen in all instances of `Hello`.
-* *Scenario 3*: we attempted to initialise a class variable in the constructor - but `List li` no longer belongs to an instance so therefore attempting to **change the value** of `List li` every time a new instance is created!
-
+* *Scenario 2*: now `List li` is a class variable that is initialized once at the top. We can mutate the list and will be seen in all instances of `Hello`.
+* *Scenario 3*: we attempted to initialize a class variable in the constructor - but `List li` no longer belongs to an instance so therefore attempting to **change the value** of `List li` every time a new instance is created!
 
 ### Methods
 
@@ -447,7 +444,7 @@ Explanation:
 
 You can also have a **static block**:
 
-* Is used to initialise the `static` data member - but not instance variables!.
+* Is used to initialize the `static` data member - but not instance variables!.
 * It is executed before main method at the time of classloading.
 
 ```java
@@ -455,7 +452,7 @@ class Example {
     public static String staticString;
 
     static {
-        staticString = "Static block example - initialised before main!";
+        staticString = "Static block example - initialized before main!";
     }
 }
 ```
@@ -795,7 +792,7 @@ Explaination:
 * `c1.getArea()` or `c1.toString()` invokes the **overridden** version defined in the subclass Cylinder, instead of the version defined in Circle. **This is because c1 is in fact holding a Cylinder object internally.**
 
 ```java
-// But c1 runs the Cylinder overriden methods
+// But c1 runs the Cylinder overridden methods
 c1.toString();  // Run the overridden version!
 c1.getArea();   // Run the overridden version!
 ```
