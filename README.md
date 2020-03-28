@@ -9,10 +9,10 @@ These docs are hosted on [Github Pages](https://burrt.github.io/compsci-docs/).
 
 ### Building
 
-Cloning:
+Clone the repository:
 
 ```sh
-git clone git@github.com:burrt/compsci-docs.git
+$> git clone https://github.com/burrt/compsci-docs.git
 ```
 
 ### Linux
@@ -20,8 +20,8 @@ git clone git@github.com:burrt/compsci-docs.git
 Setup and install [Jekyll](#https://jekyllrb.com/docs/) and then run:
 
 ```bash
-bundle update
-bundle exec jekyll serve --config _config.yml,_config_development.yml
+$> bundle install
+$> bundle exec jekyll serve --config _config.yml,_config_development.yml
 ```
 
 ### Windows
@@ -30,7 +30,7 @@ bundle exec jekyll serve --config _config.yml,_config_development.yml
 
 ```powershell
 # Powershell
-docker run `
+PS> docker run `
     --rm `
     --label=jekyll `
     --volume=${pwd}:/srv/jekyll `
