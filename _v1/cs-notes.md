@@ -1457,6 +1457,14 @@ var studentQuery8 =
 
 The `List<int> numbers` now has the `Where` method due to method extensions from LINQ.
 
+### Any vs Count
+
+For `IEnumerable<>`, use `Any()`.
+
+For collections like `IList<>` etc. use the `Count` property.
+
+See also [StackOverflow - Any vs Count](https://stackoverflow.com/questions/305092/which-method-performs-better-any-vs-count-0).
+
 ## Namespaces
 
 * They organize large code projects.
@@ -1562,9 +1570,26 @@ With async programming, firstly, you must identify the following situations:
 
 Think of `await` as an "asynchronous wait" i.e. it **blocks the method** (if necessary) but **not the thread**.
 
+### Making async synchronous
+
+These articles summarizes it far better than I could have:
+
+* [Intro into async and await](https://blog.stephencleary.com/2012/02/async-and-await.html)
+* [Do not block on async code](https://blog.stephencleary.com/2012/07/dont-block-on-async-code.html)
+  * Understanding what synchronization context is captured upon awaiting is important as it can cause deadlocks!
+  * `.Result` will wait and wrap any exceptions into an AggregateException
+  * `.Wait()` may do the same as above or swallow exceptions
+* [Eliding async await](https://blog.stephencleary.com/2016/12/eliding-async-await.html)
+* Eliding == omitting
+
+Must reads:
+
+* ConfigureAwait in-dept - [MS Blog ConfigureAwait FAQ](https://devblogs.microsoft.com/dotnet/configureawait-faq/)
+* Running an async task synchronously - [StackOverflow - How would I run an async task method synchronously](https://stackoverflow.com/questions/5095183/how-would-i-run-an-async-taskt-method-synchronously)
+
 ### CPU bound
 
-Because it's CPU bound, you ideally want to move this work onto a **new thread** without making the main thread wait.
+Because it's CPU bound, you ideally want to move this work onto a **new thread** without making the main thread wait. This work is usually delegated to the thread pool.
 
 You want to use:
 
@@ -1579,12 +1604,6 @@ Make sure to yield control back to the main thread!
 You **don't** want a new thread or queue an IO bound task to the `Threadpool` because  a **new thread** dedicated to just wait for return request is costly when the thread could be doing more meaningful work!
 
 What you want is to **delegate** the work to the OS which in turn delegates the work asynchronously - this is important so that when your HTTP request finally responds - it is bubbled back to the caller via interrupts and in a non-blocking fashion.
-
-You want to use:
-
-```cs
-await SomeFuncAsync();
-```
 
 ```cs
 public async Task DoMixedWork()
