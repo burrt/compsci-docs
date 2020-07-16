@@ -44,13 +44,13 @@ Useful links:
 
 We basically only care about O(n) since it is more practical and easier to calculate compared to Θ(n). Remember we only care about asymptotic behavior hence the removal of constants and only caring about the most dominant n.
 
-|Asymptotic comparison operator| Explanation|
-|------------------------------|--------------------------------------------------------------|
-|`o(n)` - Small-O of n     | Asymptotic 'loose' upper bound - if we know a `O(n)` is **not** a tight bound, we can denote a `o(n)`|
-|`O(n)` - Big-O of n       | Asymptotic upper bound - can't be worse than this but can be *better*|
-|`Θ(n)` - Theta n          | Asymptotic tight bound - exactly the behavior (graph is between constants - see Hackerrank link)|
-|`Ω(n)` - Big-Omega of n   | Asymptotic lower bound|
-|`ω(n)` - Small-Omega of n | Asymptotic 'loose' lower bound - similar to small-o of n|
+| Asymptotic comparison operator | Explanation                                                                                           |
+|--------------------------------|-------------------------------------------------------------------------------------------------------|
+| `o(n)` - Small-O of n          | Asymptotic 'loose' upper bound - if we know a `O(n)` is **not** a tight bound, we can denote a `o(n)` |
+| `O(n)` - Big-O of n            | Asymptotic upper bound - can't be worse than this but can be *better*                                 |
+| `Θ(n)` - Theta n               | Asymptotic tight bound - exactly the behavior (graph is between constants - see Hackerrank link)      |
+| `Ω(n)` - Big-Omega of n        | Asymptotic lower bound                                                                                |
+| `ω(n)` - Small-Omega of n      | Asymptotic 'loose' lower bound - similar to small-o of n                                              |
 
 To determine if a bound is tight, we have to compare `O(n)` and `Θ(n)`. If `O(n)` > `Θ(n)`, then we say the **bound is not tight** and can generally speaking, replace `O(n)` with `o(n)`.
 
@@ -64,17 +64,15 @@ For example, we have Θ(n) and O(n<sup>2</sup>) for a given algorithm, we can de
 * **All** logarithmic function are in the same class **O(log(n))**
   * i.e. O(log<sub>2</sub>(n)) = O(log<sub>3</sub>(n)) as log<sub>b</sub>(a) * log<sub>a</sub>(n) = log<sub>b</sub>(n)
 
-|Big-O      | Term | Explanation                                                                  |
-|----------|------|-----------------------------------------------------------------------|
-|O(1)      | Constant|Instructions in the program are executed a fixed number of times, **independent** of the `n` |
-|O(log(n)) | Logarithmic| Some divide & conquer algorithms with trivial splitting and combining operations. e.g. binary search |
-|O(n)      | Linear| Every element of the input has to be processed, usually in a straight forward way. e.g. linear search|
-|O(nlog(n))| Logarithmic| Divide & conquer algorithms where splitting/combining operation is proportional to the input. <br> e.g. merge, heap, quick |
-|O(n<sup>2</sup>)| Quadratic| Algorithms which have to compare each input value with every other input value. <br> e.g. bubble, insertion, selection |
-|O(n<sup>3</sup>)| - |Only feasible for very small problem sizes |
-|O(2<sup>n</sup>)| Exponential| Of almost no practical use|
-
-Example of why time complexity matters:
+| Big-O            | Term        | Explanation                                                                                                                |
+|------------------|-------------|----------------------------------------------------------------------------------------------------------------------------|
+| O(1)             | Constant    | Instructions in the program are executed a fixed number of times, **independent** of the `n`                               |
+| O(log(n))        | Logarithmic | Some divide & conquer algorithms with trivial splitting and combining operations. e.g. binary search                       |
+| O(n)             | Linear      | Every element of the input has to be processed, usually in a straight forward way. e.g. linear search                      |
+| O(nlog(n))       | Logarithmic | Divide & conquer algorithms where splitting/combining operation is proportional to the input. <br> e.g. merge, heap, quick |
+| O(n<sup>2</sup>) | Quadratic   | Algorithms which have to compare each input value with every other input value. <br> e.g. bubble, insertion, selection     |
+| O(n<sup>3</sup>) | -           | Only feasible for very small problem sizes                                                                                 |
+| O(2<sup>n</sup>) | Exponential | Of almost no practical use                                                                                                 |Example of why time complexity matters:
 
 |n   |log(n)| n*log(n) | n<sup>2</sup> | 2<sup>n</sup>  |
 |--- |:-----|:---------|:--------------|:---------      |
@@ -102,14 +100,13 @@ Amortized analysis from [Wikipedia](https://en.wikipedia.org/wiki/Amortized_anal
 
 * [Python implementation example](https://github.com/burrt/debian/blob/master/languages/python/sorts.py)
 
-| Sort      | Complexity       | Features                                                         | Link                                                      | Description                                                                                                                                                                                                    |
-|-----------|------------------|------------------------------------------------------------------|-----------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| Bubble    | O(n<sup>2</sup>) | * Comparison   <br> * Adaptive     <br> * Stable <br> * In-place | [Wikipedia](https://en.wikipedia.org/wiki/Bubble_sort)    | * Really simple, it just compares adjacent pairs in the array.<br>* Repeat this `n` times.                                                                                                                     |
-| Insertion | O(n<sup>2</sup>) | * Adaptive     <br> * Stable       <br> * In-place               | [Wikipedia](https://en.wikipedia.org/wiki/Insertion_sort) | * Compares a value in the list iteratively and places it in order - compares values to its left.<br>* i.e. it will start at index 1, compare with index 0 - (swap)?, index 2 compares with 1..0 - (swap)? etc. |
-| Selection | O(n<sup>2</sup>) | * Non-adaptive <br> * Stability depends   <br> * In-place        | [Wikipedia](https://en.wikipedia.org/wiki/Selection_sort) | * Keeps track of the current minimum index/value in the array.<br>* If the next values in the array are smaller, we swap - but only after traversing the RHS of the array.                                     |
-| Merge     | O(nlog(n))       | * Non-adaptive <br> * Unstable   <br> * In-place                 |                                                           | * Splits the array into sub-arrays, then recursively sorts and merges the sub-arrays.                                                                                                                          |
-| Heap      | O(nlog(n))       | * Non-adaptive <br> * Unstable   <br> * In-place                 |                                                           |                                                                                                                                                                                                                |
-| Quick     | O(nlog(n))       | * Adaptive     <br> * Stability depends                          | [Wikipedia](https://en.wikipedia.org/wiki/Quicksort)      | * Makes use of pivots and applies divide and conquer strategy to sort.                                                                                                                                         |
+| Sort                                                      | Complexity       | Features                                      | Description                                                                                                                                                                                                |
+|-----------------------------------------------------------|------------------|-----------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| [Bubble](https://en.wikipedia.org/wiki/Bubble_sort)       | O(n<sup>2</sup>) | Comparison<br>Adaptive<br>Stable<br>In-place  | Really simple, it just compares adjacent pairs in the array.<br>Repeat this `n` times.                                                                                                                     |
+| [Insertion](https://en.wikipedia.org/wiki/Insertion_sort) | O(n<sup>2</sup>) | Adaptive<br>Stable<br>In-place                | Compares a value in the list iteratively and places it in order - compares values to its left.<br>i.e. it will start at index 1, compare with index 0 - (swap)?, index 2 compares with 1..0 - (swap)? etc. |
+| [Selection](https://en.wikipedia.org/wiki/Selection_sort) | O(n<sup>2</sup>) | Non-adaptive<br>Stability depends<br>In-place | Keeps track of the current minimum index/value in the array.<br>If the next values in the array are smaller, we swap - but only after traversing the RHS of the array.                                     |
+| [Merge](https://en.wikipedia.org/wiki/Merge_sort)         | O(nlog(n))       | Non-adaptive<br>Unstable<br>In-place          | Splits the array into sub-arrays, then recursively sorts and merges the sub-arrays.                                                                                                                        |
+| [Quick](https://en.wikipedia.org/wiki/Quicksort)          | O(nlog(n))       | Adaptive<br>Stability depends                 | Makes use of pivots and applies divide and conquer strategy to sort.                                                                                                                                       |
 
 ### Quick sort
 
@@ -162,7 +159,7 @@ Examples:
 Difference with DFS:
 > It checks whether a vertex has been discovered before enqueueing the vertex rather than delaying this check until the vertex is dequeued from the queue.
 
-In order words, neighbour nodes can be added to the visited queue as well even it if hasn't been visited - this is actually an optimisation as it removes duplicated nodes on the unvisited fifo.
+In order words, neighbor nodes can be added to the visited queue as well even it if hasn't been visited - this is actually an optimization as it removes duplicated nodes on the unvisited fifo.
 
 | Attribute  | Explanation                                                                                                                                    |
 |------------|------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -175,7 +172,7 @@ In order words, neighbour nodes can be added to the visited queue as well even i
 ### Depth First Search
 
 * It doesn't care about the optimal path - it traverses the tree to the deepest levels - this `m` could be infinite.
-* Once a dead-end is reached, it returns and pops the next neighbour node at the `d-1`th level
+* Once a dead-end is reached, it returns and pops the next neighbor node at the `d-1`th level
 * Stack based implementation.
 
 Difference with BFS:
@@ -217,7 +214,7 @@ In other words, it cannot mark a node as visited like in BFS until it has been p
 * [Greedy search](#greedy-search)
 * [A* search](#a-search)
 * [Iterative Deepening A* Search](#iterative-deepening-a-search)
-* [Alpha Beta search](#alpha-beta-search) - an optimisation
+* [Alpha Beta search](#alpha-beta-search) - an optimization
 
 ### Greedy Search
 
@@ -268,7 +265,7 @@ In other words, it cannot mark a node as visited like in BFS until it has been p
 I actually think this algorithm is magic - it's so awesome!
 
 * Is used for game playing e.g. determining the next best move for Minmax.
-* Note that this isn't a *replacement* for a search algorithm but rather an optimisation for an *existing* one.
+* Note that this isn't a *replacement* for a search algorithm but rather an optimization for an *existing* one.
 * Instead of traversing all decisions of a Minmax **O(b<sup>d</sup>)**, alpha-beta effectively prunes unnecessary decisions from the search by 'intuition'.
 
 Basic steps:
@@ -280,6 +277,8 @@ Basic steps:
 
 ## Heuristics
 
+Is an approach to problem solving that employs a practical method that is **not** guaranteed to be optimal or rational but is sufficient in determining an immediate, short-term solution. They can be used to speed up finding a satisfactory solution.
+
 Some of them include:
 
 * Straight line distance
@@ -288,7 +287,7 @@ Some of them include:
 * Euclidean
 * Breaking ties
 
-I think the [Standford website](http://theory.stanford.edu/~amitp/GameProgramming/Heuristics.html) summarises heuristics far better than I can.
+I think the [Stanford website](https://theory.stanford.edu/~amitp/GameProgramming/Heuristics.html) summarizes heuristics far better than I can.
 
 ### Straight line distance
 
@@ -298,7 +297,7 @@ D = sqrt((x1 - x2)**2 + (y1 - y2)**2)
 
 ### Manhattan
 
-For your typical 4 move heuristic (N, S, E, W). Check out this excellent [Standford website]( http://theory.stanford.edu/~amitp/GameProgramming/Heuristics.html).
+For your typical 4 move heuristic (N, S, E, W). Check out this excellent [Stanford website](https://theory.stanford.edu/~amitp/GameProgramming/Heuristics.html).
 
 ```python
 function heuristic(node) =
