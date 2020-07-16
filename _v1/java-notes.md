@@ -121,7 +121,7 @@ A few streams that you should be aware of:
 try (Reader reader = Helper.openReader("foo.txt")
      Writer writer = Helper.openWriter("bar.txt")) {
          // Do something
-// Will caputre the exception in the try {}
+// Will capture the exception in the try {}
 // To access additional exceptions thrown by the f.close()
 // They exist in the ex.getSuppressed()
 } catch (IOException ex) {
@@ -130,9 +130,9 @@ try (Reader reader = Helper.openReader("foo.txt")
 }
 ```
 
-You can also use `BufferedReader/Writer` for optimisations with line-endings and buffering data from file IO.
+You can also use `BufferedReader/Writer` for optimizations with line-endings and buffering data from file IO.
 
-Actually, what you should use is the `java.nio.file` packages that provide additional features and optimisations. Basically prefix everything with `new`.
+Actually, what you should use is the `java.nio.file` packages that provide additional features and optimizations. Basically prefix everything with `new`.
 
 ### ArrayList vs LinkedList
 
@@ -262,7 +262,7 @@ public class Adder implements Callable<Integer> {
     }
 
     // Implement the call method and we can throw exceptions
-    // and let the parent/process handle the execeptions
+    // and let the parent/process handle the exceptions
     public Integer call() throws IOException {
         return doAdd();
     }
@@ -864,7 +864,7 @@ c1 = (Circle)p1;
 ```java
 // An instance of subclass is also an instance of its superclass
 // No upcasting here
-Circle c1 = new Circle(1.1);  // a Circle objext
+Circle c1 = new Circle(1.1);  // a Circle object
 Cylinder cy1 = new Cylinder(2.2, 3.3);  // a Cylinder object
 
 System.out.println(c1 instanceof Circle);    // true

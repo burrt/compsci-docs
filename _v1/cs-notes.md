@@ -43,7 +43,7 @@ sitemap: false
 * [Indexers](#indexers)
 * [Generics](#generics)
 * [LINQ](#linq)
-* [Namespaces](#namescapes)
+* [Namespaces](#namespaces)
 * [Null](#null)
 * [Async](#async)
 
@@ -499,7 +499,7 @@ This is useful since you can pass it in as a method parameter without declaring 
 // They can also be assigned to an expression/statement lambdas
 Func<string, string, int> callback = (s1, s2) => return 1;
 
-int (Func<string, string, int> callbackasparam)
+int (Func<string, string, int> callBackAsParam)
 {
     return callback("Foo", "Bar");
 }
@@ -925,9 +925,9 @@ static void PrintOrderDetails(
 // Optional arguments
 public void ExampleMethod(
     int required,
-    string optionalstr = "default string",
-    int optionalint = 10,
-    int optionintagaon = default(int))
+    string optionalStr = "default string",
+    int optionalInt = 10,
+    int optionIntAgain = default(int))
 ```
 
 ### Methods
@@ -1034,7 +1034,7 @@ It is also applicable to `struct` and `interface` which is a bit more relevant.
 
 ```cs
 // Foo.cs
-namescape ns
+namespace ns
 {
     public partial PartClass
     {
@@ -1043,7 +1043,7 @@ namescape ns
 }
 
 // Bar.cs
-namescape ns
+namespace ns
 {
     public partial PartClass
     {
@@ -1248,7 +1248,7 @@ Person person2 = new Person(person1);
 person2.Name = "New Person's name";
 ```
 
-### Finalises
+### Finalizes
 
 You can cleanup objects or resources by using:
 
@@ -1271,7 +1271,7 @@ public class Car
 
 You don't want to use the `Dispose` method unless you know what you're doing. Read more about it:
 
-* [Cleaning Up Unmanaged Resources](https://docs.microsoft.com/en-us/dotnet/standard/garbage-collection/unmanaged)
+* [Cleaning Up Un-managed Resources](https://docs.microsoft.com/en-us/dotnet/standard/garbage-collection/unmanaged)
 * [Garbage Collection](https://docs.microsoft.com/en-us/dotnet/standard/garbage-collection/)
 
 ## Interfaces
@@ -1394,7 +1394,7 @@ They are a way of support subscribers and publishers model.
 
 Too much to cover about generics, [see the MS docs for information](https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/generics/)
 
-Generics at run time are actually optimized so there is instance reuse for reference classes (references have the same value - pointers). This is slightly less optimized for value types as a specialised version of the class is initialized per value type and then reused.
+Generics at run time are actually optimized so there is instance reuse for reference classes (references have the same value - pointers). This is slightly less optimized for value types as a specialized version of the class is initialized per value type and then reused.
 
 ## LINQ
 
@@ -1457,6 +1457,14 @@ var studentQuery8 =
 
 The `List<int> numbers` now has the `Where` method due to method extensions from LINQ.
 
+### Any vs Count
+
+For `IEnumerable<>`, use `Any()`.
+
+For collections like `IList<>` etc. use the `Count` property.
+
+See also [StackOverflow - Any vs Count](https://stackoverflow.com/questions/305092/which-method-performs-better-any-vs-count-0).
+
 ## Namespaces
 
 * They organize large code projects.
@@ -1505,7 +1513,6 @@ C# methods:
 
 * `HasValue`: same as `!= null` but use either consistently - use this with casting nullable types to non-nullable
 
-
 ```cs
 // Using t
 Person p = null;
@@ -1553,7 +1560,7 @@ C# methods:
 
 ## Async
 
-C# has asynchronous support built-in to its language and Microsoft encourages the use of it to alleviate the complexity of concurrency, mulit-threading, locking etc.
+C# has asynchronous support built-in to its language and Microsoft encourages the use of it to alleviate the complexity of concurrency, multi-threading, locking etc.
 
 With async programming, firstly, you must identify the following situations:
 
@@ -1563,9 +1570,26 @@ With async programming, firstly, you must identify the following situations:
 
 Think of `await` as an "asynchronous wait" i.e. it **blocks the method** (if necessary) but **not the thread**.
 
+### Making async synchronous
+
+These articles summarizes it far better than I could have:
+
+* [Intro into async and await](https://blog.stephencleary.com/2012/02/async-and-await.html)
+* [Do not block on async code](https://blog.stephencleary.com/2012/07/dont-block-on-async-code.html)
+  * Understanding what synchronization context is captured upon awaiting is important as it can cause deadlocks!
+  * `.Result` will wait and wrap any exceptions into an AggregateException
+  * `.Wait()` may do the same as above or swallow exceptions
+* [Eliding async await](https://blog.stephencleary.com/2016/12/eliding-async-await.html)
+* Eliding == omitting
+
+Must reads:
+
+* ConfigureAwait in-dept - [MS Blog ConfigureAwait FAQ](https://devblogs.microsoft.com/dotnet/configureawait-faq/)
+* Running an async task synchronously - [StackOverflow - How would I run an async task method synchronously](https://stackoverflow.com/questions/5095183/how-would-i-run-an-async-taskt-method-synchronously)
+
 ### CPU bound
 
-Because it's CPU bound, you ideally want to move this work onto a **new thread** without making the main thread wait.
+Because it's CPU bound, you ideally want to move this work onto a **new thread** without making the main thread wait. This work is usually delegated to the thread pool.
 
 You want to use:
 
@@ -1580,12 +1604,6 @@ Make sure to yield control back to the main thread!
 You **don't** want a new thread or queue an IO bound task to the `Threadpool` because  a **new thread** dedicated to just wait for return request is costly when the thread could be doing more meaningful work!
 
 What you want is to **delegate** the work to the OS which in turn delegates the work asynchronously - this is important so that when your HTTP request finally responds - it is bubbled back to the caller via interrupts and in a non-blocking fashion.
-
-You want to use:
-
-```cs
-await SomeFuncAsync();
-```
 
 ```cs
 public async Task DoMixedWork()
