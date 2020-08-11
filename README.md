@@ -1,7 +1,7 @@
 # Computer Science Notes
 
 A collection of Computer Science and Engineering notes I've jotted down across the years.
-I thought I'd use Jekyll to organize and view these notes as they were starting to grow quickly.
+I thought I'd use Jekyll to organize and view these notes as they were starting to grow pretty quick.
 
 ## In-browser viewing
 
@@ -12,7 +12,7 @@ These docs are hosted on [Github Pages](https://burrt.github.io/compsci-docs/).
 Clone the repository:
 
 ```sh
-$> git clone https://github.com/burrt/compsci-docs.git
+$ git clone https://github.com/burrt/compsci-docs.git
 ```
 
 ### Linux
@@ -20,8 +20,8 @@ $> git clone https://github.com/burrt/compsci-docs.git
 Setup and install [Jekyll](#https://jekyllrb.com/docs/) and then run:
 
 ```bash
-$> bundle install
-$> bundle exec jekyll serve --config _config.yml,_config_development.yml
+$ bundle install
+$ bundle exec jekyll serve --config _config.yml,_config_development.yml
 ```
 
 ### Windows
