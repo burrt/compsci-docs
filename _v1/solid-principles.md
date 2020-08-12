@@ -57,7 +57,7 @@ interface IEmailSender
 {
     public void SendEmail(Email email);
 }
-interface IEmailSender
+interface ISmsSender
 {
     public void SendSms(Sms sms);
 }
