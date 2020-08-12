@@ -497,14 +497,14 @@ The Heat tool can be invoked in the VS Installer project `.wixproj` where you ca
 
 <Target Name="BeforeBuild">
   <!-- Remove any old builds -->
-  <Exec Command="rd /s /q $(SolutionDir)\build\" />
+  <Exec Command="rd /s /q $(SolutionDir)\BuildOutput\" />
 
-  <!-- Publish binaries to a build folder -->
-  <Exec Command="dotnet publish ..\ -c Release -r win-x64 -o &quot;$(SolutionDir)\build\&quot;" />
+  <!-- Publish binaries to a BuildOutput folder -->
+  <Exec Command="dotnet publish ..\ -c Release -r win-x64 -o &quot;$(SolutionDir)\BuildOutput\&quot;" />
 
   <!-- Define variables -->
   <PropertyGroup>
-    <DefineConstants>BuildVersion=%(AssemblyVersion.Version);BasePath=$(SolutionDir)\build\</DefineConstants>
+    <DefineConstants>BuildVersion=%(AssemblyVersion.Version);BasePath=$(SolutionDir)\BuildOutput\</DefineConstants>
   </PropertyGroup>
 
   <!-- Use the Heat tool to harvest the build binaries and apply any filters -->
@@ -513,7 +513,7 @@ The Heat tool can be invoked in the VS Installer project `.wixproj` where you ca
       DirectoryRefId="INSTALLFOLDER"
       ComponentGroupName="GeneratedComponents"
       SuppressCom="true"
-      Directory="$(SolutionDir)\build\"
+      Directory="$(SolutionDir)\BuildOutput\"
       SuppressFragments="true"
       SuppressRegistry="true"
       SuppressRootDirectory="true"
@@ -542,11 +542,11 @@ I don't recommend this way as it is similar to Custom Actions; in the sense it h
 
 ### Installer Upgrades
 
-See ....
+See [Windows Installer Upgrades]({{ site.baseurl }}{% link _v1/windows-installer-upgrades.md %}).
 
 ### Burn Engine and WiX Bootstrapper
 
-See ...
+See [WiX Burn Engine]({{ site.baseurl }}{% link _v1/windows-installer-burn.md %}).
 
 ## Tips
 

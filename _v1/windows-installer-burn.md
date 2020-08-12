@@ -105,7 +105,6 @@ A common method of reducing the installer size is to have the installer download
 For remote packages, WiX will verify the SHA-1 hash of the downloaded file with the package in your build environment i.e. you need to have downloaded the remote package and place it in a location known to the WiX Bootstrapper project so it can calculate the hash and use it in the installation later.
 
 ```xml
-<>
 <Bundle>
   <!-- Check the Registry -->
   <util:RegistrySearch
