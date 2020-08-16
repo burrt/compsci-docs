@@ -7,17 +7,17 @@ I thought I'd use Jekyll to organize and view these notes as they were starting 
 
 These docs are hosted on [Github Pages](https://burrt.github.io/compsci-docs/).
 
-### Building
+## Getting Started
 
-Clone the repository:
 
 ```sh
+# clone the repository
 $ git clone https://github.com/burrt/compsci-docs.git
 ```
 
 ### Linux
 
-Setup and install [Jekyll](#https://jekyllrb.com/docs/) and then run:
+Setup and install [Jekyll](https://jekyllrb.com/docs/) and then run:
 
 ```bash
 $ bundle install
