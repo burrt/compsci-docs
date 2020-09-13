@@ -44,6 +44,17 @@ t[Name] = <'Bob'>           // first tuple only
 t[Name, Ssn] = <'Bob, 123'>
 ```
 
+### ACID
+
+* Atomic
+  * "All or nothing" - no partial failure and state unchanged if fails
+* Consistency
+  * Changes to one valid state to another - must satisfy any defined consistency rules
+* Isolation
+  * Concurrent execution of transactions are isolated
+* Durability
+  * Once committed, remain so even if power loss, crashes etc.
+
 ## Keys
 
 ### Superkey

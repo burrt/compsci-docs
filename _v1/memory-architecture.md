@@ -23,6 +23,14 @@ sitemap: false
 * **Cycle time**: is the *minimum* time between requests to memory.
 * `Cycle > access` when the memory needs the address lines to be stable between accesses e.g. DRAM refresh
 
+### CAP
+
+CAP theorem that states it is impossible for distributed data store to simultaneously provide **more than two** out of the thee guarantees:
+
+* Consistency
+* Availability
+* Partition tolerance
+
 ## Architectures
 
 ### Harvard

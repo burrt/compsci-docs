@@ -5,9 +5,6 @@ categories: [other]
 description: Some notes I find pretty handy
 order: 20
 sitemap: false
-sidebar:
-  title: Docs
-  nav: sidebar-test
 ---
 
 ## Exiting VIM
@@ -16,7 +13,7 @@ sidebar:
 
 The only commands you need to know - then switch to Emacs.
 
-## Random commands that are sometimes useful
+## Random Linux stuff
 
 ```bash
 sha256sum file | diff - shafile             # generate sha-256
@@ -40,35 +37,6 @@ time a.out
 # sys  0m0.001s  # kernel time e.g. syscalls, interrupts
 ```
 
-## Acronyms
-
-### ACID
-
-* Atomic
-  * "All or nothing" - no partial failure and state unchanged if fails
-* Consistency
-  * Changes to one valid state to another - must satisfy any defined consistency rules
-* Isolation
-  * Concurrent execution of transactions are isolated
-* Durability
-  * Once committed, remain so even if power loss, crashes etc.
-
-### CAP
-
-CAP theorem that states it is impossible for distributed data store to simultaneously provide **more than two** out of the thee guarantees:
-
-* Consistency
-* Availability
-* Partition tolerance
-
-### SOLID
-
-* Single responsibility principle (SRP)
-* Open closed principle (OCP)
-* Liskov substitution principle (LSP)
-* Interface segregation principle (ISP)
-* Dependency injection principle (DIP)
-
 ### Adding user to another group
 
 `usermod -aG additional_groups username`
@@ -79,7 +47,7 @@ CAP theorem that states it is impossible for distributed data store to simultane
 ### Adding your scripts to PATH
 
 * Create your `~/bin` directory
-* In your `.bashrc`, add it to your `PATH=$PATH:~/bin`
+* In your `.bashrc`, add it to your `PATH=$PATH:~/bin` (this is appending it to PATH)
 * Add a shebang `#!/bin/bash` to your script
   * Better to use `#!/usr/bin/env bash`
 * Give it exec permissions: `chmod +x script`
@@ -103,16 +71,3 @@ To break it up:
 | 0             | Standard input  | `STDIN_FILENO`                 | stdin                   |
 | 1             | Standard output | `STDOUT_FILENO`                | stdout                  |
 | 2             | Standard error  | `STDERR_FILENO`                | stderr                  |
-
-### Fixing WSL terminal colours
-
-If you're using a dark colour scheme on the WSL terminal - you might get some horrible looking colours when you do `ls` for example. Quick fix is to do:
-
-```bash
-cd ~/src
-git clone https://github.com/seebi/dircolors-solarized.git
-eval `dircolors dircolors-solarized/dircolors.256dark`
-
-# add to your .bashrc if you want to
-echo "eval `dircolors dircolors-solarized/dircolors.256dark`" >> ~/.bashrc
-```
