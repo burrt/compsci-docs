@@ -9,6 +9,8 @@ baseurl: "/compsci-docs"
 github_username: burrt
 repository: "burrt/compsci-docs"
 
+google_analytics: UA-104494941-5
+
 markdown: kramdown
 theme: jekyll-theme-cayman
 plugins:
