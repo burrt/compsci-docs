@@ -9,35 +9,22 @@ These docs are hosted on [Github Pages](https://burrt.github.io/compsci-docs/).
 
 ## Getting Started
 
-
 ```sh
 # clone the repository
 $ git clone https://github.com/burrt/compsci-docs.git
 ```
 
+### Docker
+
+```bash
+$ docker-compose up
+```
+
 ### Linux
 
-Setup and install [Jekyll](https://jekyllrb.com/docs/) and then run:
+Instead of Docker (recommended), you can setup and install [Jekyll](https://jekyllrb.com/docs/) and then run:
 
 ```bash
 $ bundle install
 $ bundle exec jekyll serve --config _config.yml,_config_development.yml
 ```
-
-### Windows
-
-#### Docker
-
-```powershell
-# Powershell
-PS> docker run `
-    --rm `
-    --label=jekyll `
-    --volume=${pwd}:/srv/jekyll `
-    -it -p 4000:4000 jekyll/jekyll `
-    jekyll serve `
-        --force_polling `
-        --config _config.yml,_config_development.yml
-```
-
-Or alternatively, run the Powershell script `.\RunDocker.ps1`.
