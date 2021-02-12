@@ -19,53 +19,23 @@ sitemap: false
 ## Generating SSH keys (copy paste from Github)
 
 ```bash
-ssh-keygen -t rsa -b 4096 -C "your_email@example.com"
-eval $(ssh-agent -s)
-ssh-add ~/.ssh/id_rsa
-cat ~/.ssh/id_rsa.pub
+$ ssh-keygen -t rsa -b 4096 -C "your_email@example.com"
+$ eval $(ssh-agent -s)
+$ ssh-add ~/.ssh/id_rsa
+$ cat ~/.ssh/id_rsa.pub
 ```
 
 ## Commands easy to forget
 
 ```bash
-git remote -v
-git rebase -i branchname or commit hash
-git log --stat
-git log --graph
-git checkout other-branch the/path/to/yourfile
-git diff yourbranch otherbranch -- file
-git merge --reset
+$ git remote -v
+$ git rebase -i branchname or commit hash
+$ git log --stat
+$ git log --graph
+$ git checkout other-branch the/path/to/yourfile
+$ git diff yourbranch otherbranch -- file
+$ git merge --reset
 
-```
-
-## Cloning a public repo and pushing your own repo
-
-```bash
-# make your bitbucket repo
-#
-git clone bitbucket-repo
-cd bitbucket-repo
-git remote add upstream torvalds:linux
-git fetch upstream
-git reset --hard upstream/master
-git push origin master -f
-
-# you can get the right version with:
-#
-git fetch upstream --tags
-git tag
-git checkout <tagname>
-git checkout -b newbranchname
-
-git clone git@github.com:torvalds/linux.git
-git remote add bitbucket git@bitbucket:....
-git push bitbucket
-
-# or even
-#
-git remote rm origin
-git remote add origin ...
-git push origin
 ```
 
 ## Tags
@@ -73,10 +43,10 @@ git push origin
 Annotated (with message) and light-weight (no message).
 
 ```bash
-git tag
-git push origin tag_name
-git show tag_name
-git log -1 tag_name
+$ git tag
+$ git push origin tag_name
+$ git show tag_name
+$ git log -1 tag_name
 ```
 
 ## Annoying line-ending differences
@@ -105,27 +75,28 @@ To create a user `.gitignore` and **not** global, do:
 
 ```bash
 # go to your repo .git folder
-cd <your-repo>/.git
+$ cd <your-repo>/.git
 
 # populate with your files/folders
-nano .user_gitignore
+$ nano .user_gitignore
 
 # add it to your config
-git config core.excludesfile .git/.user_gitignore
+$ git config core.excludesfile .git/.user_gitignore
 
 # you can see it is added
-git config -l
+$ git config -l
 ```
 
 To create a **global** `.gitignore`, do:
 
 ```bash
-git config --global core.excludesfile ~/.global_gitignore   # or where desired
+# or where desired
+$ git config --global core.excludesfile ~/.global_gitignore
 ```
 
 ## Using HEAD^ and HEAD~
 
-Basically `HEAD^` is doing a BFS traversal while `HEAD~` only recognises the first parent but can select the leaves using the caret e.g. `H = A^^^2 = A~2^2`
+Basically `HEAD^` is doing a BFS traversal while `HEAD~` only recognizes the first parent but can select the leaves using the caret e.g. `H = A^^^2 = A~2^2`
 
 ```text
 G   H   I   J
@@ -179,14 +150,14 @@ Useful if you have bitbucket, github etc. and want to use different ssh keys ins
 
     ```bash
     # git remote add <remote_name> git@<new_host>:<username>/<repo>.git
-    git remote add bitbucket git@bitbucket-deadbeef:deadbeef/some-repo.git
+    $ git remote add bitbucket git@bitbucket-deadbeef:deadbeef/some-repo.git
     ```
 
 4. Now we can push to our new remote with our new ssh key!
 
     ```bash
-    git fetch bitbucket master
-    git push bitbucket master
+    $ git fetch bitbucket master
+    $ git push bitbucket master
     ```
 
 ## Submodules
@@ -220,5 +191,5 @@ $ git push
 If you want to update all your submodules to the latest commit available from their remotes:
 
 ```bash
-git submodule foreach git pull origin master
+$ git submodule foreach git pull origin master
 ```

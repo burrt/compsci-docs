@@ -46,15 +46,7 @@ sitemap: false
 * [Namespaces](#namespaces)
 * [Null](#null)
 * [Async](#async)
-
-## Style guide
-
-* Use `PascalCasing` for all identifies **except** parameters which use `camelCasing`. Also `_privateMemberCamelCase`.
-
-### Do Not's
-
-* Avoid underscores
-* Avoid abbreviations and acronyms
+* [Floating Point](#floating-point)
 
 ## Terms
 
@@ -1629,7 +1621,6 @@ public async Task DoMixedWork()
 public async Task<string> SomeIoBoundAsync()
 {
     // Fetch some database or HTTP requests
-    // ...
 }
 
 public async Task<int> Prime95()
@@ -1638,3 +1629,19 @@ public async Task<int> Prime95()
     return 1*1;
 }
 ```
+
+## Floating point
+
+Common confusions between:
+
+* `float`/`single`: 32 bit - float is an alias to single
+  * Approximately ±1.5e-45 to ±3.4e38 with ~6-9 significant figures
+* `double`: 64 bit
+  * For very large numbers where losing precision is acceptable e.g. very large scientific values
+  * Approximately ±5.0e-324 to ±1.7e308 with ~15-17 significant figures
+* `decimal`: 128 bit
+  * Use for money
+  * Smaller range of values, performance cost, stored as base 10
+  * Approximately ±1.0e-28 to ±7.9e28 with 28-29 significant figures
+
+All values except `decimal` are stored as base 2 which can leverage hardware acceleration.
