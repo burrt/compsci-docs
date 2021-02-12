@@ -1,4 +1,5 @@
 title: Computer Science Notes
+author: Geoffrey Choy
 email: geoffchoy@outlook.com
 description: >
   Computer Science notes that I've had for a while.
@@ -33,6 +34,14 @@ defaults:
       type: "v1"
     values:
       lang: "en"
+
+# SEO
+social:
+  name: Geoffrey Choy
+  links:
+    - https://www.linkedin.com/in/geoffrey-choy
+
+logo: /favicons/favicon-96x96.png
 
 # Exclude from processing.
 # The following items will not be processed, by default. Create a custom list
