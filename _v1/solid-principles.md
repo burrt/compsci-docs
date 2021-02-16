@@ -1,7 +1,7 @@
 ---
 layout: compsci-note
 title: SOLID Principles Notes
-categories: [solid, fundamentals]
+categories: [solid, fundamentals, architecture]
 description: Some notes on SOLID Principles in Software Engineering
 order: 20
 sitemap: false
@@ -14,12 +14,8 @@ sitemap: false
 * [Liskov Substitution Principle](#liskov-substitution-principle)
 * [Interface Segregation Principle](#interface-segregation-principle)
 * [Dependency Inversion Principle](#dependency-inversion-principle)
+* [Inversion of Control](#inversion-of-control)
 * [Dependency Injection](#dependency-injection])
-* [Don't Repeat Yourself Principle](#dont-repeat-yourself-principle)
-* [Patterns](#patterns)
-  * [Repository Pattern](#repository-pattern)
-  * [Command Query Pattern](#command-query-pattern)
-  * [Factory Pattern](#factory-pattern)
 * [Service scope](#service-scope)
 * [Miscellaneous Encyclopedia](#miscellaneous-encyclopedia)
 
@@ -31,7 +27,7 @@ The SOLID principles are a set of software design principles that were first int
 
 > Every software should have **only** one reason to change.
 
-A class should only have one job. A popular analogy is the Swiss knife which has can perform many different functions and with more and more functions added, it becomes a nightmare to use.
+A class should only have one job. A popular analogy is the Swiss knife which has can perform many different functions and with more and more functions added, it becomes a nightmare to use/maintain.
 
 ```cs
 // Violates the SRP and has hidden dependencies
@@ -67,7 +63,7 @@ interface ISmsSender
 
 ## Open Closed Principle
 
-> Open for extension and closed or modification.
+> Open for extension, closed to modification.
 
 A class should be designed in a way such that new functionality should only be added when there are new requirements - this can be achieved with inheritance. An existing class should be closed for modification and it shouldn't be necessary to modify it to add new functionality.
 
@@ -90,7 +86,7 @@ Basically clients shouldn't be forced to implement interfaces that they don't us
 
 ## Dependency Inversion Principle
 
-> Depend on abstractions, not on concretions.
+> Depend on abstractions, not on concretions. Details depend on abstractions.
 
 High level modules/classes shouldn't depend on low-level modules/classes.
 
@@ -109,11 +105,57 @@ High level modules/classes shouldn't depend on low-level modules/classes.
 
 The idea is that classes should be **honest** with their dependencies so that they are *explicit*. Having hidden or implicit dependencies makes it very hard to unit test and change/extended functionality.
 
+## Inversion of Control
+
+> Don't call us, we'll call you. See [Martin Fowler Blog](https://martinfowler.com/bliki/InversionOfControl.html)
+
+Simply put, it is when the control is inverted to what it was previously. This often comes up in the design of Frameworks.
+
+From Martin Fowler's blog:
+
+>Let's consider a simple example. Imagine I'm writing a program to get some information from a user and I'm using a command line enquiry. I might do it something like this
+>
+>```ruby
+>  #ruby
+>  puts 'What is your name?'
+>  name = gets
+>  process_name(name)
+>  puts 'What is your quest?'
+>  quest = gets
+>  process_quest(quest)
+>```
+>
+>In this interaction, my code is in control: it decides when to ask questions, when to read responses, and when to process those results.
+>
+>However if I were were to use a windowing system to do something like this, I would do it by configuring a window.
+>
+>```python
+>  require 'tk'
+>  root = TkRoot.new()
+>  name_label = TkLabel.new() {text "What is Your Name?"}
+>  name_label.pack
+>  name = TkEntry.new(root).pack
+>  name.bind("FocusOut") {process_name(name)}
+>  quest_label = TkLabel.new() {text "What is Your Quest?"}
+>  quest_label.pack
+>  quest = TkEntry.new(root).pack
+>  quest.bind("FocusOut") {process_quest(quest)}
+>  Tk.mainloop()
+>```
+>
+>There's a **big** difference now in the flow of control between these programs - in particular the control of when the `process_name` and `process_quest` methods are called. In the command line form I control when these methods are called, but in the window example I don't.
+>
+>Instead I **hand control over** to the windowing system (with the `Tk.mainloop` command). It then decides when to call my methods, based on the bindings I made when creating the form. The control is inverted - it calls me rather me calling the framework. This phenomenon is Inversion of Control.
+
+This can still be a little confusing and it doesn't help when it is often used interchangeably with Dependency Injection/Inversion!
+
 ## Dependency Injection
 
 > Is a set of software design principles and patterns that enable us to develop loosely coupled code.
 
 In its general form, it would be described as above. Designing loosely coupled code tends to adhere to other SOLID principles naturally; for example, it often does not violate the DRY and O/C principles.
+
+> It is a technique in which an object **receives** the object it depends on instead of it building/finding the service it needs.
 
 For .NET Core for example, it injects or resolves the dependencies a class explicitly needs through its IoC (Inversion of Control) Container - adding your service implementations is as simple as adding it to the service collection with a method extension.
 
@@ -139,12 +181,12 @@ For .NET Core for example, it injects or resolves the dependencies a class expli
 
 Also known as "Setter Injection" by setting properties.
 
-**Pros**
+#### Pro
 
 * Dependencies can be changed at any time during its lifetime
 * Very flexible
 
-**Cons**
+#### Cons
 
 * Dependencies may be in an invalid state between constructions and setting of dependencies
 * Less intuitive - hard to document, what if order of setting matters?
@@ -153,30 +195,16 @@ Also known as "Setter Injection" by setting properties.
 
 Dependencies are passed in via a method parameter. Consider if one method has the dependency, otherwise prefer constructor injection.
 
-**Pros**
+#### Pros
 
 * Most granular
 * Very flexible
 * Requires no change for the rest of the class
 
-**Cons**
+#### Cons
 
 * Breaks method signature
 * Can result in many parameters (design smell)
-
-## Don't Repeat Yourself Principle
-
-> Repetition in logic calls for abstraction. Repetition in process calls for automation.
-
-## Patterns
-
-### Repository Pattern
-
-Abstracts data access behind a collection like interface.
-
-### Command Query Pattern
-
-### Factory Pattern
 
 ## Service Scope
 
@@ -199,6 +227,14 @@ A nice example from [StackOverflow with examples](https://stackoverflow.com/ques
 There are some interesting situations where if you have a parent service that has transient dependencies; the transient dependencies will not be different. A better [example is detailed here](https://dotnetcoretutorials.com/2017/03/25/net-core-dependency-injection-lifetimes-explained/).
 
 ## Miscellaneous Encyclopedia
+
+### Don't Repeat Yourself Principle
+
+> Repetition in logic calls for abstraction. Repetition in process calls for automation.
+
+### You Aren't Going To Need It
+
+YAGNI - build you you need today and not tomorrow.
 
 ### Domain Objects
 
