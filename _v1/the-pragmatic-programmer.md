@@ -438,7 +438,7 @@ Business people are more *comfortable* with the building construction metaphor s
 Gardening is much closer to the realities of software development.
 
 > Don't live with broken windows
-
+>
 > Refactor Early, Refactor Often
 
 #### Code that's easy to test
