@@ -28,3 +28,13 @@ Useful for unit testing for mocks or even for method signatures that require a d
 
 * Virtual methods may or may not have an implementation
 * Abstract methods must be empty statements
+
+> Is class overloading and overriding at compile time and/or run-time?
+
+Class **overloading** is at (static) compile time as the compiler is aware of what method is invoked and what parameter types are set up.
+
+Class **overriding** is at run-time and is an example of dynamic polymorphism. An example is when a method has an interface object as a parameter and the IoC container will resolve the implementing class at run-time. Thus the implementing method's behavior could change.
+
+> What is `IQueryable` used for?
+
+It provides functionalities to evaluate queries against a specific data source where the type of the data is known. It is intended for implementation by query provides and it also implements `IEnumerable` - thus enumeration of the expression tree is lazily executed.

@@ -13,6 +13,7 @@ sitemap: false
 * [DNS](#dns)
 * [Network Security](#network-security)
   * [SSL](#ssl)
+* [Proxy](#proxy)
 
 ## Basics
 
@@ -241,8 +242,10 @@ It can operate in two modes:
 
 ### VPN
 
->A virtual private network (VPN) extends a private network across a public network,and enables users to send and receive data across shared or public networks as if their computing devices were directly connected to the private network.
+>A virtual private network (VPN) extends a private network across a public network, and enables users to send and receive data across shared or public networks as if their computing devices were directly connected to the private network.
 > \- [Wikipedia](https://en.wikipedia.org/wiki/Virtual_private_network)
+
+A VPN client is installed on the machine and connects to the VPN server. All traffic, not per-application base but at the OS level, is then communicated in the encrypted channel to the VPN server. At the VPN server, it will then resolve the original requests via an un-encrypted channel.
 
 There are a few VPN protocols:
 
@@ -251,3 +254,17 @@ There are a few VPN protocols:
 * SSTP - Secure Socket Tunneling Protocol
 * IKEv2 - Internet Key Exchange v2
 * PPTP - Point to Point Tunneling Protocol
+
+## Proxy
+
+Summarized from [Cloudflare](https://www.cloudflare.com/en-au/learning/cdn/glossary/reverse-proxy/).
+
+### Forward Proxy
+
+A forward proxy (proxy/proxy server/web proxy) is when a server sits **in front** of a group of **client machines**. when this clients make requests to sites on the Internet, the proxy intercepts those requires and communicates with web servers on behalf of those clients - like MIM.
+
+These are often used on a per-application basis for hiding IP addresses, restricting content, bypass firewalls etc.
+
+### Reverse Proxy
+
+A reverse proxy is instead a server that sits **in front** of one or more **web servers**. Requests from the Internet are intercepted and then delegated to a particular server. This is common for load balances, caching, API gateway etc.
