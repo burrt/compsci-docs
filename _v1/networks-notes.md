@@ -9,9 +9,11 @@ sitemap: false
 
 ## Contents
 
+* [Protocols](#protocols)
 * [DNS](#dns)
-* [Security](#network-security)
+* [Network Security](#network-security)
   * [SSL](#ssl)
+* [Proxy](#proxy)
 
 ## Basics
 
@@ -28,15 +30,28 @@ sitemap: false
 
 The Open Systems Interconnection model (OSI model) is a conceptual model that characterizes and standardizes the communication functions of a telecommunication or computing system without regard to its underlying internal structure and technology. Its goal is the interoperability of diverse communication systems with standard protocols. The model partitions a communication system into abstraction layers. The original version of the model defined seven layers.
 
-| Layer           | Protocol data unit (PDU) | Function                                                                                                                                                                 |
-|-----------------|--------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| 7. Application  | Data                     | High-level APIs, including resource sharing, remote file access                                                                                                          |
-| 6. Presentation | Data                     | Translation of data between a networking service and an application; including character encoding, data compression and encryption/decryption                            |
-| 5. Session      | Data                     | Managing communication sessions, i.e. continuous exchange of information in the form of multiple back-and-forth transmissions between two nodes.                         |
-| 4. Transport    | Segment, Datagram        | Reliable transmission of data segments between points on a network, including segmentation, acknowledgement and multiplexing. TCP/UDP etc.                               |
-| 3. Network      | Packet                   | Structuring and managing a multi-node network, including addressing, routing and traffic control. Transferring packets between nodes and is dominated by the Internet Protocol (IP).                                    |
-| 2. Data link    | Frame                    | Reliable transmission of data frames between two nodes connected by a physical layer. MAC/LLC layer e.g. 802.3 Ethernet, 802.15.4 ZigBee operate at the data link layer. |
-| 1. Physical     | Symbol                   | Transmission and reception of raw bit streams over a physical medium                                                                                                     |
+| Layer           | Protocol data unit (PDU) | Function                                                                                                                                                                                               |
+|-----------------|--------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| 7. Application  | Data                     | High-level APIs, including resource sharing, remote file access e.g. HTTP, SMTP,FTP                                                                                                                    |
+| 6. Presentation | Data                     | Translation of data between a networking service and an application; including character encoding, data compression and encryption/decryption                                                          |
+| 5. Session      | Data                     | Managing communication sessions, i.e. continuous exchange of information in the form of multiple back-and-forth transmissions between two nodes.                                                       |
+| 4. Transport    | Segment, Datagram        | Reliable transmission of data segments between points on a network, including segmentation, acknowledgement and multiplexing. TCP/UDP etc.                                                             |
+| 3. Network      | Packet                   | Structuring and managing a multi-node network, including addressing, routing and traffic control. Transferring packets between nodes and is dominated by the Internet Protocol (IP). e.g. IP, routers  |
+| 2. Data link    | Frame                    | Reliable transmission of data frames between two nodes connected by a physical layer. MAC/LLC layer e.g. 802.3 Ethernet, 802.15.4 ZigBee operate at the data link layer. Ethernet, switches.           |
+| 1. Physical     | Symbol                   | Transmission and reception of raw bit streams over a physical medium. Cables etc.                                                                                                                      |
+
+#### TCP/IP Model
+
+It's essentially the same with the exception the application, presentation and session layers are merged into just the application layer. This results in 5 layers and below is an example of the internet data flow starting at the application layer:
+
+1. It is treated as just data - data
+2. The transport information is added - TCP + data
+    * TCP information includes source and destination ports, sequence numbers and so on
+3. The IP information is added - IP + TCP + data
+    * Source and destination IP addresses
+4. Ethernet header and trailer added - Ethernet + IP + TCP + data + Ethernet
+    * Source and destination MAC address, and also error-checking information
+5. Physical layer transfers the symbol.
 
 ### Proxy servers
 
@@ -45,6 +60,14 @@ Also known as application-level gateway, is a machine that acts as a gateway bet
 It connects to, responds to, and receives traffic from the internet - acting on behalf of the client computer. Whilst a NAT device will transparently change the origin address traffic going through it before passing it to the internet. NAT operates at the Layer 3 (Network).
 
 ### Protocols
+
+#### HTTP
+
+Hypertext Transfer Protocol is an application layer protocol for distributed, collaborative, hypermedia information systems. It is commonly used to access hypertext documents which include hyperlinks to other resources they too can be accessed and so on.
+
+HTTP functions as a request-response protocol in a client-server computing model. For example, a client submits an HTTP request message to the server which provides resources such as HTML files and other content, or performs other functions on behalf ot he client, returns a response to the client.
+
+HTTP/1.1 has improvements such as streaming content by chunked transfer encoding, persistent connections (keep-alive mechanism) and connection reuse. HTTP/3 uses QUIC instead of TCP and it aims to address HTTP/2 performance concerns.
 
 #### HTTPS
 
@@ -219,8 +242,10 @@ It can operate in two modes:
 
 ### VPN
 
->A virtual private network (VPN) extends a private network across a public network,and enables users to send and receive data across shared or public networks as if their computing devices were directly connected to the private network.
+>A virtual private network (VPN) extends a private network across a public network, and enables users to send and receive data across shared or public networks as if their computing devices were directly connected to the private network.
 > \- [Wikipedia](https://en.wikipedia.org/wiki/Virtual_private_network)
+
+A VPN client is installed on the machine and connects to the VPN server. All traffic, not per-application base but at the OS level, is then communicated in the encrypted channel to the VPN server. At the VPN server, it will then resolve the original requests via an un-encrypted channel.
 
 There are a few VPN protocols:
 
@@ -229,3 +254,17 @@ There are a few VPN protocols:
 * SSTP - Secure Socket Tunneling Protocol
 * IKEv2 - Internet Key Exchange v2
 * PPTP - Point to Point Tunneling Protocol
+
+## Proxy
+
+Summarized from [Cloudflare](https://www.cloudflare.com/en-au/learning/cdn/glossary/reverse-proxy/).
+
+### Forward Proxy
+
+A forward proxy (proxy/proxy server/web proxy) is when a server sits **in front** of a group of **client machines**. when this clients make requests to sites on the Internet, the proxy intercepts those requires and communicates with web servers on behalf of those clients - like MIM.
+
+These are often used on a per-application basis for hiding IP addresses, restricting content, bypass firewalls etc.
+
+### Reverse Proxy
+
+A reverse proxy is instead a server that sits **in front** of one or more **web servers**. Requests from the Internet are intercepted and then delegated to a particular server. This is common for load balances, caching, API gateway etc.

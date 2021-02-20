@@ -11,7 +11,58 @@ sitemap: false
 
 * [Indexes - clustered and unclustered](https://technet.microsoft.com/en-us/library/jj835095(v=sql.110).aspx)
 
-## Terms
+### ACID
+
+* Atomic
+  * "All or nothing" - no partial failure and state unchanged if fails
+* Consistency
+  * Changes to one valid state to another - must satisfy any defined consistency rules
+* Isolation
+  * Concurrent execution of transactions are isolated
+* Durability
+  * Once committed, remain so even if power loss, crashes etc.
+
+### BASE
+
+Basically Available, Soft state, Eventual consistency.
+ From [stackoverflow](https://stackoverflow.com/questions/3342497/explanation-of-base-terminology):
+
+>The CAP theorem states that a distributed computer system cannot guarantee all of the following three properties at the same time:
+>
+> * Consistency
+> * Availability
+> * Partition tolerance
+>
+> A BASE system gives up on consistency.
+>
+>Basically available indicates that the system does guarantee availability, in terms of the CAP theorem.
+>Soft state indicates that the state of the system may change over time, even without input. This is because of the eventual consistency model.
+>Eventual consistency indicates that the system will become consistent over time, given that the system doesn't receive input during that time.
+
+### Theory
+
+#### Superkey
+
+* A superkey `SK` specifies a **uniqueness** constraint that **no two** distinct tuples in any state `r` of `R` can have the **same** value for SK.
+* Every relation has at least **one default** superkey — the set of **all** its attributes.
+* A superkey can have redundant attributes, however, so a more useful concept is that of a **key**, which has **no** redundancy.
+
+#### Key
+
+* A key `K` of a relation schema `R` is a superkey of `R` with the additional property that **removing** any attribute `A` from `K` leaves a set of attributes `K'` that is **not** a superkey of `R` any more.
+
+Hence, a key satisfies **two** properties:
+
+1. **Two distinct** tuples in any state of the relation **cannot** have identical values for (all) the attributes in the key.
+   This first property also applies to a superkey.
+2. It is a **minimal** superkey i.e. a superkey from which we **cannot remove** any attributes and **still** have the uniqueness constraint in **condition 1 hold**.
+   This property is **not** required by a superkey.
+
+#### Candidate key
+
+* A relation can have more than one key, these are called candidate keys e.g. If a relation contains 2 unique serials.
+
+#### Terms
 
 * **DBMS**: Database Management System is a collection of programs that enables users to create and maintain a database.
 * **Domain** `D` is an atomic value. Each domain is specified a data *type* or *format*.
@@ -43,37 +94,3 @@ Tuples = row
 t[Name] = <'Bob'>           // first tuple only
 t[Name, Ssn] = <'Bob, 123'>
 ```
-
-### ACID
-
-* Atomic
-  * "All or nothing" - no partial failure and state unchanged if fails
-* Consistency
-  * Changes to one valid state to another - must satisfy any defined consistency rules
-* Isolation
-  * Concurrent execution of transactions are isolated
-* Durability
-  * Once committed, remain so even if power loss, crashes etc.
-
-## Keys
-
-### Superkey
-
-* A superkey `SK` specifies a **uniqueness** constraint that **no two** distinct tuples in any state `r` of `R` can have the **same** value for SK.
-* Every relation has at least **one default** superkey — the set of **all** its attributes.
-* A superkey can have redundant attributes, however, so a more useful concept is that of a **key**, which has **no** redundancy.
-
-### Key
-
-* A key `K` of a relation schema `R` is a superkey of `R` with the additional property that **removing** any attribute `A` from `K` leaves a set of attributes `K'` that is **not** a superkey of `R` any more.
-
-Hence, a key satisfies **two** properties:
-
-1. **Two distinct** tuples in any state of the relation **cannot** have identical values for (all) the attributes in the key.
-   This first property also applies to a superkey.
-2. It is a **minimal** superkey i.e. a superkey from which we **cannot remove** any attributes and **still** have the uniqueness constraint in **condition 1 hold**.
-   This property is **not** required by a superkey.
-
-### Candidate key
-
-* A relation can have more than one key, these are called candidate keys e.g. If a relation contains 2 unique serials.
