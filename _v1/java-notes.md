@@ -883,7 +883,7 @@ System.out.println(c2 instanceof Cylinder);  // true
 * A subclass instance processes *all the attributes operations* of its superclass.
 * When a superclass instance is expected, it can be substituted by a subclass instance - it is called **substitutability**.
 * If a subclass instance is assign to a superclass reference, you can invoke the methods defined in the **superclass only**. You **cannot** invoke methods defined in the subclass.
-* However, the substituted instance retains its own identity in terms of overridden methods and hiding variables. If the subclass overrides methods in the superclass, the subclass's version will be executed, **instead** of the superclass's version.
+* However, the substituted instance retains its own identity in terms of overridden methods and hiding variables. If the subclass overrides methods in the superclass, the subclass' version will be executed, **instead** of the superclass's version.
 
 ### Abstract classes & interfaces
 

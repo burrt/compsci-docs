@@ -22,7 +22,7 @@ description: Some notes on Design Patterns in Software Engineering
 
 ### Intent
 
-Ensures a class only has a single instance.
+> Ensures a class only has a single instance.
 
 ### Motivation
 
@@ -100,7 +100,7 @@ Diagrams are much easier to understand - the above was a snippet from [Design Pa
 
 ### Intent
 
-To provide a surrogate/substitute/proxy for another object to *control access* to it.
+>To provide a surrogate/substitute/proxy for another object to *control access* to it.
 
 ### Motivation
 
@@ -112,7 +112,7 @@ The proxy has control of what interface it chooses to expose thus a way of hidin
 
 ### Intent
 
-It mediates between the domain and data mapping layers by abstracting the data access behind a collection like interface.
+> To mediate between the domain and data mapping layers by abstracting the data access behind a collection like interface.
 
 ### Motivation
 
@@ -152,7 +152,7 @@ The traditional method of accessing data is to treat it as a CRUD datastore. How
 
 This leads to multiple representations of information. Developers build their own *conceptual model* which they use to manipulate core elements of the model and the persistent storage is often as close to this model as possible.
 
-CQRS splits the conceptual model into separate models for update and display - **Command** and **Query** Separation. *The rational is that for many problems, particularly in more complicated domains, have the same conceptual model for commands and queries leads to to a more complex model that does neither well.*
+CQRS splits the conceptual model into separate models for update and display - **Command** and **Query** Separation. *The rationale is that for many problems, particularly in more complicated domains, have the same conceptual model for commands and queries leads to to a more complex model that does neither well.*
 
 Note that the statement is in theory however in practice, CQRS is a **significant** mental leap as well as in complexity, often resulting in a drag on productivity and increased risk.
 

@@ -21,7 +21,7 @@ sitemap: false
 
 ## Overview
 
-The SOLID principles are a set of software design principles that were first introduced
+The SOLID principles are a set of software design principles intended to make software designs more understandable, flexible, and maintainable.
 
 ## Single Responsibility Principle
 
@@ -234,7 +234,7 @@ There are some interesting situations where if you have a parent service that ha
 
 ### You Aren't Going To Need It
 
-YAGNI - build you you need today and not tomorrow.
+YAGNI - build what you need today and not tomorrow.
 
 ### Domain Objects
 

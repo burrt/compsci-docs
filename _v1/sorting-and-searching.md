@@ -24,7 +24,7 @@ Sorting:
 * **Recursive**: can be both e.g. merge
 * **Stability**: if duplicate values are kept in the *same* order after being sorted.
 * **Adaptability**: if the input is partially sorted, it *affects* the running time.
-* **Comparison**: it if only examines the data only by using a direct comparison symbol.
+* **Comparison**: if it only examines the data by using a direct comparison symbol.
 
 Searching:
 
@@ -72,7 +72,7 @@ For example, we have Θ(n) and O(n<sup>2</sup>) for a given algorithm, we can de
 | O(nlog(n))       | Logarithmic | Divide & conquer algorithms where splitting/combining operation is proportional to the input. <br> e.g. merge, heap, quick |
 | O(n<sup>2</sup>) | Quadratic   | Algorithms which have to compare each input value with every other input value. <br> e.g. bubble, insertion, selection     |
 | O(n<sup>3</sup>) | -           | Only feasible for very small problem sizes                                                                                 |
-| O(2<sup>n</sup>) | Exponential | Of almost no practical use                                                                                                 |Example of why time complexity matters:
+| O(2<sup>n</sup>) | Exponential | Of almost no practical use                                                                                                 |
 
 |n   |log(n)| n*log(n) | n<sup>2</sup> | 2<sup>n</sup>  |
 |--- |:-----|:---------|:--------------|:---------      |
