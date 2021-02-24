@@ -37,4 +37,4 @@ Class **overriding** is at run-time and is an example of dynamic polymorphism. A
 
 > What is `IQueryable` used for?
 
-It provides functionalities to evaluate queries against a specific data source where the type of the data is known. It is intended for implementation by query provides and it also implements `IEnumerable` - thus enumeration of the expression tree is lazily executed.
+It provides functionalities to evaluate queries against a specific data source where the type of the data is known. It is intended for implementation by query providers and it also implements `IEnumerable` - thus enumeration of the expression tree is lazily executed.

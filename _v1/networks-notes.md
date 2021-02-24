@@ -138,9 +138,7 @@ In the absence of the NRPT, the client will operate in a normal fashion. The NRP
 
 ### DNSSEC
 
-Domain Name System Security Extensions (DNSSEC) is a suite of extensions that add security to the DNS protocol.
-
-Specifically, DNSSEC provides origin authority, data integrity, and authenticated denial of existence.
+Domain Name System Security Extensions (DNSSEC) is a suite of extensions that add security to the DNS protocol.Specifically, DNSSEC provides origin authority, data integrity, and authenticated denial of existence.
 
 To read more about DNS threats, the [MS Docs](https://docs.microsoft.com/en-us/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/ee649205(v%3dws.10)#dns-threats-and-security) covers it pretty well.
 
@@ -261,10 +259,10 @@ Summarized from [Cloudflare](https://www.cloudflare.com/en-au/learning/cdn/gloss
 
 ### Forward Proxy
 
-A forward proxy (proxy/proxy server/web proxy) is when a server sits **in front** of a group of **client machines**. when this clients make requests to sites on the Internet, the proxy intercepts those requires and communicates with web servers on behalf of those clients - like MIM.
+A forward proxy (proxy/proxy server/web proxy) is when a server sits **in front** of a group of **client machines**. When clients make requests to sites on the Internet, the proxy intercepts those requests and communicates with web servers on behalf of those clients - like MIM.
 
 These are often used on a per-application basis for hiding IP addresses, restricting content, bypass firewalls etc.
 
 ### Reverse Proxy
 
-A reverse proxy is instead a server that sits **in front** of one or more **web servers**. Requests from the Internet are intercepted and then delegated to a particular server. This is common for load balances, caching, API gateway etc.
+A reverse proxy is instead a server that sits **in front** of one or more **web servers**. Requests from the Internet are intercepted and then delegated to a particular server. This is common for load balances, caching, API gateways etc.
