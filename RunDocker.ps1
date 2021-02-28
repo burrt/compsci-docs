@@ -3,6 +3,4 @@ docker run `
     --label=jekyll `
     --volume=${pwd}:/srv/jekyll `
     -it -p 4000:4000 jekyll/jekyll `
-    jekyll serve `
-        --force_polling `
-        --config _config.yml,_config_development.yml
+    jekyll serve --force_polling

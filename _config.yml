@@ -4,7 +4,7 @@ email: geoffchoy@outlook.com
 description: >
   Computer Science notes that I've had for a while.
 
-url: "https://burrt.github.io/compsci-docs/"
+url: "https://burrt.github.io"
 baseurl: "/compsci-docs"
 
 github_username: burrt
@@ -40,7 +40,6 @@ social:
   name: Geoffrey Choy
   links:
     - https://www.linkedin.com/in/geoffrey-choy
-
 logo: /favicons/favicon-96x96.png
 
 # Exclude from processing.

@@ -26,7 +26,7 @@ Instead of Docker (recommended), you can setup and install [Jekyll](https://jeky
 
 ```bash
 $ bundle install
-$ bundle exec jekyll serve --config _config.yml,_config_development.yml
+$ bundle exec jekyll serve --incremental
 ```
 
 ## Upgrading Gems
