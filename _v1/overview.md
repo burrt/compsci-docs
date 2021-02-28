@@ -3,8 +3,8 @@ layout: compsci-note
 title: Random Useful Notes
 categories: [other]
 description: Some notes I find pretty handy
-order: 20
 sitemap: false
+favorite: true
 ---
 
 ## Exiting VIM

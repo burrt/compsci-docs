@@ -3,8 +3,8 @@ layout: compsci-note
 title: Git Notes
 categories: [tools]
 description: Some notes on git
-order: 20
 sitemap: false
+favorite: true
 ---
 
 ## Contents

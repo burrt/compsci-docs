@@ -6,157 +6,32 @@ lang: en
 ---
 
 <div class="row">
-    <div class="col-xs-12 col-sm-6">
-        <h2>Home</h2>
-        <p>An overview and random snippets of my Computer Science notes.</p>
-        <ul>
-            <li><a href="{{ site.baseurl }}/v1/overview/">Overview</a></li>
-            <li><a href="{{ site.baseurl }}/v1/ascii-table/">ASCII Table</a></li>
-        </ul>
-    </div>
 
-    <div class="col-xs-12 col-sm-6">
-        <h2>Tools</h2>
-        <p>Useful tools for coding.</p>
-        <ul>
-            <li><a href="{{ site.baseurl }}/v1/git/">Git</a></li>
-            <li><a href="{{ site.baseurl }}/v1/docker/">Docker</a></li>
-            <li><a href="{{ site.baseurl }}/v1/python-tools/">Python tools</a></li>
-            <li><a href="{{ site.baseurl }}/v1/gradle-notes/">Gradle</a></li>
-        </ul>
-    </div>
+  <div class="col-xs-12 col-sm-6">
+    <h2>Favorites</h2>
+    <p>Some of my favorite notes.</p>
+    <ul>
+        {% assign favorites = site.v1 | where:"favorite", "true" %}
+        {% for favorite in favorites %}
+        <li>
+          <a title="{{ favorite.description }}" href="{{ site.baseurl }}{{ favorite.url}}">{{ favorite.title}}</a>
+        </li>
+        {% endfor %}
+    </ul>
+  </div>
 
-    <div class="col-xs-12 col-sm-6">
-        <h2>Fundamentals</h2>
-        <p>Useful notes on Computer Science fundamentals.</p>
-        <ul>
-            <li><a href="{{ site.baseurl }}/v1/sorting-and-searching/">Sorting and searching</a></li>
-            <li><a href="{{ site.baseurl }}/v1/solid-principles/">SOLID Principles</a></li>
-            <li><a href="{{ site.baseurl }}/v1/unicode-notes/">Unicode</a></li>
-        </ul>
-    </div>
+  <div class="col-xs-12 col-sm-6">
+    <h2>Categories</h2>
+    <p>Categories list.</p>
 
-    <div class="col-xs-12 col-sm-6">
-        <h2>Languages</h2>
-        <p>Bunch of notes on languages I've learnt.</p>
-        <ul>
-            <li><a href="{{ site.baseurl }}/v1/cs-notes/">C#</a></li>
-            <li><a href="{{ site.baseurl }}/v1/c-notes/">C</a></li>
-            <li><a href="{{ site.baseurl }}/v1/python-notes/">Python</a></li>
-            <li><a href="{{ site.baseurl }}/v1/java-notes/">Java</a></li>
-        </ul>
-    </div>
-
-    <div class="col-xs-12 col-sm-6">
-        <h2>Scripting</h2>
-        <p>Some scripting languages that I've never learnt properly.</p>
-        <ul>
-            <li><a href="{{ site.baseurl }}/v1/bash-notes/">Bash</a></li>
-            <li><a href="{{ site.baseurl }}/v1/cmd-notes/">CMD/Batch</a></li>
-            <li><a href="{{ site.baseurl }}/v1/powershell-notes/">Powershell</a></li>
-        </ul>
-    </div>
-
-    <div class="col-xs-12 col-sm-6">
-        <h2>Operating Systems</h2>
-        <p>Cool stuff about Operating Systems.</p>
-        <ul>
-            <li><a href="{{ site.baseurl }}/v1/operating-systems-notes/">Operating Systems</a></li>
-            <li><a href="{{ site.baseurl }}/v1/linux-syscalls/">Linux Syscalls</a></li>
-        </ul>
-    </div>
-
-    <div class="col-xs-12 col-sm-6">
-        <h2>Hardware</h2>
-        <p>Hardware related stuff like FPGA, memory etc.</p>
-        <ul>
-            <li><a href="{{ site.baseurl }}/v1/caching/">Caching</a></li>
-            <li><a href="{{ site.baseurl }}/v1/peripherals/">Peripherals</a></li>
-            <li><a href="{{ site.baseurl }}/v1/memory-architecture/">Memory Architecture</a></li>
-            <!-- <li><a href="{{ site.baseurl }}/v1/pi3/">Raspberry Pi 3</a></li> -->
-        </ul>
-    </div>
-
-    <div class="col-xs-12 col-sm-6">
-        <h2>Compilers</h2>
-        <p>Some notes about compilers and libraries.</p>
-        <ul>
-            <li><a href="{{ site.baseurl }}/v1/libraries-notes/">Building libraries</a></li>
-        </ul>
-    </div>
-
-    <div class="col-xs-12 col-sm-6">
-        <h2>Networks</h2>
-        <p>Some notes about networks and the WWW.</p>
-        <ul>
-            <li><a href="{{ site.baseurl }}/v1/networks-notes/">Networks</a></li>
-            <li><a href="{{ site.baseurl }}/v1/world-wide-web-notes/">World Wide Web</a></li>
-        </ul>
-    </div>
-
-    <div class="col-xs-12 col-sm-6">
-        <h2>Databases</h2>
-        <p>Some notes about databases and SQL.</p>
-        <ul>
-            <li><a href="{{ site.baseurl }}/v1/database-notes/">Database</a></li>
-            <li><a href="{{ site.baseurl }}/v1/sql-notes/">Some SQL</a></li>
-        </ul>
-    </div>
-
-    <div class="col-xs-12 col-sm-6">
-        <h2>Windows</h2>
-        <p>Some notes about Windows.</p>
-        <ul>
-            <li><a href="{{ site.baseurl }}/v1/windows-sec-id-mgmt/">Windows Security & Identity Management</a></li>
-            <li><a href="{{ site.baseurl }}/v1/windows-activedirectory/">Windows Active Directory</a></li>
-            <li><a href="{{ site.baseurl }}/v1/windows-networks/">Windows Networking</a></li>
-            <li><a href="{{ site.baseurl }}/v1/windows-pipes/">Windows Pipes</a></li>
-            <li><a href="{{ site.baseurl }}/v1/windows-installer/">Windows Installer</a></li>
-        </ul>
-    </div>
-
-    <div class="col-xs-12 col-sm-6">
-        <h2>Security</h2>
-        <p>Some notes on basic security stuff.</p>
-        <ul>
-            <li><a href="{{ site.baseurl }}/v1/security-notes/">Security</a></li>
-        </ul>
-    </div>
-
-    <div class="col-xs-12 col-sm-6">
-        <h2>Web Development</h2>
-        <p>Some notes basic web development.</p>
-        <ul>
-            <li><a href="{{ site.baseurl }}/v1/javascript-notes/">Javascript</a></li>
-            <li><a href="{{ site.baseurl }}/v1/web-dev-notes/">Web Development</a></li>
-            <li><a href="{{ site.baseurl }}/v1/angular-notes/">Angular</a></li>
-        </ul>
-    </div>
-
-    <div class="col-xs-12 col-sm-6">
-        <h2>Books</h2>
-        <p>Some notes on CS books.</p>
-        <ul>
-            <li><a href="{{ site.baseurl }}/v1/the-pragmatic-programmer/">The Pragmatic Programmer</a></li>
-        </ul>
-    </div>
-
-    <div class="col-xs-12 col-sm-6">
-        <h2>IDE</h2>
-        <p>Some notes on IDEs that I use.</p>
-        <ul>
-            <li><a href="{{ site.baseurl }}/v1/visual-studio-notes/">Visual Studio</a></li>
-            <li><a href="{{ site.baseurl }}/v1/emacs-notes/">Emacs</a></li>
-            <li><a href="{{ site.baseurl }}/v1/intellij-notes/">IntelliJ</a></li>
-        </ul>
-    </div>
-
-    <div class="col-xs-12 col-sm-6">
-        <h2>Miscellaneous</h2>
-        <p>Some other notes on miscellaneous stuff.</p>
-        <ul>
-            <li><a href="{{ site.baseurl }}/v1/archlinux-notes/">ArchLinux</a></li>
-        </ul>
-    </div>
+    <ul>
+      {% assign category_list = site.v1 | where:"layout", "compsci-category" %}
+          {% for category in category_list %}
+      <li>
+        <a title="{{ category.description }}" href="{{ site.baseurl }}{{ category.url}}">{{ category.title}}</a>
+      </li>
+      {% endfor %}
+    </ul>
+  </div>
 
 </div>

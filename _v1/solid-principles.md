@@ -3,8 +3,8 @@ layout: compsci-note
 title: SOLID Principles Notes
 categories: [solid, fundamentals, architecture]
 description: Some notes on SOLID Principles in Software Engineering
-order: 20
 sitemap: false
+favorite: true
 ---
 
 ## Contents

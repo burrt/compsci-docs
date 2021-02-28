@@ -18,14 +18,19 @@
       </div>
       <div id="navbar" class="navbar-collapse collapse">
         <ul class="nav navbar-nav">
-          {% assign categories = site.data.categories %}
-          {% for category in categories %}
+          {% assign category_list = site.v1 | where:"layout", "compsci-category" %}
+          {% for category in category_list %}
             {% if category.topnav == true %}
               <li class="nav-item">
-                <a class="nav-link" href="{{ site.baseurl }}/v1/{{ category.slug }}">{{ category.name}}</a>
+                <a class="nav-link" title="{{ category.description }}" href="{{ site.baseurl }}/v1/categories/{{ category.slug }}">{{ category.title}}</a>
               </li>
             {% endif %}
           {% endfor %}
+
+          <li class="nav-item">
+            <a class="nav-link" title="All of my notes" href="{{ site.baseurl }}/v1/all/">All Notes</a>
+          </li>
+
           <!-- <li class="dropdown">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
               aria-expanded="false">Dropdown <span class="caret"></span></a>

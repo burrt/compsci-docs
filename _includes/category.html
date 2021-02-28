@@ -1,6 +1,6 @@
 <ul>
-  {% assign toolpages = site.v1 | where:"categories", page.slug %}
-  {% for page in toolpages %}
+  {% assign pages = site.v1 | where:"categories", page.slug %}
+  {% for page in pages %}
   <li>
     <a href="{{ site.baseurl }}{{ page.url}}">{{ page.title}}</a>
   </li>

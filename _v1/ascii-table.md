@@ -2,9 +2,9 @@
 layout: compsci-note
 title: ASCII Table
 categories: [other]
-description: An ASCII Table
-order: 20
+description: The ASCII Table
 sitemap: false
+favorite: true
 ---
 
 ## ASCII table

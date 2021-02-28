@@ -1,0 +1,16 @@
+---
+layout: compsci-note
+title: All Notes
+description: All of my notes
+permalink: v1/all/
+---
+
+<ul>
+  {% assign note_list = site.v1 | where:"layout", "compsci-note" %}
+  {% for note in note_list %}
+  <li>
+    <a title="{{ note.description }}" href="{{ site.baseurl }}{{ note.url}}">{{ note.title}}</a>
+  </li>
+  {% endfor %}
+</ul>
+</div>
