@@ -1,6 +1,6 @@
 jekyll:
     image: jekyll/jekyll
-    command: jekyll serve --watch --incremental --config _config.yml,_config_development.yml
+    command: jekyll serve --watch --incremental
     ports:
         - 4000:4000
     volumes:
