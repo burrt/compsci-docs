@@ -3,7 +3,6 @@ layout: compsci-note
 title: Operating System Notes
 categories: [linux]
 description: Some notes on Operating Systems
-order: 20
 sitemap: false
 ---
 
@@ -313,7 +312,7 @@ A file system must do the following:
 * This allows parallel execution of programs.
 * All CPUs access a shared memory - this may be using shared memory buses and crossbar switches - limited scalability.
 * Other memory bus alternatives are on-chip mesh networks - this has significant complexities of communication as well.
-* Shared memory access is serialised, you have cache coherency challenges as well.
+* Shared memory access is serialized, you have cache coherency challenges as well.
 
 ## Initialization routines
 
@@ -445,4 +444,4 @@ Position independent functions accessing global data start by determining the **
         * If you check the flags, there is no `ALLOC`
 4. Section Header Table
     * This lists all the different sections and where they are found
-    * Also lists the virtual addresses they are mapped to, type of section eg. ALLOC
+    * Also lists the virtual addresses they are mapped to, type of section eg. `ALLOC`

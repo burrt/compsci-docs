@@ -3,7 +3,6 @@ layout: compsci-note
 title: Powershell Notes
 categories: [scripting]
 description: Some notes on Powershell which I never use
-order: 20
 sitemap: false
 ---
 
@@ -11,11 +10,11 @@ sitemap: false
 
 ## Basics
 
-```ps
+```powershell
 Get-Alias ls
 Get-Help Get-Content -Full  # Help Get-Content
-Get-Command *GPO*  # gcm *gpo*
-Get-Process | Get-Member  # Get-Process | gm
+Get-Command *GPO*           # gcm *gpo*
+Get-Process | Get-Member    # Get-Process | gm
 
 # Interactive sessions
 Enter-PSSession SomeServer

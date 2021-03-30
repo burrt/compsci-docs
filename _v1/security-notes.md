@@ -3,7 +3,6 @@ layout: compsci-note
 title: Security Notes
 categories: [security]
 description: Some very basic notes on security
-order: 20
 sitemap: false
 ---
 

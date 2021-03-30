@@ -3,7 +3,6 @@ layout: compsci-note
 title: Java Notes
 categories: [language]
 description: Some notes on Java
-order: 20
 sitemap: false
 ---
 

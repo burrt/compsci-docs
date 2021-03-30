@@ -3,7 +3,6 @@ layout: compsci-note
 title: Sorting and Searching Algorithm Notes
 categories: [fundamentals]
 description: Some notes on sorting and searching algorithms, and time complexity
-order: 20
 sitemap: false
 ---
 

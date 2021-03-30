@@ -53,5 +53,5 @@ Simple Object Access Protocol is a protocol whilst REST is an architectural styl
 
 ### Additional Reading
 
-* [stackoverflow - What is RESTful programming?](https://stackoverflow.com/questions/671118/what-exactly-is-restful-programming)
-* [stackoverflow - What's the difference between REST and RESTful?](https://stackoverflow.com/questions/1568834/whats-the-difference-between-rest-restful)
+* [Stack Overflow - What is RESTful programming?](https://stackoverflow.com/questions/671118/what-exactly-is-restful-programming)
+* [Stack Overflow - What's the difference between REST and RESTful?](https://stackoverflow.com/questions/1568834/whats-the-difference-between-rest-restful)

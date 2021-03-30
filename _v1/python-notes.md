@@ -3,7 +3,6 @@ layout: compsci-note
 title: Python Notes
 categories: [language]
 description: Some notes on Python
-order: 20
 sitemap: false
 ---
 
@@ -30,7 +29,7 @@ sitemap: false
 
 * [Google Dev Python](https://developers.google.com/edu/python/)
 * [Python 3.6 Docs](https://docs.python.org/3.6/)
-* [StackOverflow - Python yield](https://stackoverflow.com/questions/231767/what-does-the-yield-keyword-do)
+* [Stack Overflow - Python yield](https://stackoverflow.com/questions/231767/what-does-the-yield-keyword-do)
 
 ## Quick style guide
 
@@ -176,7 +175,7 @@ list(range(1) is list(range(1))  # False
 
 ### iterables and iterators
 
-See the [stackoverflow post](https://stackoverflow.com/questions/9884132/what-exactly-are-pythons-iterator-iterable-and-iteration-protocols) for more explanations.
+See the [Stack Overflow post](https://stackoverflow.com/questions/9884132/what-exactly-are-pythons-iterator-iterable-and-iteration-protocols) for more explanations.
 
 An **iterable** is:
 

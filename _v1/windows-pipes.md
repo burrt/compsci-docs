@@ -122,7 +122,7 @@ Compete list can be found at [MS Using Pipes](https://docs.microsoft.com/en-us/w
 
 ### Using Named Pipes
 
-Basic C# example from [StackOverflow](https://stackoverflow.com/questions/13806153/example-of-named-pipes):
+Basic C# example from [Stack Overflow](https://stackoverflow.com/questions/13806153/example-of-named-pipes):
 
 ```cs
 using System;

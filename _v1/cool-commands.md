@@ -3,7 +3,6 @@ layout: compsci-note
 title: Cool Commands
 categories: [random]
 description: Some cool commands on Linux
-order: 20
 sitemap: false
 ---
 
@@ -75,7 +74,7 @@ top                               # less user-friendly but default on most
 ps axjf                           # tree view of COMPLETE running processes
 pgrep firefox                     # get PID or can use: pidof firefox
 
-kill PID_of_proc                  # to safely exit or use 
+kill PID_of_proc                  # to safely exit or use
 kill -9 PID_of                    # to escalate to KILL, 15 is safe
 pkill proc_name                   # instead of PID, give the name
 killall -9 service

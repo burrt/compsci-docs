@@ -3,7 +3,6 @@ layout: compsci-note
 title: Go Notes
 categories: [language]
 description: Some notes on Go lang
-order: 20
 sitemap: false
 ---
 

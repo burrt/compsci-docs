@@ -3,7 +3,6 @@ layout: compsci-note
 title: ArchLinux Notes
 categories: [linux]
 description: Some notes on ArchLinux installation and stuff
-order: 20
 sitemap: false
 ---
 

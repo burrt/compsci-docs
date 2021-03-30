@@ -1,6 +1,6 @@
 ---
 layout: compsci-note
-title: Windows Security & ID Management Notes
+title: Windows Security and ID Management Notes
 categories: [security, windows]
 description: Some notes on Windows Security and Identity Management
 sitemap: false

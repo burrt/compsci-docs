@@ -3,7 +3,6 @@ layout: compsci-note
 title: Test Driven Development
 categories: [fundamentals, methodologies]
 description: Some notes on Test Driven Development (TDD)
-order: 20
 sitemap: false
 ---
 
@@ -43,9 +42,9 @@ This is the most important - if all tests pass, then there is **nothing more to 
 * Trend in modern languages encroaching into static type-checking; more and more coupling to the compiler
   * "Some unit tests don't need to be written": unit tests test operations and indirectly tests the types
 
-## BDD - Behavioural Driven Development
+## BDD - Behavioral Driven Development
 
-It is a process that encourages collaboration amongs developers, QA and non-technical or business participants in a software project. It is an evolution from TDD and involves the use of natural-language constructs e.g. English sentences, that can express the behaviour and expected outcomes.
+It is a process that encourages collaboration amongst developers, QA and non-technical or business participants in a software project. It is an evolution from TDD and involves the use of natural-language constructs e.g. English sentences, that can express the behavior and expected outcomes.
 
 In short, it focuses on:
 

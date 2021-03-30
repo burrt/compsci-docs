@@ -214,7 +214,7 @@ With dependency injection frameworks in .NET being a best practice - it's import
 
 > Transient objects are always different; a new instance is provided to every controller and every service.
 
-A nice example from [StackOverflow with examples](https://stackoverflow.com/questions/38138100/addtransient-addscoped-and-addsingleton-services-differences) helps a log visually.
+A nice example from [Stack Overflow with examples](https://stackoverflow.com/questions/38138100/addtransient-addscoped-and-addsingleton-services-differences) helps a log visually.
 
 ### Scoped
 
@@ -269,7 +269,7 @@ For example, `(x ≤ y) = (N(y) ≤ N(x))` is always true and you can see that t
 
 ### Anemic
 
-Objects tht have state but lack behavior e.g. DTOs
+Objects that have state but lack behavior e.g. DTOs
 
 ### Closure
 

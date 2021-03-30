@@ -3,7 +3,6 @@ layout: compsci-note
 title: Emacs Notes
 categories: [ide]
 description: Some hotkeys of Emacs I always forget
-order: 20
 sitemap: false
 ---
 
@@ -29,7 +28,7 @@ Select text- sets the marker           | C-<SPACE>
 Select text - up/down                  | up / down keys / C-up/down
 
 Delete line from cursor                | C-k
-Delete word infront of cursor          | M-d
+Delete word in front of cursor         | M-d
 Delete word behind of cursor - freq    | M-<DEL>
 
 Search for word - display list         | M-s o | "\bword\b" to bound it

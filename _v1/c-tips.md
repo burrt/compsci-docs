@@ -3,7 +3,6 @@ layout: compsci-note
 title: C Tips
 categories: [language, tips]
 description: Some tips and tricks with C
-order: 20
 sitemap: false
 ---
 
@@ -68,7 +67,7 @@ int (*functionFactory(int n))(int, int)
 
 // But it's much nicer to use a typedef function pointer
 // myFuncDef is the name to replace
-typedef int (*myFuncDef)(int, int);  
+typedef int (*myFuncDef)(int, int);
 
 // only the parameter and func name is retained
 myFuncDef functionFactory(int n)

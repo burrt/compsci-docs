@@ -9,7 +9,7 @@ sitemap: false
 
 ## Links
 
-* [Indexes - clustered and unclustered](https://technet.microsoft.com/en-us/library/jj835095(v=sql.110).aspx)
+* [Indexes - clustered and un-clustered](https://technet.microsoft.com/en-us/library/jj835095(v=sql.110).aspx)
 
 ## ACID
 
@@ -25,7 +25,7 @@ sitemap: false
 ## BASE
 
 Basically Available, Soft state, Eventual consistency.
- From [stack overflow](https://stackoverflow.com/questions/3342497/explanation-of-base-terminology):
+ From [Stack Overflow](https://stackoverflow.com/questions/3342497/explanation-of-base-terminology):
 
 >The CAP theorem states that a distributed computer system cannot guarantee all of the following three properties at the same time:
 >

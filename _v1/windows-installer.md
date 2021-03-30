@@ -105,11 +105,11 @@ There are a few key difference you need to be aware of, this [Stackoverflow](htt
 >
 >Each have different syntax and are evaluated at different times:
 >
->Candle's preprocessor variables "`$(var.VariableName)`" are evaluated when candle runs, and can be set from candle's commandline and from "" statements. Build-time environment properties as well as custom variables can also be accessed similarly (changing the "`var.`" prefix with other values).
->Light's variables accessible from the command-line are the `WixVariables`, and accessing them is via the "`!(wix.>VariableName)`" syntax. To access your variable from your commandline, you would need to change your String to: "This build was prepared on `!(wix.BuildMachine)`"
+>Candle's preprocessor variables "`$(var.VariableName)`" are evaluated when candle runs, and can be set from candle's command line and from "" statements. Build-time environment properties as well as custom variables can also be accessed similarly (changing the "`var.`" prefix with other values).
+>Light's variables accessible from the command-line are the `WixVariables`, and accessing them is via the "`!(wix.>VariableName)`" syntax. To access your variable from your command line, you would need to change your String to: "This build was prepared on `!(wix.BuildMachine)`"
 >If you instead need to have the `BuildMachine` value exist as an MSI property at installation time (which is the "`[VariableName]`" syntax) you would need to add the following to one of your `.wxs` files in a fragment that is already linked in:
 >
->Now, the environment variable `COMPUTERNAME` always has held the name of my build machines in the past, and you can access that this way: `$(env.COMPUTERNAME)`. So, you can get rid of the commandline addition to light.exe and change your wxs file like this:
+>Now, the environment variable `COMPUTERNAME` always has held the name of my build machines in the past, and you can access that this way: `$(env.COMPUTERNAME)`. So, you can get rid of the command line addition to light.exe and change your wxs file like this:
 >
 >`<WixVariable Id="BuildMachine" Value="$(env.COMPUTERNAME)"/>`
 
@@ -448,7 +448,6 @@ See also:
 * [Stackoverflow: installing a driver inf from cmd](https://stackoverflow.com/questions/22496847/installing-a-driver-inf-file-from-command-line)
 * [MS Docs: Setup API installing drivers inf](https://docs.microsoft.com/en-us/windows/desktop/api/setupapi/nf-setupapi-installhinfsectiona)
 
-
 #### Driver resources
 
 * [Stackoverflow: deploy an inf based USB driver](https://stackoverflow.com/questions/1197514/how-do-i-use-wix-to-deploy-an-inf-based-usb-driver)
@@ -663,6 +662,6 @@ The `InstallFlowSequence.wxs` file contains the `InstallExecuteSequence` - movin
 
 #### App CustomActions Tests
 
-Yes; unit testing custom actions does exist - [WiX Lux](https://wixtoolset.org/documentation/manual/v3/overview/lux.html). Often custom actions are the cause for installation failures and become highly complex. It is strongly recommended to limit the number of CAs and its complexity.
+Unit testing custom actions do exist - [WiX Lux](https://wixtoolset.org/documentation/manual/v3/overview/lux.html). Often custom actions are the cause for installation failures and become highly complex. It is strongly recommended to limit the number of CAs and its complexity.
 
 * `CustomActionTests.cs`

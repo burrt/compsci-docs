@@ -3,7 +3,6 @@ layout: compsci-note
 title: VHDL Tips
 categories: [tips, language]
 description: Some tips and tricks with VHDL
-order: 20
 sitemap: false
 ---
 
@@ -22,7 +21,7 @@ sitemap: false
 
 * DO NOT write to same signal in 2 different processes!
 * DO NOT have a 'reset' signal in combinational logic!
-* DO NOT write to **registers** in combinational processes! Creates latches and are **not synthesisable**!
+* DO NOT write to **registers** in combinational processes! Creates latches and are **not synthesizable**!
 * **Variables** update immediately
 * **Signals** update on its **last** assignment
 * Sequential logic **only** needs `(clk, reset)`

@@ -3,7 +3,6 @@ layout: compsci-note
 title: VHDL Notes
 categories: [language, hardware]
 description: Some notes on VHDL
-order: 20
 sitemap: false
 ---
 

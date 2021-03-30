@@ -164,9 +164,9 @@ Useful if you have bitbucket, github etc. and want to use different ssh keys ins
 
 ### Adding changes in the submodule
 
-From [StackOverflow](https://stackoverflow.com/questions/5542910/how-do-i-commit-changes-in-a-git-submodule):
+From [Stack Overflow](https://stackoverflow.com/questions/5542910/how-do-i-commit-changes-in-a-git-submodule):
 
-A submodule is its own repo/work-area, with its own `.git` directory. When cloning, use the `--recurse-submodules`.
+> A submodule is its own repo/work-area, with its own `.git` directory. When cloning, use the `--recurse-submodules`.
 
 So, first commit/push your submodule's changes:
 

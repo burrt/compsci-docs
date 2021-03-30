@@ -3,7 +3,6 @@ layout: compsci-note
 title: C# Notes
 categories: [language]
 description: Some notes on C#
-order: 20
 sitemap: false
 ---
 
@@ -1455,7 +1454,7 @@ For `IEnumerable<>`, use `Any()`.
 
 For collections like `IList<>` etc. use the `Count` property.
 
-See also [StackOverflow - Any vs Count](https://stackoverflow.com/questions/305092/which-method-performs-better-any-vs-count-0).
+See also [Stack Overflow - Any vs Count](https://stackoverflow.com/questions/305092/which-method-performs-better-any-vs-count-0).
 
 ## Namespaces
 
@@ -1577,7 +1576,7 @@ These articles summarizes it far better than I could have:
 Must reads:
 
 * ConfigureAwait in-dept - [MS Blog ConfigureAwait FAQ](https://devblogs.microsoft.com/dotnet/configureawait-faq/)
-* Running an async task synchronously - [StackOverflow - How would I run an async task method synchronously](https://stackoverflow.com/questions/5095183/how-would-i-run-an-async-taskt-method-synchronously)
+* Running an async task synchronously - [Stack Overflow - How would I run an async task method synchronously](https://stackoverflow.com/questions/5095183/how-would-i-run-an-async-taskt-method-synchronously)
 
 ### CPU bound
 

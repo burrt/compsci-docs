@@ -3,7 +3,6 @@ layout: compsci-note
 title: Gradle Notes
 categories: [tools]
 description: Some notes on Gradle
-order: 20
 sitemap: false
 ---
 

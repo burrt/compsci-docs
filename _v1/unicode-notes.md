@@ -16,7 +16,7 @@ favorite: true
 
 ## References
 
-* [StackOverflow CEO - Joel](https://www.joelonsoftware.com/2003/10/08/the-absolute-minimum-every-software-developer-absolutely-positively-must-know-about-unicode-and-character-sets-no-excuses/)
+* [Stack Overflow CEO - Joel](https://www.joelonsoftware.com/2003/10/08/the-absolute-minimum-every-software-developer-absolutely-positively-must-know-about-unicode-and-character-sets-no-excuses/)
 * [Unicode Plane](https://en.wikipedia.org/wiki/Plane_(Unicode))
 
 ## Unicode
@@ -74,7 +74,7 @@ Expected to have a strings in the header of the form: `Content-Type: text/plain;
 
 ### Web
 
-Joel CEO of StackOverflow puts this bit really well:
+Joel CEO of Stack Overflow puts this bit really well:
 
 >For a web page, the original idea was that the web server would return a similar Content-Type http header along with the web page itself — not in the HTML itself, but as one of the response headers that are sent before the HTML page.
 >
@@ -86,6 +86,7 @@ Joel CEO of StackOverflow puts this bit really well:
 <html>
     <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+</html>
 ```
 
 >But that meta tag really has to be the very first thing in the `<head>` section because as soon as the web browser sees this tag it's going to stop parsing the page and start over after reinterpreting the whole page using the encoding you specified.

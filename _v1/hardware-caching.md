@@ -3,7 +3,6 @@ layout: compsci-note
 title: Hardware Caching Notes
 categories: [hardware]
 description: Some notes on cache architecture in hardware
-order: 20
 sitemap: false
 ---
 
