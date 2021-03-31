@@ -1,8 +1,8 @@
 ---
 layout: compsci-note
-title: Windows Networking Notes
-categories: [networks, windows]
-description: Some notes on Windows Networking
+title: Wireshark Notes
+categories: [networks]
+description: Some notes on Wireshark
 sitemap: false
 ---
 
