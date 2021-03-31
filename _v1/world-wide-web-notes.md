@@ -8,24 +8,33 @@ sitemap: false
 
 ## How the browser works
 
-1. URL is entered in the browser
-2. DNS server request is made (UDP:53) for `foo.com` by the browser
-3. DNS server responds with the IP address of the server `1.1.1.1`
-4. The local machine caches the DNS response data and sends an access request for `foo.com` to the server with an IP address `1.1.1.1`
-5. The server `1.1.1.1` establishes a TCP connection with the local machine for data exchange
+A summary of the different steps of what happens when you nevigate to a website.
 
-### TCP and HTTP
+### 1. Hostname Resolution
 
-Once the TCP connection is setup up (handshake etc.), data transfer is ready. To transfer data, the connection must meet the requirements of the HTTP protocol 1.0/1.1, including connection, messaging, request and response rules.
+When the URL is entered in the browser, e.g. `https://www.foo.com`, the browser observes the transport protocol (https) and the hostname.
 
-### HTML data
+The hostname must be resolved to an IP address on the network stack and a DNS request over UDP:53, usually the recursive strategy is employed, is made to the DNS servers.
 
-Once the HTML page of the website is sent from the server and is received at the browser, it converts it to a structured object (DOM tree) in memory. It then renders elements in the DOM tree as visual items.
+The DNS servers will be queried in the following order:
 
-Whilst the DOM tree is rendered from top to bottom, the browser will initiate any HTTP request on external resources/scripts (links, image tags etc.).
+1. Local server
+2. Root DNS server
+3. TLD DNS server
+4. Authoratative servers
 
-### Cookies
+If a hostname entry is found in the DNS servers, it is subsequently returned to the browser. The local DNS server will cache this IP resolution for future requests. For this example, let us assume `foo.com` resolved to the IP address `1.2.3.4`.
 
-Cookies are stored locally on a user's computer and usually contains information of the user's browsing activity.
+### 2. Connecting over HTTPS
 
-The HTTP protocol defines a list of operations of cookies. Cookies are ideally isolated by the domain name (excluding child-level domains) and are attached to the HTTP request before being sent to the backend server.
+The HTTPS protocol was specified as part of the URL, today's browsers will default to HTTPS, and a TCP connection will be made over TLS to the IP address `1.2.3.4`.
+
+It is important to remember that TLS is an **application** layer protocol however programmers often treat it as an transport layer protocol. Many steps occur as part of a TCP connection, much less TCP over TLS! To limit this exposition, many areas will be summarized.
+
+* The  client (browser) would create a TCP socket, and additionally a TLS socket for the TLS layer, and the TCP three-way handshake would proceed.
+* As part of the handshake, the server's identity is verified by the browser which validates its certificate with a certificate authority.
+* The **symmetric session key** will be generated which will be used for encrypting and integrity checking for the rest of the session.
+
+### 3. Data transfer
+
+TCP is a byte-stream protocol and the data stream is broken into records - this enables the data and MAC to be combined and encrypted together. This enables both **confidentiality** and **data integrity**.

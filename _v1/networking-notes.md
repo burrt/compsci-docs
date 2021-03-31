@@ -1,8 +1,8 @@
 ---
 layout: compsci-note
-title: World Wide Web Notes
+title: Networking Notes
 categories: [networks]
-description: Some notes on the World Wide Web
+description: Some notes on Networking
 sitemap: false
 favorite: true
 ---
@@ -25,6 +25,10 @@ favorite: true
 | Host record | Domain you which to use. the `@` symbol indicates the root domain.              |
 | TTL         | Time to Live indicates the amount of time the record is cached by a DNS server. |
 | Tunnelling  | Is the delivery of one protocol on top of a protocol of similar or higher layer e.g. TCP on IP on Ethernet. For VPNs for example, the TCP/IP packets containing the HTTP session would be carried in a distinct TCP/UDP/IP stream between the VPN endpoints. This portion of the trip would be HTTP on TCP/IP on IPSec on UDP/IP on Ethernet|
+
+### TCP vs UDP
+
+UDP is a connection-less transport protocol that has no reliability guarantees of the packets transmitted. TCP is connection orientated and provides reliable flow of data between two systems.
 
 ### OSI
 
@@ -71,9 +75,7 @@ HTTP/1.1 has improvements such as streaming content by chunked transfer encoding
 
 #### HTTPS
 
-TCP is a transport layer protocol and HTTP is an application layer protocol that runs over TCP.
-
-It aims to provide authentication, privacy and integrity of the data that is exchanged with the server - protection against MIM.
+HTTPS is an extension of the HTTP protocol by securing the protocol with TLS. HTTPS listens on port 443 by default. It aims to provide authentication, privacy and integrity of the data that is exchanged with the server - protection against MIM.
 
 Most of the internet traffic uses HTTPS and since SSL/TLS can still provide some protection with only one side of the communication authenticated (the client authenticates the server's certificate).
 
@@ -265,4 +267,4 @@ These are often used on a per-application basis for hiding IP addresses, restric
 
 ### Reverse Proxy
 
-A reverse proxy is instead a server that sits **in front** of one or more **web servers**. Requests from the Internet are intercepted and then delegated to a particular server. This is common for load balances, caching, API gateways etc.
+A reverse proxy is instead a server that sits **in front** of one or more **web servers**. Requests from the Internet are intercepted and then delegated to a particular server. This is common for load balancers, caching, API gateways etc.
