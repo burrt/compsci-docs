@@ -56,13 +56,15 @@ As a consequence, because its 2 bytes are read as a *single* code point value, i
 
 #### UTF-16
 
-An extension of UCS-2 and can encode 2<sup>20</sup> code points (16 planes). This is due to its variable-length encoding as code points are encoded with one or two 16-bit code units. It is still used internally by systems such as Windows, Java and Javascript.
+An extension of UCS-2 and can encode 2<sup>20</sup> code points (16 planes). This is due to its variable-length encoding as code points are encoded with **one** or **two** 16-bit code units, this means a character can be stored as 2-4 bytes. The byte order (endianness) is specified with the BOM which was considered wasteful and led the the birth of UTF-8. It is still used internally by systems such as Windows, Java and Javascript.
 
 #### UTF-8
 
 It could be store in 8 bits for <= 128 else be 2-6 bytes. This was more than sufficient to cater for all other languages' code points. Because of its variable length - it can encode up to 2<sup>31</sup> code points even though the current Unicode version has 6 planes with assigned code points.
 
 The beautiful thing about UTF-8 is that it is compatible with the earlier character sets - ASCII, ANSI and OEM character sets!
+
+![UTF-8](https://i.imgur.com/K8V1G1V.png)
 
 ### Displaying Unicode strings
 
