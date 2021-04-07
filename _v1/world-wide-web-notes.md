@@ -8,7 +8,7 @@ sitemap: false
 
 ## How the browser works
 
-A summary of the different steps of what happens when you nevigate to a website.
+A summary of the different steps of what happens when you navigate to a website.
 
 ### 1. Hostname Resolution
 
@@ -21,7 +21,7 @@ The DNS servers will be queried in the following order:
 1. Local server
 2. Root DNS server
 3. TLD DNS server
-4. Authoratative servers
+4. Authoritative servers
 
 If a hostname entry is found in the DNS servers, it is subsequently returned to the browser. The local DNS server will cache this IP resolution for future requests. For this example, let us assume `foo.com` resolved to the IP address `1.2.3.4`.
 

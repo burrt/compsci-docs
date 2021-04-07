@@ -119,13 +119,13 @@ A few streams that you should be aware of:
 // We don't have do to a finally {f.close()}
 try (Reader reader = Helper.openReader("foo.txt")
      Writer writer = Helper.openWriter("bar.txt")) {
-         // Do something
-// Will capture the exception in the try {}
-// To access additional exceptions thrown by the f.close()
-// They exist in the ex.getSuppressed()
+  // Do something
+  // Will capture the exception in the try {}
+  // To access additional exceptions thrown by the f.close()
+  // They exist in the ex.getSuppressed()
 } catch (IOException ex) {
-    // This captures the exceptions from f.close() but
-    // e.g. if reader in the try{}
+  // This captures the exceptions from f.close() but
+  // e.g. if reader in the try{}
 }
 ```
 
@@ -137,7 +137,6 @@ Actually, what you should use is the `java.nio.file` packages that provide addit
 
 ```java
 // LinkedList<E>
-
 get(int index)              // O(n)
 add(E element)              // O(1)
 add(int index, E element)   // O(n)
@@ -146,7 +145,6 @@ Iterator.remove()           // O(1)
 ListIterator.add(E element) // O(n)
 
 // ArrayList<E>
-
 get(int index)              // O(1)
 add(E element)              // O(1) amortized
                             // O(n) worst-case since the array
@@ -304,7 +302,7 @@ public synchronized foo() {
 }
 ```
 
-**You need to be aware of the limitations of synchronized methods because you can introduce race conditions if you are not careful**
+**You need to be aware of the limitations of synchronized methods because you can introduce race conditions if you are not careful.**
 
 An example of this is if, in a non-synchronized method you call 2 synchronized methods, if the thread is yielded on another thread in between the invocations - you now have a race condition!
 
@@ -882,7 +880,7 @@ System.out.println(c2 instanceof Cylinder);  // true
 * A subclass instance processes *all the attributes operations* of its superclass.
 * When a superclass instance is expected, it can be substituted by a subclass instance - it is called **substitutability**.
 * If a subclass instance is assign to a superclass reference, you can invoke the methods defined in the **superclass only**. You **cannot** invoke methods defined in the subclass.
-* However, the substituted instance retains its own identity in terms of overridden methods and hiding variables. If the subclass overrides methods in the superclass, the subclass' version will be executed, **instead** of the superclass's version.
+* However, the substituted instance retains its own identity in terms of overridden methods and hiding variables. If the subclass overrides methods in the superclass, the subclass' version will be executed, **instead** of the superclass' version.
 
 ### Abstract classes & interfaces
 

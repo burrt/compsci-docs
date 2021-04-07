@@ -112,16 +112,13 @@ DNS allows users to locate resources on the network by converting friendly, huma
 
 3. It then performs the following checks in order:
     1. The DNS Client service checks the DNS resolver cache for the FQDN, which contains the entries in the Hosts file and the results of recent positive and negative name queries. If an entry is found, the result is used and no further processing occurs.
-
     2. Next the [NRPT](#nrpt) table is checked
         * The DNS Client service passes the FQDN through the NRPT to determine the rules in which the FQDN matches the namespace of the rule.
         * NRPT Stands for Name Resolution Policy Table and is the first location that is checked.
         * If a Match is found, No further processing is done and the DNS Server/Proxy server in the NRPT table is used to query for the address
         * Now if resolution fails and if the user on a Private Network, the resolution will fall back to the interface
-
     3. Finally if no match is found we go to the Interface directly.
         * If the FQDN does not match any rules, or matches a single rule that is an exemption rule, the DNS Client service attempts to resolve the FQDN using interface-configured DNS servers. How this works is the following;
-
             * The interface with the lowest metric is checked first
             * What would happen in this situation that DNS would take the hostname, append the DNS Suffix for the first interface that matches, send a DNS query on it. If fails, move to the next.
             * If the FQDN matches a single rule that is not an exemption rule, the DNS Client service applies the specified special handling.
