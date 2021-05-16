@@ -61,6 +61,40 @@ From the [Azure article](https://azure.microsoft.com/en-au/overview/nosql-databa
 
 ## Theory
 
+### Relationships
+
+These O'Reilly chapters cover the basics, including the symbols that are often used:
+
+* [Learning MySQL - The Entity Relationship Model](https://learning.oreilly.com/library/view/learning-mysql/0596008643/ch04s03.html)
+* [Learning MySQL - Examples](https://learning.oreilly.com/library/view/learning-mysql/0596008643/ch04s04.html)
+
+![ERD symbols](https://i.imgur.com/eFPqJxlm.png)
+
+#### 1:1
+
+* One country, one capital city
+* One person, one passport
+
+A 1:1 relationship can be enforced at the database level using foreign keys with a unique constraint.
+
+#### 1:M
+
+* One building, many apartments
+* One apartment only relates to one building
+
+The latter defines it as a 1:M as a result. Other examples:
+
+* One company has many employees, and one employee is related to one company
+
+#### M:M
+
+* One tenant can own many apartments, **and** one apartment can be owned by many tenants
+* Therefore Many tenants can own many apartments
+
+A M:M relationship would be to have an table with columns of the two entities with the relation. Other examples:
+
+* Customer and products - one customer is related/buys to many products, and one product is bought/related to many customers
+
 ### Superkey
 
 * A superkey `SK` specifies a **uniqueness** constraint that **no two** distinct tuples in any state `r` of `R` can have the **same** value for SK.
