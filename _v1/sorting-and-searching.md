@@ -97,8 +97,6 @@ Amortized analysis from [Wikipedia](https://en.wikipedia.org/wiki/Amortized_anal
 
 ## Sorts
 
-* [Python implementation example](https://github.com/burrt/debian/blob/master/languages/python/sorts.py)
-
 | Sort                                                      | Complexity       | Features                                      | Description                                                                                                                                                                                                |
 |-----------------------------------------------------------|------------------|-----------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | [Bubble](https://en.wikipedia.org/wiki/Bubble_sort)       | O(n<sup>2</sup>) | Comparison<br>Adaptive<br>Stable<br>In-place  | Really simple, it just compares adjacent pairs in the array.<br>Repeat this `n` times.                                                                                                                     |
