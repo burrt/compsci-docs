@@ -15,8 +15,9 @@ Some of this may affect the application's architecture, code changes etc. I hard
 
 ## Deployment strategies
 
-* Blue Green
-* Rolling upgrade
+* [Blue Green](#blue-green)
+* [Rolling upgrade](#rolling-upgade)
+* [Canary release](#canary-release)
 
 ### Blue Green
 
