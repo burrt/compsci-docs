@@ -10,7 +10,7 @@ baseurl: "/compsci-docs"
 github_username: burrt
 repository: "burrt/compsci-docs"
 
-google_analytics: 312393364
+google_analytics: G-YDP286XTS2
 
 markdown: kramdown
 theme: jekyll-theme-cayman
