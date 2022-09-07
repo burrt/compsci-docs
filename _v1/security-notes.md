@@ -8,17 +8,45 @@ sitemap: false
 
 ## Contents
 
-* [TOTP](#totp)
-* [HTOP](#htop)
+* [Common FAQs](#common-faqs)
+* [One time passwords](#one-time-passwords)
 
-## TOTP
+## Resources
+
+* [OWASP - Top 10](https://owasp.org/www-project-top-ten/)
+* [sans - Agile development and building secure software](https://www.sans.org/blog/agile-development-teams-can-build-secure-software/)
+* [Attack Trees - security modelling](https://www.infoq.com/presentations/security-modeling-agile-teams/)
+
+## Common FAQs
+
+### Hashing vs Encryption
+
+Taken from [OWASP - Password Storage](https://cheatsheetseries.owasp.org/cheatsheets/Password_Storage_Cheat_Sheet.html):
+
+>Hashing and encryption both provide ways to keep sensitive data safe. However, in almost all circumstances, passwords should be hashed, **NOT** encrypted.
+>
+>**Hashing is a one-way function** (i.e., it is impossible to "decrypt" a hash and obtain the original plaintext value). Hashing is appropriate for password validation. Even if an attacker obtains the hashed password, they cannot enter it into an application's password field and log in as the victim.
+>
+>**Encryption is a two-way function**, meaning that the original plaintext can be retrieved. Encryption is appropriate for storing data such as a user's address since this data is displayed in plaintext on the user's profile. Hashing their address would result in a garbled mess.
+
+### What hashing algorithm should I use for passwords?
+
+See [OWASP - Password Storage](https://cheatsheetseries.owasp.org/cheatsheets/Password_Storage_Cheat_Sheet.html)
+
+### How to test for weak cryptography?
+
+See [OWASP - Testing for weak cryptography](https://owasp.org/www-project-web-security-testing-guide/stable/4-Web_Application_Security_Testing/09-Testing_for_Weak_Cryptography/README)
+
+## One time passwords
+
+### TOTP
 
 > Time-based One-time Password Algorithm is an algorithm that computes a one-time password from a shared secret key and the current time.
 [Wikipedia](https://en.wikipedia.org/wiki/Time-based_One-time_Password_Algorithm)
 
 Also see [RFC 6238](https://tools.ietf.org/html/rfc6238)
 
-### TOTP Definition
+#### TOTP Definition
 
 TOTP is based on HOTP with a timestamp replacing the incrementing counter.
 
@@ -34,7 +62,7 @@ TOTP = HOTP(SecretKey, TC)
 TOTP-Value = TOTP mod 10d  // where d is the desired number of digits of the one-time password.
 ```
 
-### Implementation
+#### Implementation
 
 * generate a key, `K`, which is an arbitrary byte string, and share it securely with the client.
 * agree upon a `T0`, the Unix time to start counting time steps from (default Unix epoch)
@@ -61,11 +89,11 @@ Now:
 * then the server checks if the token supplied by the client matches the locally generated token
 * some servers allow codes that should have been generated **before or after the current time** in order to account for slight *clock skews, network latency and user delays*
 
-## HTOP
+### HTOP
 
 HOTP is an HMAC-based one-time password (OTP) algorithm. See [Wikipedia](https://en.wikipedia.org/wiki/HMAC-based_One-time_Password_Algorithm#Definition).
 
-### HTOP Definition
+#### HTOP Definition
 
 * `K` be a secret key
 * `C` be a counter
