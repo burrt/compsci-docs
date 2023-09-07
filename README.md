@@ -29,10 +29,26 @@ $ bundle install
 $ bundle exec jekyll serve --incremental
 ```
 
-## Upgrading Gems
+## Upgrading and maintenance
 
-To test upgrading of the Gems for either new features and/or security vulnerabilities:
+See the `docker-compose.yml` file for the Jekyll image versions and the GitHub Pages support.
+To upgrade the Gem versions, see [Jekyll Docker - updating](https://github.com/envygeeks/jekyll-docker/tree/master#updating).
 
+**With Docker**:
+
+```bash
+export JEKYLL_VERSION=3.8
+docker run --rm \
+  --volume="$PWD:/srv/jekyll:Z" \
+  -it jekyll/jekyll:$JEKYLL_VERSION \
+  bundle update github-pages
+```
+
+**With Linux**:
+
+#
 ```bash
 $ bundle update github-pages
 ```
+
+**See also**: the jekyll plugin releases in `Gemfile` to upgrade.
