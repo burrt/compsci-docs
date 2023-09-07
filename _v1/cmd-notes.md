@@ -3,7 +3,6 @@ layout: compsci-note
 title: CMD Notes
 categories: [windows]
 description: Some notes on cmd commands and batch
-sitemap: false
 ---
 
 ## Basics

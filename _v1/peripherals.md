@@ -3,7 +3,6 @@ layout: compsci-note
 title: Linux Peripheral Notes
 categories: [hardware, linux]
 description: Some notes on Linux peripherals
-sitemap: false
 ---
 
 ## UART - Universal Asynchronous Receiver/Transmitter

@@ -3,7 +3,6 @@ layout: compsci-note
 title: Linux Syscall Notes
 categories: [linux]
 description: Some notes on Linux Syscalls - a little unnecessary
-sitemap: false
 ---
 
 ## Contents

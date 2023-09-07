@@ -3,7 +3,6 @@ layout: compsci-note
 title: Docker Notes
 categories: [docker, tools]
 description: Some notes on Docker
-sitemap: false
 ---
 
 ## Links

@@ -3,7 +3,6 @@ layout: compsci-note
 title: DevOps Notes
 categories: [devops]
 description: Some notes on DevOps
-sitemap: false
 favorite: true
 ---
 

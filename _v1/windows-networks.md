@@ -3,7 +3,6 @@ layout: compsci-note
 title: Windows Networking Notes
 categories: [networks, windows]
 description: Some notes on Windows Networking
-sitemap: false
 ---
 
 ## Windows Name Resolution

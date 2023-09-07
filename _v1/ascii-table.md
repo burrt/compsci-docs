@@ -3,7 +3,6 @@ layout: compsci-note
 title: ASCII Table
 categories: [other]
 description: The ASCII Table
-sitemap: false
 favorite: true
 ---
 

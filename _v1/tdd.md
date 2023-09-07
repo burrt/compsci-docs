@@ -3,7 +3,6 @@ layout: compsci-note
 title: Test Driven Development
 categories: [fundamentals, methodologies]
 description: Some notes on Test Driven Development (TDD)
-sitemap: false
 ---
 
 ## The Three Laws of TDD

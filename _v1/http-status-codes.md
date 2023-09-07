@@ -3,7 +3,6 @@ layout: compsci-note
 title: HTTP Status Codes
 categories: [web-dev]
 description: HTTP Status Codes
-sitemap: false
 ---
 
 ## HTTP Codes

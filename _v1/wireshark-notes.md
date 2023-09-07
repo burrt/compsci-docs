@@ -3,7 +3,6 @@ layout: compsci-note
 title: Wireshark Notes
 categories: [networks]
 description: Some notes on Wireshark
-sitemap: false
 ---
 
 ## Display filter

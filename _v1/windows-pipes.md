@@ -3,7 +3,6 @@ layout: compsci-note
 title: Windows Pipes
 categories: [windows]
 description: Some notes on Windows Pipes
-sitemap: false
 ---
 
 Below is a summarized version of the [Microsoft Windows Documentation - Pipes](https://docs.microsoft.com/en-us/windows/win32/ipc/pipes).

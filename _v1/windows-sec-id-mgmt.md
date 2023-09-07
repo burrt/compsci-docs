@@ -3,7 +3,6 @@ layout: compsci-note
 title: Windows Security and ID Management Notes
 categories: [security, windows]
 description: Some notes on Windows Security and Identity Management
-sitemap: false
 ---
 
 The main source of information can be found at the [Microsoft Documentation: Identity and access management](https://docs.microsoft.com/en-us/windows/security/identity-protection/).

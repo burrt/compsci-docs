@@ -3,7 +3,6 @@ layout: compsci-note
 title: Python Notes
 categories: [language]
 description: Some notes on Python
-sitemap: false
 ---
 
 ## Contents

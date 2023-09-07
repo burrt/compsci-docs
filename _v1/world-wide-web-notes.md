@@ -3,7 +3,6 @@ layout: compsci-note
 title: World Wide Web Notes
 categories: [networks]
 description: Some notes on the World Wide Web
-sitemap: false
 ---
 
 ## How the browser works

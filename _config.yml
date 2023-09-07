@@ -42,6 +42,11 @@ social:
     - https://www.linkedin.com/in/geoffrey-choy
 logo: /favicons/favicon-96x96.png
 
+# Atom Feed (RSS like feed) - jekyll-feed
+feed:
+  posts_limit: 100
+  tags: true
+
 # Exclude from processing.
 # The following items will not be processed, by default. Create a custom list
 # to override the default setting.

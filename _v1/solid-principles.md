@@ -3,7 +3,6 @@ layout: compsci-note
 title: SOLID Principles Notes
 categories: [solid, fundamentals, architecture]
 description: Some notes on SOLID Principles in Software Engineering
-sitemap: false
 favorite: true
 ---
 
@@ -15,7 +14,7 @@ favorite: true
 * [Interface Segregation Principle](#interface-segregation-principle)
 * [Dependency Inversion Principle](#dependency-inversion-principle)
 * [Inversion of Control](#inversion-of-control)
-* [Dependency Injection](#dependency-injection])
+* [Dependency Injection](#dependency-injection)
 * [Service scope](#service-scope)
 * [Miscellaneous Encyclopedia](#miscellaneous-encyclopedia)
 

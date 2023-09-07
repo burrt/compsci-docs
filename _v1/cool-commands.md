@@ -3,7 +3,6 @@ layout: compsci-note
 title: Cool Commands
 categories: [random]
 description: Some cool commands on Linux
-sitemap: false
 ---
 
 ## Contents

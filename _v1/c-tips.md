@@ -3,7 +3,6 @@ layout: compsci-note
 title: C Tips
 categories: [language, tips]
 description: Some tips and tricks with C
-sitemap: false
 ---
 
 ## Contents

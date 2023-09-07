@@ -3,7 +3,6 @@ layout: compsci-note
 title: VHDL Tips
 categories: [tips, language]
 description: Some tips and tricks with VHDL
-sitemap: false
 ---
 
 ## Contents
@@ -105,7 +104,7 @@ pr_out <= std_logic_vector(unsigned(pr_in1) + unsigned(pr_in2));
 label: entity work.counter_mod port map (..)
 ```
 
-## Increment a counter
+## Incrementing a counter
 
 ```vhdl
 use ieee.numeric_std.all

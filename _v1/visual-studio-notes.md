@@ -3,7 +3,6 @@ layout: compsci-note
 title: Visual Studio Notes
 categories: [ide]
 description: Some hotkeys and stuff for Visual Studio
-sitemap: false
 ---
 
 ## Visual Studio

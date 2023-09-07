@@ -3,7 +3,6 @@ layout: compsci-note
 title: The Pragmatic Programmer
 categories: [books]
 description: Some notes from The Pragmatic Programmer
-sitemap: false
 favorite: true
 ---
 

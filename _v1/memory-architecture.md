@@ -3,7 +3,6 @@ layout: compsci-note
 title: Memory Architecture Notes
 categories: [memory]
 description: Some notes on Memory Architectures
-sitemap: false
 ---
 
 ## Contents

@@ -3,7 +3,6 @@ layout: compsci-note
 title: Networking Notes
 categories: [networks]
 description: Some notes on Networking
-sitemap: false
 favorite: true
 ---
 

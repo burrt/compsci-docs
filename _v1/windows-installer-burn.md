@@ -3,7 +3,6 @@ layout: compsci-note
 title: WiX Burn Engine and Bootstrapper
 categories: [windows, windows-installer]
 description: Some notes on WiX Burn Engine and Bootstrapper
-sitemap: false
 ---
 
 ## Contents

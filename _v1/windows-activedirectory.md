@@ -3,7 +3,6 @@ layout: compsci-note
 title: Active Directory
 categories: [windows]
 description: Some notes on Active Directory
-sitemap: false
 ---
 
 ## Security Groups

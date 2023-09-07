@@ -3,7 +3,6 @@ layout: compsci-note
 title: Bash Notes
 categories: [bash, scripting]
 description: Some basic stuff on Bash
-sitemap: false
 ---
 
 ## Bash

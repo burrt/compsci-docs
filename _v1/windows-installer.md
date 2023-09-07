@@ -3,7 +3,6 @@ layout: compsci-note
 title: Windows Installer Notes
 categories: [windows, windows-installer]
 description: Some notes on Windows Installers
-sitemap: false
 ---
 
 ## Contents

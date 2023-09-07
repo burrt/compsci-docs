@@ -4,7 +4,6 @@ title: Database Notes
 categories: [database]
 description: Some basic notes on databases
 order: 20
-sitemap: false
 ---
 
 ## Links

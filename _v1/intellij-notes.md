@@ -3,7 +3,6 @@ layout: compsci-note
 title: IntelliJ Notes
 categories: [ide]
 description: Some hotkeys for the IntelliJ IDEs
-sitemap: false
 ---
 
 ## Basic hotkeys

@@ -3,7 +3,6 @@ layout: compsci-note
 title: C# Tips
 categories: [tips, language]
 description: Some tips and tricks with C#
-sitemap: false
 ---
 
 ## C# Tips

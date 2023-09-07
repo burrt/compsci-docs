@@ -3,7 +3,6 @@ layout: compsci-note
 title: Unicode Notes
 categories: [fundamentals]
 description: Some notes on Unicode
-sitemap: false
 favorite: true
 ---
 

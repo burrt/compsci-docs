@@ -3,7 +3,6 @@ layout: compsci-note
 title: Angular Notes
 categories: [web-dev]
 description: Some basic notes on Angular
-sitemap: false
 ---
 
 ## Angular

@@ -3,7 +3,6 @@ layout: compsci-note
 title: Windows Installer Upgrades Notes
 categories: [windows, windows-installer]
 description: Some notes on Windows Installer Upgrades
-sitemap: false
 ---
 
 ## Contents
@@ -12,7 +11,7 @@ sitemap: false
 * [Upgrades Overview](#upgrades-overview)
 * [Major upgrades](#major-upgrades)
   * [Upgrade Conditions](#upgrade-conditions)
-  * [WiX MajorUpgrade Element](#Wix-majorupgrade-element)
+  * [WiX MajorUpgrade Element](#wix-majorupgrade-element)
 * [Minor upgrades](#minor-upgrades)
 * [Small upgrades](#small-updates)
 
