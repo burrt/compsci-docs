@@ -22,6 +22,8 @@ description: Some notes on Windows Installers
 
 ## Overview
 
+Surprisingly, Windows Installers still exist today and there remains an abundance of confusion around this framework, I have answered a few questions on [StackOverflow - Geoff](https://stackoverflow.com/users/10554839/geoff). I have attempted to collate as much of my understanding of it when I touched it many years ago on this page - I hope it is helpful to someone out there!
+
 [Wikipedia](https://en.wikipedia.org/wiki/Windows_Installer) summarizes the format of the Windows Installer Package `.msi` but I'll repeat it here for completion sake.
 
 >* A Windows Installer package is made up of one or more full **products** and is universally identified by a GUID.
