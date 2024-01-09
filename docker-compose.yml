@@ -1,4 +1,11 @@
 services:
+    # update the Gems, this may cause problems!
+    # update:
+    #     image: jekyll/jekyll:3.8
+    #     command: bundle update github-pages
+    #     volumes:
+    #         - .:/srv/jekyll
+
     jekyll:
         # https://pages.github.com/versions/
         # https://hub.docker.com/r/jekyll/jekyll/tags

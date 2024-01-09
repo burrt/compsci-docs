@@ -44,9 +44,10 @@ docker run --rm \
   bundle update github-pages
 ```
 
+or best to un-comment out the section in the `docker-compose.yml`.
+
 **With Linux**:
 
-#
 ```bash
 $ bundle update github-pages
 ```
